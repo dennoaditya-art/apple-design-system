@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next"
-import { PageTransition } from "@/components/page-transition"
+import { LayoutClient } from "@/components/layout-client"
 import { CursorGlow } from "@/components/cursor-glow"
 import { BackToTop } from "@/components/back-to-top"
 import "./globals.css"
@@ -49,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <PageTransition>{children}</PageTransition>
+        <LayoutClient>{children}</LayoutClient>
         <CursorGlow />
         <BackToTop />
       </body>

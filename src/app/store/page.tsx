@@ -1,40 +1,113 @@
+"use client"
+
+import { useState } from "react"
 import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
-import { ProductLineup } from "@/components/product-lineup"
+import { ProductCard } from "@/components/product-card"
 import { MediaCardGrid } from "@/components/media-card-grid"
 import { FooterSection } from "@/components/footer-section"
-import { PillButton } from "@/components/pill-button"
-import { Reveal } from "@/components/reveal"
-import { ScrollParallax } from "@/components/scroll-parallax"
+import { PRODUCTS, CATEGORIES } from "@/lib/products"
+import { StaggerGrid, StaggerItem } from "@/components/reveal"
 
 export default function StorePage() {
+  const [activeCategory, setActiveCategory] = useState("all")
+  const [searchQuery, setSearchQuery] = useState("")
+
+  const filtered = PRODUCTS.filter((p) => {
+    const matchCategory = activeCategory === "all" || p.category === activeCategory
+    const matchSearch =
+      !searchQuery ||
+      p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.tagline.toLowerCase().includes(searchQuery.toLowerCase())
+    return matchCategory && matchSearch
+  })
+
   return (
     <>
       <TopNotificationBar />
       <StickyNav />
       <main>
-        <section className="flex flex-col items-center justify-center bg-paper px-5 py-[120px] text-center">
-          <h1 className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
-            Store
-          </h1>
-          <p className="mt-3 max-w-[640px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
-            The best way to buy the products you love.
+        <section className="flex flex-col items-center justify-center bg-paper px-5 py-[80px] text-center">
+          <p className="font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
+            Apple Store
           </p>
-          <div className="mt-6 flex items-center gap-3">
-            <PillButton variant="filled">Shop iPhone</PillButton>
-            <PillButton variant="outlined">Shop Mac</PillButton>
+          <h1 className="mt-1 font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+            Shop the latest products.
+          </h1>
+          <p className="mt-3 max-w-[560px] font-sf-pro-text text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog">
+            Free delivery and free returns.{" "}
+          </p>
+
+          <div className="mt-8 w-full max-w-[400px]">
+            <div className="relative">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-fog"
+                aria-hidden="true"
+              >
+                <circle cx="8" cy="8" r="5.5" />
+                <path d="M12 12L15.5 15.5" />
+              </svg>
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search products..."
+                className="w-full rounded-[10px] border border-bone bg-cloud py-3 pl-10 pr-4 font-sf-pro-text text-[15px] text-graphite outline-none transition-colors placeholder:text-fog focus:border-apple-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+                aria-label="Search products"
+              />
+            </div>
           </div>
         </section>
-        <ScrollParallax offset={30}>
-          <Reveal delay={0.1}>
-            <ProductLineup />
-          </Reveal>
-        </ScrollParallax>
-        <ScrollParallax offset={25}>
-          <Reveal delay={0.1}>
+
+        <section className="bg-cloud px-5 pb-[80px]">
+          <div className="mx-auto max-w-[980px]">
+            <div className="mb-6 flex flex-wrap justify-center gap-2">
+              {CATEGORIES.map((cat) => (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`rounded-[980px] px-4 py-2 font-sf-pro-text text-[13px] leading-[1.38] transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
+                    activeCategory === cat.id
+                      ? "bg-graphite text-paper"
+                      : "bg-paper text-graphite hover:bg-bone"
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+
+            {filtered.length === 0 ? (
+              <div className="py-16 text-center">
+                <p className="font-sf-pro-text text-[17px] font-light leading-[1.47] text-fog">
+                  No products found for &ldquo;{searchQuery}&rdquo;
+                </p>
+              </div>
+            ) : (
+              <StaggerGrid className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+                {filtered.map((product) => (
+                  <StaggerItem key={product.id}>
+                    <ProductCard product={product} />
+                  </StaggerItem>
+                ))}
+              </StaggerGrid>
+            )}
+          </div>
+        </section>
+
+        <section className="bg-paper px-5 py-[80px]">
+          <div className="mx-auto max-w-[980px]">
             <MediaCardGrid />
-          </Reveal>
-        </ScrollParallax>
+          </div>
+        </section>
       </main>
       <FooterSection />
     </>

@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { SlidePanel } from "@/components/slide-panel"
 import { SearchPanel } from "@/components/search-panel"
 import { BagPanel } from "@/components/bag-panel"
+import { useCart } from "@/lib/cart-context"
 
 interface NavLink {
   label: string
@@ -31,6 +32,7 @@ export function StickyNav() {
   const [bagOpen, setBagOpen] = useState(false)
   const menuRef = useRef<HTMLDivElement>(null)
   const hamburgerRef = useRef<HTMLButtonElement>(null)
+  const { itemCount } = useCart()
 
   const closeMenu = useCallback(() => {
     setMenuOpen(false)
@@ -155,7 +157,12 @@ export function StickyNav() {
               <path d="M11 18L14 21" strokeLinecap="round" />
             </motion.svg>
           </button>
-          <button aria-label="Bag" onClick={() => setBagOpen(true)} className="transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue">
+          <button aria-label="Bag" onClick={() => setBagOpen(true)} className="relative transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue">
+            {itemCount > 0 && (
+              <span className="absolute -right-1 top-1 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-button-blue px-1 font-sf-pro-text text-[10px] font-semibold leading-none text-paper">
+                {itemCount}
+              </span>
+            )}
             <motion.svg
               width="16"
               height="44"
@@ -229,7 +236,7 @@ export function StickyNav() {
         </>
       )}
       <SlidePanel open={searchOpen} onClose={() => setSearchOpen(false)} title="Search">
-        <SearchPanel />
+        <SearchPanel onClose={() => setSearchOpen(false)} />
       </SlidePanel>
       <SlidePanel open={bagOpen} onClose={() => setBagOpen(false)} title="Bag">
         <BagPanel />

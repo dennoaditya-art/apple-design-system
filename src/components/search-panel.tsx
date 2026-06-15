@@ -1,11 +1,37 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { PRODUCTS } from "@/lib/products"
+import type { Product } from "@/lib/products"
+import { useCart } from "@/lib/cart-context"
 
-const QUICK_LINKS = ["iPhone 16 Pro", "MacBook Pro", "iPad Air", "Apple Watch", "AirPods Pro"]
-
-export function SearchPanel() {
+export function SearchPanel({ onClose }: { onClose?: () => void }) {
   const [query, setQuery] = useState("")
+  const [results, setResults] = useState<Product[]>([])
+  const inputRef = useRef<HTMLInputElement>(null)
+  const { addItem } = useCart()
+
+  useEffect(() => {
+    if (inputRef.current) inputRef.current.focus()
+  }, [])
+
+  useEffect(() => {
+    if (!query.trim()) {
+      setResults([])
+      return
+    }
+    const q = query.toLowerCase()
+    setResults(
+      PRODUCTS.filter(
+        (p) =>
+          p.name.toLowerCase().includes(q) ||
+          p.tagline.toLowerCase().includes(q) ||
+          p.category.toLowerCase().includes(q)
+      )
+    )
+  }, [query])
 
   return (
     <div>
@@ -25,37 +51,98 @@ export function SearchPanel() {
           <path d="M12 12L15.5 15.5" />
         </svg>
         <input
+          ref={inputRef}
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search products..."
+          placeholder="Search 17 products..."
           className="w-full rounded-[10px] border border-bone bg-cloud py-3 pl-10 pr-4 font-sf-pro-text text-[15px] text-graphite outline-none transition-colors placeholder:text-fog focus:border-apple-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
           aria-label="Search products"
         />
       </div>
 
-      {query ? (
+      {query && results.length === 0 && (
         <p className="mt-6 font-sf-pro-text text-[14px] font-light leading-[1.43] text-fog">
           No results for &ldquo;{query}&rdquo;
         </p>
-      ) : (
-        <div className="mt-8">
-          <h3 className="mb-3 font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
-            Quick links
-          </h3>
-          <ul className="space-y-2">
-            {QUICK_LINKS.map((link) => (
-              <li key={link}>
+      )}
+
+      {results.length > 0 && (
+        <ul className="mt-4 space-y-2">
+          {results.slice(0, 6).map((product) => (
+            <li key={product.id}>
+              <Link
+                href={`/${product.category}`}
+                onClick={onClose}
+                className="flex items-center gap-3 rounded-[8px] p-2 transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+              >
+                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-[6px] bg-cloud">
+                  <Image
+                    src={product.imageSrc}
+                    alt=""
+                    fill
+                    sizes="48px"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate font-sf-pro-text text-[14px] font-semibold leading-[1.43] text-graphite">
+                    {product.name}
+                  </p>
+                  <p className="truncate font-sf-pro-text text-[12px] font-light leading-[1.33] text-fog">
+                    {product.price}
+                  </p>
+                </div>
                 <button
                   type="button"
-                  onClick={() => setQuery(link)}
-                  className="w-full rounded-[8px] px-3 py-2 text-left font-sf-pro-text text-[15px] text-graphite transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    addItem(product)
+                  }}
+                  aria-label={`Add ${product.name} to bag`}
+                  className="shrink-0 rounded-[980px] bg-button-blue px-3 py-1 font-sf-pro-text text-[12px] leading-[1.33] text-paper transition-colors hover:bg-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
                 >
-                  {link}
+                  Add
                 </button>
-              </li>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {!query && (
+        <div className="mt-8">
+          <h3 className="mb-3 font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
+            Popular products
+          </h3>
+          <div className="space-y-2">
+            {PRODUCTS.slice(0, 5).map((product) => (
+              <Link
+                key={product.id}
+                href={`/${product.category}`}
+                onClick={onClose}
+                className="flex items-center gap-3 rounded-[8px] p-2 transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+              >
+                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-[6px] bg-cloud">
+                  <Image
+                    src={product.imageSrc}
+                    alt=""
+                    fill
+                    sizes="40px"
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="font-sf-pro-text text-[14px] font-semibold leading-[1.43] text-graphite">
+                    {product.name}
+                  </p>
+                  <p className="font-sf-pro-text text-[12px] font-light leading-[1.33] text-fog">
+                    {product.price}
+                  </p>
+                </div>
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
       )}
     </div>

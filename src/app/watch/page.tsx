@@ -1,6 +1,6 @@
 import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
-import { ProductHero } from "@/components/product-hero"
+import { WatchHero } from "@/components/watch-hero"
 import { ProductLineup } from "@/components/product-lineup"
 import { MediaCardGrid } from "@/components/media-card-grid"
 import { FooterSection } from "@/components/footer-section"
@@ -14,13 +14,7 @@ export default function WatchPage() {
       <TopNotificationBar />
       <StickyNav />
       <main>
-        <ProductHero
-          productName="Apple Watch Ultra 2"
-          subtitle="Adventure awaits."
-          imageSrc="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=1200&q=80"
-          imageAlt="Apple Watch Ultra 2 on wrist"
-          priority
-        />
+        <WatchHero as="h1" />
         <Reveal delay={0.1}>
           <section className="flex flex-col items-center justify-center bg-paper px-5 py-[80px] text-center">
             <h2 className="font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
