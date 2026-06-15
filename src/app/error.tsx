@@ -1,0 +1,27 @@
+"use client"
+
+export default function ErrorPage({
+  _error,
+  reset,
+}: {
+  _error: Error & { digest?: string }
+  reset: () => void
+}) {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center bg-cloud px-5 text-center">
+      <h1 className="font-sf-pro-display text-[56px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+        Something went wrong
+      </h1>
+      <p className="mt-3 font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-fog">
+        Please try again later.
+      </p>
+      <button
+        type="button"
+        onClick={reset}
+        className="mt-8 inline-block rounded-[980px] bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[17px] leading-[1.47] tracking-[-0.05px] text-paper transition-all hover:bg-deep-link-blue"
+      >
+        Try again
+      </button>
+    </main>
+  )
+}
