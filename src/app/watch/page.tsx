@@ -23,7 +23,7 @@ export default function WatchPage() {
         />
         <Reveal delay={0.1}>
           <section className="flex flex-col items-center justify-center bg-paper px-5 py-[80px] text-center">
-            <h2 className="font-sf-pro-display text-[40px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
+            <h2 className="font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
               Why Apple Watch
             </h2>
             <p className="mt-3 max-w-[640px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">

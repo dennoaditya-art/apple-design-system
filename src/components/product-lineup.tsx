@@ -90,7 +90,7 @@ export function ProductLineup() {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-center font-sf-pro-display text-[40px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite"
+            className="text-center font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite"
           >
             Meet the latest iPhone lineup.
           </motion.h2>
@@ -121,7 +121,7 @@ export function ProductLineup() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
+                <h3 className="font-sf-pro-display md:text-[28px] text-[22px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
                   {FEATURED.name}
                 </h3>
                 <p className="mt-1 font-sf-pro-text text-[14px] font-light leading-[1.43] text-paper/80">

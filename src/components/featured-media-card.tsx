@@ -38,7 +38,7 @@ export function FeaturedMediaCard() {
           <p className="font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
             Apple TV+
           </p>
-          <h2 className="mt-1 font-sf-pro-display text-[40px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
+          <h2 className="mt-1 font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
             Watch now
           </h2>
         </div>
@@ -70,7 +70,7 @@ export function FeaturedMediaCard() {
               Stream now
             </span>
             <div>
-              <h3 className="font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
+              <h3 className="font-sf-pro-display md:text-[28px] text-[22px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
                 Silo
               </h3>
               <p className="mt-0.5 font-sf-pro-text text-[14px] font-light leading-[1.43] text-paper/80">

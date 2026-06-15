@@ -139,7 +139,7 @@ export function MediaCardGrid() {
     <section className="bg-cloud px-5 py-[80px]">
       <div className="mx-auto max-w-[980px]">
         <div className="mb-10 text-center">
-          <h2 className="font-sf-pro-display text-[40px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
+          <h2 className="font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
             More from Apple
           </h2>
           <p className="mt-2 font-sf-pro-text text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog">

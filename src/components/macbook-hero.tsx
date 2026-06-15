@@ -15,7 +15,7 @@ export function MacBookHero({ as: Heading = "h2" }: MacBookHeroProps) {
     return (
       <section className="relative overflow-hidden bg-paper px-5 py-[80px] text-center">
         <div className="mx-auto max-w-[980px]">
-          <Heading className="font-sf-pro-display text-[56px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+          <Heading className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
             MacBook Pro
           </Heading>
           <p className="mt-3 font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-fog">
@@ -55,7 +55,7 @@ export function MacBookHero({ as: Heading = "h2" }: MacBookHeroProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <Heading className="font-sf-pro-display text-[56px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+          <Heading className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
             MacBook Pro
           </Heading>
         </motion.div>
