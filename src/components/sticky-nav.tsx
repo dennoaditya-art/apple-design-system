@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { SlidePanel } from "@/components/slide-panel"
 import { SearchPanel } from "@/components/search-panel"
 import { BagPanel } from "@/components/bag-panel"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { useCart } from "@/lib/cart-context"
 
 interface NavLink {
@@ -23,6 +24,7 @@ const NAV_LINKS: NavLink[] = [
   { label: "Vision", href: "/store" },
   { label: "AirPods", href: "/airpods" },
   { label: "TV & Home", href: "/tv" },
+  { label: "Dashboard", href: "/dashboard" },
 ]
 
 export function StickyNav() {
@@ -142,6 +144,7 @@ export function StickyNav() {
         </motion.div>
 
         <div className="flex items-center gap-5">
+          <ThemeToggle />
           <button aria-label="Search" onClick={() => setSearchOpen(true)} className="transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue">
             <motion.svg
               width="16"

@@ -1,11 +1,24 @@
-interface PillButtonProps {
+import type { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react"
+
+interface PillButtonBaseProps {
   variant?: "filled" | "outlined"
   children: React.ReactNode
-  href?: string
   className?: string
 }
 
-export function PillButton({ variant = "filled", children, href, className = "" }: PillButtonProps) {
+type PillButtonProps = PillButtonBaseProps &
+  (
+    | ({ href: string } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "children">)
+    | ({ href?: never } & ButtonHTMLAttributes<HTMLButtonElement>)
+  )
+
+export function PillButton({
+  variant = "filled",
+  children,
+  href,
+  className = "",
+  ...props
+}: PillButtonProps) {
   const base = "inline-block px-[15px] py-[8px] font-sf-pro-text text-[17px] font-normal leading-[1.47] tracking-[-0.05px] transition-all duration-200"
   const styles = {
     filled:
@@ -16,11 +29,15 @@ export function PillButton({ variant = "filled", children, href, className = "" 
 
   if (href) {
     return (
-      <a href={href} className={`${base} ${styles[variant]} ${className}`}>
+      <a href={href} className={`${base} ${styles[variant]} ${className}`} {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}>
         {children}
       </a>
     )
   }
 
-  return <button type="button" className={`${base} ${styles[variant]} ${className}`}>{children}</button>
+  return (
+    <button type="button" className={`${base} ${styles[variant]} ${className}`} {...(props as ButtonHTMLAttributes<HTMLButtonElement>)}>
+      {children}
+    </button>
+  )
 }
