@@ -1,4 +1,8 @@
+"use client"
+
+import { motion, useReducedMotion } from "framer-motion"
 import { StaggerGrid, StaggerItem } from "@/components/reveal"
+import { easings, durations } from "@/lib/motion"
 
 interface ServiceProps {
   name: string
@@ -135,28 +139,39 @@ const SERVICES: ServiceProps[] = [
 ]
 
 export function MediaCardGrid() {
+  const prefersReduced = useReducedMotion()
   return (
     <section className="bg-cloud px-5 py-[80px]">
       <div className="mx-auto max-w-[980px]">
-        <div className="mb-10 text-center">
+        <motion.div
+          initial={prefersReduced ? undefined : { opacity: 0, y: 30, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          viewport={{ once: true }}
+          transition={prefersReduced ? { duration: 0 } : { duration: durations.hero, ease: easings.dramatic }}
+          className="mb-10 text-center"
+        >
           <h2 className="font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
             More from Apple
           </h2>
           <p className="mt-2 font-sf-pro-text text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog">
             Discover services that power your digital life.
           </p>
-        </div>
+        </motion.div>
 
         <StaggerGrid className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {SERVICES.map((service) => (
             <StaggerItem key={service.name}>
               <a
-                href="#"
-                className="group flex h-full flex-col rounded-[8px] bg-paper p-6 shadow-xl transition-shadow hover:shadow-lg"
+                href="/store"
+                className="group flex h-full flex-col rounded-[8px] bg-paper p-6 shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="text-graphite transition-colors group-hover:text-apple-blue">
+                <motion.div
+                  className="text-graphite transition-colors group-hover:text-apple-blue"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                >
                   {service.icon}
-                </div>
+                </motion.div>
                 <h3 className="mt-4 font-sf-pro-text text-[17px] font-semibold leading-[1.24] text-graphite">
                   {service.name}
                 </h3>

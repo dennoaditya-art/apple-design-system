@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, type ReactNode } from "react"
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
+import { easings, durations } from "@/lib/motion"
 
 interface Tab {
   id: string
@@ -17,6 +18,8 @@ interface TabsProps {
 
 export function Tabs({ tabs, defaultTab, className = "" }: TabsProps) {
   const [activeId, setActiveId] = useState(defaultTab || tabs[0]?.id)
+  if (!activeId) return null
+  const prefersReduced = useReducedMotion()
 
   const active = tabs.find((t) => t.id === activeId)
 
@@ -43,21 +46,25 @@ export function Tabs({ tabs, defaultTab, className = "" }: TabsProps) {
                 <motion.span
                   layoutId="tab-active"
                   className="absolute inset-x-0 bottom-0 h-[2px] bg-apple-blue"
-                  transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={prefersReduced ? { duration: 0 } : { duration: durations.normal, ease: easings.easeOut }}
                 />
               )}
             </button>
           )
         })}
       </div>
-      <div
+      <motion.div
         role="tabpanel"
         id={`panel-${activeId}`}
         aria-labelledby={`tab-${activeId}`}
+        key={activeId}
+        initial={prefersReduced ? undefined : { opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={prefersReduced ? { duration: 0 } : { duration: durations.fast, ease: easings.easeOut }}
         className="pt-4"
       >
         {active?.content}
-      </div>
+      </motion.div>
     </div>
   )
 }

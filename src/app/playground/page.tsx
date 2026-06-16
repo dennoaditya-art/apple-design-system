@@ -417,7 +417,7 @@ export default function PlaygroundPage() {
               </pre>
               <button
                 type="button"
-                onClick={() => { void navigator.clipboard.writeText(getCode()) }}
+                onClick={() => { navigator.clipboard.writeText(getCode()).catch(() => {}) }}
                 className="mt-3 w-full rounded-[8px] bg-cloud py-2 font-sf-pro-text text-[13px] font-semibold leading-[1.38] text-graphite transition-colors hover:bg-bone"
               >
                 Copy code

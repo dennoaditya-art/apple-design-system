@@ -181,7 +181,7 @@ export default function DashboardPage() {
                 <div className="text-right">
                   <p className="font-sf-pro-text text-[14px] font-semibold leading-[1.43] text-graphite">{product.revenue}</p>
                   <span className={`font-sf-pro-text text-[11px] font-semibold leading-[1.33] ${product.trend === "up" ? "text-green-600" : "text-red-500"}`}>
-                    {product.trend === "up" ? "↑" : "↓"} {(Math.random() * 15 + 2).toFixed(1)}%
+                    {product.trend === "up" ? "↑" : "↓"} {(product.units * 0.03 + 2).toFixed(1)}%
                   </span>
                 </div>
               </div>

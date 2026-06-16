@@ -135,7 +135,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             type="button"
             aria-label="Toggle sidebar"
             onClick={() => setSidebarOpen((v) => !v)}
-            className="md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+            className="p-3 md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
               <path d="M3 5H17M3 10H17M3 15H17" />

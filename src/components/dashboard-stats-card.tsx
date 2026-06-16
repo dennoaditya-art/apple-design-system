@@ -1,6 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
+import { easings, durations } from "@/lib/motion"
+import { MotionNumber } from "@/components/motion-number"
 
 interface StatsCardProps {
   title: string
@@ -12,19 +14,34 @@ interface StatsCardProps {
 }
 
 export function StatsCard({ title, value, change, trend, icon, index = 0 }: StatsCardProps) {
+  const prefersReduced = useReducedMotion()
+  const numericValue = Number(value.replace(/[^0-9.-]/g, ""))
+  const isNumeric = !Number.isNaN(numericValue)
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+      initial={prefersReduced ? undefined : { opacity: 0, y: 20, scale: 0.96 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={prefersReduced ? { duration: 0 } : { duration: durations.slow, ease: easings.dramatic, delay: index * 0.1 }}
+      whileHover={{ y: -4, scale: 1.02, transition: { type: "spring", stiffness: 300, damping: 20 } }}
       className="rounded-[12px] bg-paper p-5 shadow-sm transition-shadow hover:shadow-md"
     >
       <div className="flex items-start justify-between">
         <p className="font-sf-pro-text text-[13px] font-semibold leading-[1.38] text-fog">{title}</p>
-        <span className="text-fog">{icon}</span>
+        <motion.span
+          className="text-fog"
+          whileHover={{ rotate: 10, scale: 1.1 }}
+          transition={{ type: "spring", stiffness: 300, damping: 15 }}
+        >
+          {icon}
+        </motion.span>
       </div>
       <p className="mt-2 font-sf-pro-display text-[32px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
-        {value}
+        {isNumeric ? (
+          <MotionNumber to={numericValue} duration={1.2} delay={index * 0.1} format={false} />
+        ) : (
+          value
+        )}
       </p>
       <div className="mt-1 flex items-center gap-1.5">
         <span

@@ -1,4 +1,7 @@
-import type { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react"
+"use client"
+
+import type { ButtonHTMLAttributes, AnchorHTMLAttributes, ComponentProps } from "react"
+import Link from "next/link"
 
 interface PillButtonBaseProps {
   variant?: "filled" | "outlined"
@@ -28,6 +31,14 @@ export function PillButton({
   }
 
   if (href) {
+    const isInternal = href.startsWith("/")
+    if (isInternal) {
+      return (
+        <Link href={href} className={`${base} ${styles[variant]} ${className}`} {...(props as Omit<ComponentProps<typeof Link>, "href" | "children">)}>
+          {children}
+        </Link>
+      )
+    }
     return (
       <a href={href} className={`${base} ${styles[variant]} ${className}`} {...(props as AnchorHTMLAttributes<HTMLAnchorElement>)}>
         {children}

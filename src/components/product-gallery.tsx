@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 
 interface GalleryImage {
   src: string
@@ -15,6 +15,8 @@ interface ProductGalleryProps {
 }
 
 export function ProductGallery({ images, productName }: ProductGalleryProps) {
+  if (images.length === 0) return null
+  const prefersReduced = useReducedMotion()
   const [active, setActive] = useState(0)
 
   return (
@@ -23,10 +25,10 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
-            initial={{ opacity: 0, scale: 1.05 }}
+            initial={prefersReduced ? undefined : { opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={prefersReduced ? { duration: 0 } : { duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
             className="absolute inset-0"
           >
             <Image

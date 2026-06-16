@@ -48,7 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>
+      <body className="pb-[50px] md:pb-0">
         <LayoutClient>{children}</LayoutClient>
         <CursorGlow />
         <BackToTop />

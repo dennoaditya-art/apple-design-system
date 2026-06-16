@@ -11,7 +11,7 @@ import { ScrollParallax } from "@/components/scroll-parallax"
 const IPHONE_GALLERY = [
   { src: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80", alt: "iPhone 16 Pro front view in natural lighting" },
   { src: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&q=80", alt: "iPhone 16 Pro angle view showing titanium frame" },
-  { src: "https://images.unsplash.com/photo-1592286927505-1a2513d8b3d1?w=800&q=80", alt: "iPhone 16 Pro side profile" },
+  { src: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&q=80", alt: "iPhone 16 Pro side profile" },
 ]
 
 export default function IPhonePage() {

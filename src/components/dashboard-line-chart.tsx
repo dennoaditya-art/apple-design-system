@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 
 interface DataPoint {
   label: string
@@ -13,6 +13,8 @@ interface LineChartProps {
 }
 
 export function LineChart({ data, height = 200 }: LineChartProps) {
+  if (data.length < 2) return null
+  const prefersReduced = useReducedMotion()
   const width = 100
   const padding = 8
   const chartW = width - padding * 2
@@ -37,9 +39,9 @@ export function LineChart({ data, height = 200 }: LineChartProps) {
       <motion.path
         d={areaPath}
         fill="url(#line-gradient)"
-        initial={{ opacity: 0 }}
+        initial={prefersReduced ? undefined : { opacity: 0 }}
         animate={{ opacity: 0.15 }}
-        transition={{ duration: 0.8 }}
+        transition={prefersReduced ? { duration: 0 } : { duration: 0.8 }}
       />
       <motion.path
         d={linePath}
@@ -48,9 +50,9 @@ export function LineChart({ data, height = 200 }: LineChartProps) {
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        initial={{ pathLength: 0 }}
+        initial={prefersReduced ? undefined : { pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={prefersReduced ? { duration: 0 } : { duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
       />
       {points.map((p, i) => (
         <motion.circle
@@ -61,9 +63,9 @@ export function LineChart({ data, height = 200 }: LineChartProps) {
           fill="#2997ff"
           stroke="white"
           strokeWidth="1"
-          initial={{ scale: 0 }}
+          initial={prefersReduced ? undefined : { scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ delay: 1 + i * 0.1, duration: 0.3 }}
+          transition={prefersReduced ? { duration: 0 } : { delay: 1 + i * 0.1, duration: 0.3 }}
         />
       ))}
       <defs>
@@ -77,6 +79,7 @@ export function LineChart({ data, height = 200 }: LineChartProps) {
 }
 
 export function MiniLineChart({ data }: { data: number[] }) {
+  const prefersReduced = useReducedMotion()
   const w = 80
   const h = 32
   const padding = 2
@@ -104,9 +107,9 @@ export function MiniLineChart({ data }: { data: number[] }) {
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        initial={{ pathLength: 0 }}
+        initial={prefersReduced ? undefined : { pathLength: 0 }}
         animate={{ pathLength: 1 }}
-        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={prefersReduced ? { duration: 0 } : { duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
       />
     </svg>
   )

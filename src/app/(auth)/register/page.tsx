@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Input } from "@/components/input"
 import { Checkbox } from "@/components/checkbox"
 import { PillButton } from "@/components/pill-button"
@@ -15,6 +15,11 @@ export default function RegisterPage() {
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState<{ name?: string; email?: string; password?: string; agree?: string }>({})
   const { addToast } = useToast()
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+
+  useEffect(() => {
+    return () => clearTimeout(timerRef.current)
+  }, [])
 
   function validate() {
     const errs: typeof errors = {}
@@ -34,7 +39,7 @@ export default function RegisterPage() {
     e.preventDefault()
     if (!validate()) return
     setLoading(true)
-    setTimeout(() => {
+    timerRef.current = setTimeout(() => {
       setLoading(false)
       addToast("Account created successfully!", "success")
     }, 1200)

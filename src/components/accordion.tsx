@@ -1,7 +1,8 @@
 "use client"
 
 import { useState, type ReactNode } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
+import { easings, durations } from "@/lib/motion"
 
 interface AccordionItem {
   id: string
@@ -17,6 +18,7 @@ interface AccordionProps {
 
 export function Accordion({ items, allowMultiple = false, className = "" }: AccordionProps) {
   const [openIds, setOpenIds] = useState<string[]>([])
+  const prefersReduced = useReducedMotion()
 
   function toggle(id: string) {
     setOpenIds((prev) => {
@@ -49,7 +51,7 @@ export function Accordion({ items, allowMultiple = false, className = "" }: Acco
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 animate={{ rotate: isOpen ? 180 : 0 }}
-                transition={{ duration: 0.2 }}
+                transition={prefersReduced ? { duration: 0 } : { duration: durations.fast, ease: easings.easeOut }}
                 aria-hidden="true"
               >
                 <path d="M3 5L7 9L11 5" />
@@ -60,10 +62,10 @@ export function Accordion({ items, allowMultiple = false, className = "" }: Acco
                 <motion.div
                   id={`accordion-content-${item.id}`}
                   key={item.id}
-                  initial={{ height: 0, opacity: 0 }}
+                  initial={prefersReduced ? undefined : { height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={prefersReduced ? { duration: 0 } : { duration: durations.fast, ease: easings.easeOut }}
                   className="overflow-hidden"
                 >
                   <div className="px-5 pb-4 font-sf-pro-text text-[14px] leading-[1.57] text-fog">

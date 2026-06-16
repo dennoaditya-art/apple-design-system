@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Big screen. Big battery.",
     price: "$899",
     category: "iphone",
-    imageSrc: "https://images.unsplash.com/photo-1592286927505-1a2513d8b3d1?w=600&q=80",
+    imageSrc: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=600&q=80",
   },
   {
     id: "macbook-pro-14",
@@ -103,7 +103,7 @@ export const PRODUCTS: Product[] = [
     tagline: "The future of wellness.",
     price: "$399",
     category: "watch",
-    imageSrc: "https://images.unsplash.com/photo-1546868871-af0de0ae72cc?w=600&q=80",
+    imageSrc: "https://images.unsplash.com/photo-1609587312208-cea54be969e7?w=600&q=80",
   },
   {
     id: "airpods-pro-2",
@@ -111,7 +111,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Sound the way it was meant to be.",
     price: "$249",
     category: "airpods",
-    imageSrc: "https://images.unsplash.com/photo-1631172220668-5675a45f19fc?w=600&q=80",
+    imageSrc: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&q=80",
   },
   {
     id: "airpods-4",
@@ -143,7 +143,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Pixel-perfect precision.",
     price: "$129",
     category: "accessories",
-    imageSrc: "https://images.unsplash.com/photo-1590959651373-a3db0f38cbe4?w=600&q=80",
+    imageSrc: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&q=80",
   },
 ]
 

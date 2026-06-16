@@ -1,7 +1,8 @@
 "use client"
 
-import { createContext, useContext, useState, useCallback, type ReactNode } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { createContext, useContext, useState, useCallback, useRef, useEffect, type ReactNode } from "react"
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
+import { easings, durations } from "@/lib/motion"
 
 type ToastType = "success" | "error" | "info"
 
@@ -51,11 +52,18 @@ const TEXT_COLORS: Record<ToastType, string> = {
 
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([])
+  const prefersReduced = useReducedMotion()
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+
+  useEffect(() => {
+    return () => clearTimeout(timerRef.current)
+  }, [])
 
   const addToast = useCallback((message: string, type: ToastType = "info") => {
     const id = `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`
     setToasts((prev) => [...prev, { id, message, type }])
-    setTimeout(() => {
+    clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => {
       setToasts((prev) => prev.filter((t) => t.id !== id))
     }, 4000)
   }, [])
@@ -72,11 +80,21 @@ export function ToastProvider({ children }: { children: ReactNode }) {
           {toasts.map((toast) => (
             <motion.div
               key={toast.id}
-              initial={{ opacity: 0, x: 80, scale: 0.95 }}
+              layout
+              initial={prefersReduced ? undefined : { opacity: 0, x: 80, scale: 0.9 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
-              exit={{ opacity: 0, x: 80, scale: 0.95 }}
-              transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-              className={`flex w-[360px] items-center gap-3 rounded-[12px] border-l-4 ${BORDER_COLORS[toast.type]} bg-paper px-4 py-3 shadow-md`}
+              exit={{ opacity: 0, x: 80, scale: 0.9 }}
+              transition={prefersReduced ? { duration: 0 } : { duration: durations.normal, ease: easings.easeOut }}
+              whileHover={prefersReduced ? undefined : { scale: 1.02 }}
+              whileTap={prefersReduced ? undefined : { scale: 0.98 }}
+              drag={prefersReduced ? false : "x"}
+              dragDirectionLock
+              onDragEnd={(_e, { offset, velocity }) => {
+                if (Math.abs(offset.x) > 100 || velocity.x > 200) {
+                  removeToast(toast.id)
+                }
+              }}
+              className={`flex w-[360px] cursor-grab items-center gap-3 rounded-[12px] border-l-4 ${BORDER_COLORS[toast.type]} bg-paper px-4 py-3 shadow-md active:cursor-grabbing`}
             >
               <span className={`shrink-0 ${TEXT_COLORS[toast.type]}`}>{ICONS[toast.type]}</span>
               <p className="flex-1 font-sf-pro-text text-[14px] leading-[1.43] text-graphite">{toast.message}</p>
@@ -84,7 +102,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
                 type="button"
                 onClick={() => removeToast(toast.id)}
                 aria-label="Dismiss"
-                className="shrink-0 text-fog transition-colors hover:text-graphite focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+                className="shrink-0 p-3 text-fog transition-colors hover:text-graphite focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
               >
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
                   <path d="M3 3L11 11M11 3L3 11" />

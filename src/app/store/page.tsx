@@ -7,7 +7,6 @@ import { ProductCard } from "@/components/product-card"
 import { MediaCardGrid } from "@/components/media-card-grid"
 import { FooterSection } from "@/components/footer-section"
 import { PRODUCTS, CATEGORIES } from "@/lib/products"
-import { StaggerGrid, StaggerItem } from "@/components/reveal"
 
 export default function StorePage() {
   const [activeCategory, setActiveCategory] = useState("all")
@@ -92,13 +91,13 @@ export default function StorePage() {
                 </p>
               </div>
             ) : (
-              <StaggerGrid className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+              <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                 {filtered.map((product) => (
-                  <StaggerItem key={product.id}>
+                  <div key={product.id}>
                     <ProductCard product={product} />
-                  </StaggerItem>
+                  </div>
                 ))}
-              </StaggerGrid>
+              </div>
             )}
           </div>
         </section>

@@ -1,6 +1,7 @@
 "use client"
 
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
+import { springs } from "@/lib/motion"
 
 export function BackToTop() {
   const prefersReduced = useReducedMotion()
@@ -18,7 +19,10 @@ export function BackToTop() {
       onClick={scrollToTop}
       aria-label="Back to top"
       style={{ opacity, y }}
-      className="fixed bottom-8 right-8 z-50 flex h-10 w-10 items-center justify-center rounded-full bg-graphite text-paper shadow-lg transition-transform hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      transition={springs.snappy}
+      className="fixed bottom-8 right-8 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-graphite text-paper shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
     >
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
         <path d="M8 13V3M3 8L8 3L13 8" />

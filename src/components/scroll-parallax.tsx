@@ -42,7 +42,7 @@ export function ScrollParallax({
     <motion.div
       ref={ref}
       style={{ y, opacity, scale }}
-      className={className}
+      className={`${className} relative h-full w-full`}
     >
       {children}
     </motion.div>

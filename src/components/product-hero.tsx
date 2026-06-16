@@ -8,9 +8,11 @@ interface ProductHeroProps {
   imageSrc?: string
   imageAlt?: string
   priority?: boolean
+  learnHref?: string
+  buyHref?: string
 }
 
-export function ProductHero({ productName, subtitle, bgClass = "bg-cloud", imageSrc, imageAlt, priority }: ProductHeroProps) {
+export function ProductHero({ productName, subtitle, bgClass = "bg-cloud", imageSrc, imageAlt, priority, learnHref, buyHref }: ProductHeroProps) {
   return (
     <section className={`flex flex-col items-center justify-center px-5 py-[80px] text-center ${bgClass}`}>
       <h1 className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
@@ -20,8 +22,8 @@ export function ProductHero({ productName, subtitle, bgClass = "bg-cloud", image
         {subtitle}
       </p>
       <div className="mt-5 flex items-center gap-3">
-        <PillButton variant="filled">Learn more</PillButton>
-        <PillButton variant="outlined">Buy</PillButton>
+        <PillButton variant="filled" href={learnHref}>Learn more</PillButton>
+        <PillButton variant="outlined" href={buyHref}>Buy</PillButton>
       </div>
       {imageSrc && (
         <div className="relative mt-10 w-full max-w-[65vw] shadow-xl" style={{ aspectRatio: "4 / 3" }}>

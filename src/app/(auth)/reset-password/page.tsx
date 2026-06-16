@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Input } from "@/components/input"
 import { PillButton } from "@/components/pill-button"
 import { useToast } from "@/components/toast"
@@ -12,6 +12,11 @@ export default function ResetPasswordPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState("")
   const { addToast } = useToast()
+  const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
+
+  useEffect(() => {
+    return () => clearTimeout(timerRef.current)
+  }, [])
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -19,7 +24,7 @@ export default function ResetPasswordPage() {
     if (!/\S+@\S+\.\S+/.test(email)) { setError("Enter a valid email"); return }
     setError("")
     setLoading(true)
-    setTimeout(() => {
+    timerRef.current = setTimeout(() => {
       setLoading(false)
       setSent(true)
       addToast("Reset link sent to your email", "success")

@@ -96,7 +96,7 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
                 <button
                   type="button"
                   onClick={(e) => {
-                    e.preventDefault()
+                    e.stopPropagation()
                     addItem(product)
                   }}
                   aria-label={`Add ${product.name} to bag`}

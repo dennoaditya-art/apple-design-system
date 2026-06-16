@@ -25,7 +25,7 @@ export default function AirPodsPage() {
               Adaptive Audio. Personalized Volume. Conversation Awareness.
             </p>
             <div className="mt-5">
-              <PillButton variant="filled">Learn more</PillButton>
+              <PillButton variant="filled" href="/store">Learn more</PillButton>
             </div>
           </section>
         </Reveal>

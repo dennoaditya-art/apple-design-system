@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 
 interface BarData {
   label: string
@@ -14,6 +14,7 @@ interface BarChartProps {
 }
 
 export function BarChart({ data, height = 180 }: BarChartProps) {
+  const prefersReduced = useReducedMotion()
   const maxVal = Math.max(...data.map((d) => d.value)) || 1
 
   return (
@@ -23,9 +24,9 @@ export function BarChart({ data, height = 180 }: BarChartProps) {
         return (
           <div key={i} className="flex flex-1 flex-col items-center gap-1.5">
             <motion.div
-              initial={{ height: 0 }}
+              initial={prefersReduced ? undefined : { height: 0 }}
               animate={{ height: `${pct}%` }}
-              transition={{ duration: 0.6, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={prefersReduced ? { duration: 0 } : { duration: 0.6, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
               className="w-full rounded-[4px]"
               style={{
                 backgroundColor: d.color || "#2997ff",

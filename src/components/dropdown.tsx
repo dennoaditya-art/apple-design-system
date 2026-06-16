@@ -1,7 +1,9 @@
 "use client"
 
 import { useState, useRef, useCallback, useEffect, type ReactNode } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
+import { easings, durations } from "@/lib/motion"
+import { useFocusTrap } from "@/hooks"
 
 interface DropdownItem {
   label: string
@@ -21,6 +23,7 @@ interface DropdownProps {
 
 export function Dropdown({ trigger, items, onSelect, align = "start", label = "Menu" }: DropdownProps) {
   const [open, setOpen] = useState(false)
+  const prefersReduced = useReducedMotion()
   const menuRef = useRef<HTMLDivElement>(null)
   const triggerRef = useRef<HTMLButtonElement>(null)
 
@@ -29,40 +32,7 @@ export function Dropdown({ trigger, items, onSelect, align = "start", label = "M
     triggerRef.current?.focus()
   }, [])
 
-  useEffect(() => {
-    if (!open) return
-
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        close()
-        return
-      }
-      if (e.key !== "Tab" || !menuRef.current) return
-
-      const focusable = menuRef.current.querySelectorAll<HTMLElement>(
-        'button:not([disabled])'
-      )
-      if (focusable.length === 0) return
-
-      const first = focusable[0]
-      const last = focusable[focusable.length - 1]
-
-      if (e.shiftKey) {
-        if (document.activeElement === first) {
-          e.preventDefault()
-          last.focus()
-        }
-      } else {
-        if (document.activeElement === last) {
-          e.preventDefault()
-          first.focus()
-        }
-      }
-    }
-
-    document.addEventListener("keydown", handleKeyDown)
-    return () => document.removeEventListener("keydown", handleKeyDown)
-  }, [open, close])
+  useFocusTrap({ ref: menuRef, active: open, onEscape: close })
 
   useEffect(() => {
     if (!open) return
@@ -95,19 +65,21 @@ export function Dropdown({ trigger, items, onSelect, align = "start", label = "M
             ref={menuRef}
             role="menu"
             aria-label={label}
-            initial={{ opacity: 0, scale: 0.95, y: -4 }}
+            initial={prefersReduced ? undefined : { opacity: 0, scale: 0.95, y: -6 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -4 }}
-            transition={{ duration: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+            exit={{ opacity: 0, scale: 0.95, y: -6 }}
+            transition={prefersReduced ? { duration: 0 } : { duration: durations.fast, ease: easings.easeOut }}
             className={`absolute ${align === "end" ? "right-0" : "left-0"} mt-2 min-w-[200px] overflow-hidden rounded-[10px] border border-bone bg-paper py-1 shadow-md z-50`}
           >
             {items.map((item) => (
-              <button
+              <motion.button
                 key={item.value}
                 type="button"
                 role="menuitem"
                 disabled={item.disabled}
                 onClick={() => { onSelect(item.value); close() }}
+                whileHover={{ x: 4 }}
+                transition={prefersReduced ? { duration: 0 } : { duration: durations.fast, ease: easings.easeOut }}
                 className={`flex w-full items-center gap-3 px-4 py-2.5 text-left font-sf-pro-text text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
                   item.disabled
                     ? "cursor-not-allowed text-ash"
@@ -118,7 +90,7 @@ export function Dropdown({ trigger, items, onSelect, align = "start", label = "M
               >
                 {item.icon && <span className="w-[18px] shrink-0">{item.icon}</span>}
                 {item.label}
-              </button>
+              </motion.button>
             ))}
           </motion.div>
         )}

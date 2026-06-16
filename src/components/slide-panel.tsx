@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
+import { useFocusTrap } from "@/hooks"
 
 interface SlidePanelProps {
   open: boolean
@@ -11,58 +12,25 @@ interface SlidePanelProps {
 }
 
 export function SlidePanel({ open, onClose, title, children }: SlidePanelProps) {
+  const prefersReduced = useReducedMotion()
   const panelRef = useRef<HTMLDivElement>(null)
   const triggerRef = useRef<HTMLButtonElement | null>(null)
 
   useEffect(() => {
-    triggerRef.current = document.activeElement as HTMLButtonElement
+    triggerRef.current = document.activeElement as HTMLButtonElement | null
   }, [open])
 
-  useEffect(() => {
-    if (!open) return
-
-    const panel = panelRef.current
-    if (!panel) return
-
-    const focusable = panel.querySelectorAll<HTMLElement>(
-      'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])'
-    )
-    if (focusable.length > 0) {
-      focusable[0].focus()
-    }
-
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        onClose()
-        return
-      }
-      if (e.key !== "Tab") return
-
-      const first = focusable[0]
-      const last = focusable[focusable.length - 1]
-
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault()
-        last.focus()
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault()
-        first.focus()
-      }
-    }
-
-    document.addEventListener("keydown", handleKeyDown)
-    return () => document.removeEventListener("keydown", handleKeyDown)
-  }, [open, onClose])
+  useFocusTrap({ ref: panelRef, active: open, onEscape: onClose, triggerRef })
 
   return (
     <AnimatePresence>
       {open && (
         <>
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={prefersReduced ? undefined : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={prefersReduced ? { duration: 0 } : { duration: 0.2 }}
             className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
             onClick={onClose}
             aria-hidden="true"
@@ -72,10 +40,10 @@ export function SlidePanel({ open, onClose, title, children }: SlidePanelProps) 
             role="dialog"
             aria-modal="true"
             aria-label={title}
-            initial={{ x: "100%" }}
+            initial={prefersReduced ? undefined : { x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 30, stiffness: 300 }}
+            transition={prefersReduced ? { duration: 0 } : { type: "spring", damping: 30, stiffness: 300 }}
             className="fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col bg-paper shadow-2xl"
           >
             <div className="flex items-center justify-between border-b border-bone px-6 py-4">
@@ -86,7 +54,7 @@ export function SlidePanel({ open, onClose, title, children }: SlidePanelProps) 
                 type="button"
                 onClick={onClose}
                 aria-label={`Close ${title}`}
-                className="flex h-8 w-8 items-center justify-center rounded-full transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+                className="flex h-11 w-11 items-center justify-center rounded-full transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
                   <path d="M3 3L13 13M13 3L3 13" />

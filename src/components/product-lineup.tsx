@@ -1,9 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { StaggerGrid, StaggerItem } from "@/components/reveal"
+import { easings, durations } from "@/lib/motion"
 
 interface ItemProps {
   name: string
@@ -75,30 +76,31 @@ function PhoneIcon() {
 }
 
 const LINK_ITEMS: LinkItemProps[] = [
-  { name: "Apple Watch Ultra 2", href: "/store", icon: <WatchIcon /> },
-  { name: "AirPods Pro 2", href: "/store", icon: <AirPodsIcon /> },
+  { name: "Apple Watch Ultra 2", href: "/watch", icon: <WatchIcon /> },
+  { name: "AirPods Pro 2", href: "/airpods", icon: <AirPodsIcon /> },
   { name: "iPhone 16 Plus", href: "/iphone", icon: <PhoneIcon /> },
 ]
 
 export function ProductLineup() {
+  const prefersReduced = useReducedMotion()
   return (
     <section className="bg-cloud px-5 py-[80px]">
       <div className="mx-auto max-w-[980px]">
         <div className="mb-10 overflow-hidden">
           <motion.h2
-            initial={{ x: -80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            initial={prefersReduced ? undefined : { opacity: 0, y: 30, filter: "blur(6px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={prefersReduced ? { duration: 0 } : { duration: durations.hero, ease: easings.dramatic }}
             className="text-center font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite"
           >
             Meet the latest iPhone lineup.
           </motion.h2>
           <motion.p
-            initial={{ x: -80, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            initial={prefersReduced ? undefined : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={prefersReduced ? { duration: 0 } : { duration: durations.slow, ease: easings.easeOut, delay: 0.15 }}
             className="mt-2 text-center font-sf-pro-text text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog"
           >
             Explore the full lineup of iPhone, iPad, Mac, and more.
@@ -165,7 +167,7 @@ export function ProductLineup() {
         <div className="mt-4">
           <StaggerGrid>
             <StaggerItem>
-              <Link href="/mac" className="group flex items-center justify-between rounded-[8px] bg-paper p-6 shadow-xl transition-shadow hover:shadow-lg">
+              <Link href="/mac" className="group flex items-center justify-between rounded-[8px] bg-paper p-6 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg">
                 <div className="flex items-center gap-4">
                   <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-[4px]">
                     <Image
@@ -204,15 +206,25 @@ export function ProductLineup() {
               <StaggerItem key={item.name}>
                 <Link
                   href={item.href}
-                  className="flex items-center justify-between rounded-[8px] bg-paper px-5 py-4 shadow-xl transition-all hover:shadow-lg"
+                  className="group flex items-center justify-between rounded-[8px] bg-paper px-5 py-4 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   <span className="flex items-center gap-3 font-sf-pro-text text-[14px] font-semibold leading-[1.43] text-graphite">
                     {item.icon}
                     {item.name}
                   </span>
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
+                  <motion.svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    aria-hidden="true"
+                    className="transition-transform group-hover:translate-x-1"
+                  >
                     <path d="M6 4L10 8L6 12" />
-                  </svg>
+                  </motion.svg>
                 </Link>
               </StaggerItem>
             ))}

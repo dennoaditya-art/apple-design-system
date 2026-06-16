@@ -9,7 +9,7 @@ interface CheckboxProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "typ
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
   ({ label, error, className = "", id, ...props }, ref) => {
-    const checkboxId = id || label.toLowerCase().replace(/\s+/g, "-")
+    const checkboxId = id || label.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")
 
     return (
       <div className="w-full">

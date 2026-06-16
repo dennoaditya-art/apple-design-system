@@ -1,11 +1,22 @@
 "use client"
 
-import { motion, useReducedMotion } from "framer-motion"
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
 import Image from "next/image"
 import { PillButton } from "@/components/pill-button"
+import { easings, durations } from "@/lib/motion"
 
 export function IPhoneHero() {
   const prefersReduced = useReducedMotion()
+  const ref = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  })
+
+  const imageParallaxY = useTransform(scrollYProgress, [0, 1], [80, -80])
+  const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.05, 1])
+  const bgParallax = useTransform(scrollYProgress, [0, 1], [0, -60])
 
   if (prefersReduced) {
     return (
@@ -17,8 +28,8 @@ export function IPhoneHero() {
           Built for Apple Intelligence.
         </p>
         <div className="mt-6 flex items-center gap-3">
-          <PillButton variant="filled">Learn more</PillButton>
-          <PillButton variant="outlined">Buy</PillButton>
+          <PillButton variant="filled" href="/iphone">Learn more</PillButton>
+          <PillButton variant="outlined" href="/store">Buy</PillButton>
         </div>
         <div className="relative mt-12 w-full max-w-[400px]">
           <div className="relative overflow-hidden shadow-xl">
@@ -41,44 +52,49 @@ export function IPhoneHero() {
   }
 
   return (
-    <section className="relative flex flex-col items-center justify-center overflow-hidden bg-paper px-5 pb-0 pt-[80px] text-center">
+    <section ref={ref} className="relative flex flex-col items-center justify-center overflow-hidden bg-paper px-5 pb-0 pt-[80px] text-center">
+      <motion.div
+        style={{ y: bgParallax }}
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-apple-blue/3 to-transparent"
+        aria-hidden="true"
+      />
+
       <motion.h1
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+        initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: durations.hero, ease: easings.dramatic }}
         className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite"
       >
         iPhone 16 Pro
       </motion.h1>
+
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.2 }}
         className="mt-3 max-w-[640px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite"
       >
         Built for Apple Intelligence.
       </motion.p>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.35 }}
         className="mt-6 flex items-center gap-3"
       >
-        <PillButton variant="filled">Learn more</PillButton>
-        <PillButton variant="outlined">Buy</PillButton>
+        <PillButton variant="filled" href="/iphone">Learn more</PillButton>
+        <PillButton variant="outlined" href="/store">Buy</PillButton>
       </motion.div>
 
       <div className="relative mt-12 w-full max-w-[400px]" style={{ perspective: 1000 }}>
         <motion.div
           initial={{ y: 250, rotateY: 40, scale: 0.85, opacity: 0 }}
           animate={{ y: 0, rotateY: 0, scale: 1, opacity: 1 }}
-          transition={{ duration: 1.6, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 1.6, delay: 0.4, ease: easings.dramatic }}
           style={{ transformStyle: "preserve-3d" }}
         >
-          <motion.div
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
-          >
+          <motion.div className="relative h-full w-full" style={{ y: imageParallaxY, scale: imageScale }}>
             <div className="relative overflow-hidden shadow-xl">
               <motion.div
                 animate={{ scale: [1, 1.04, 1] }}
@@ -111,9 +127,7 @@ export function IPhoneHero() {
                 />
 
                 <motion.div
-                  animate={{
-                    opacity: [0, 0.06, 0],
-                  }}
+                  animate={{ opacity: [0, 0.06, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2.5 }}
                   className="pointer-events-none absolute -inset-4 bg-gradient-to-b from-white/0 via-white/[0.02] to-white/0 blur-2xl"
                 />

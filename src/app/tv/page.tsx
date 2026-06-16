@@ -12,7 +12,7 @@ export default function TVPage() {
       <TopNotificationBar />
       <StickyNav />
       <main>
-        <section className="flex flex-col items-center justify-center bg-paper px-5 py-[120px] text-center">
+        <section className="flex flex-col items-center justify-center bg-paper px-5 py-[60px] text-center md:py-[120px]">
           <h1 className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
             Apple TV+
           </h1>

@@ -2,13 +2,16 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState, useCallback, useRef, useEffect } from "react"
+import { useState, useCallback, useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { SlidePanel } from "@/components/slide-panel"
 import { SearchPanel } from "@/components/search-panel"
 import { BagPanel } from "@/components/bag-panel"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { useCart } from "@/lib/cart-context"
+import { springs } from "@/lib/motion"
+import { useFocusTrap } from "@/hooks"
+import { MobileBottomNav } from "@/components/mobile-bottom-nav"
 
 interface NavLink {
   label: string
@@ -24,7 +27,8 @@ const NAV_LINKS: NavLink[] = [
   { label: "Vision", href: "/store" },
   { label: "AirPods", href: "/airpods" },
   { label: "TV & Home", href: "/tv" },
-  { label: "Dashboard", href: "/dashboard" },
+  { label: "Studio", href: "/studio" },
+  { label: "Labs", href: "/labs" },
 ]
 
 export function StickyNav() {
@@ -48,46 +52,7 @@ export function StickyNav() {
   const fontSize = useTransform(scrollY, [0, 80], [12, 11])
   const borderAlpha = useTransform(scrollY, [0, 80], [0, 0.08])
 
-  useEffect(() => {
-    if (!menuOpen) return
-
-    const panel = menuRef.current
-    if (!panel) return
-
-    const focusable = panel.querySelectorAll<HTMLElement>(
-      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
-    )
-    if (focusable.length > 0) {
-      focusable[0].focus()
-    }
-
-    function handleKeyDown(e: KeyboardEvent) {
-      if (e.key === "Escape") {
-        closeMenu()
-        return
-      }
-
-      if (e.key !== "Tab") return
-
-      const first = focusable[0]
-      const last = focusable[focusable.length - 1]
-
-      if (e.shiftKey) {
-        if (document.activeElement === first) {
-          e.preventDefault()
-          last.focus()
-        }
-      } else {
-        if (document.activeElement === last) {
-          e.preventDefault()
-          first.focus()
-        }
-      }
-    }
-
-    document.addEventListener("keydown", handleKeyDown)
-    return () => document.removeEventListener("keydown", handleKeyDown)
-  }, [menuOpen, closeMenu])
+  useFocusTrap({ ref: menuRef, active: menuOpen, onEscape: closeMenu })
 
   return (
     <motion.nav
@@ -127,9 +92,13 @@ export function StickyNav() {
                 key={link.label}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`px-2 font-normal leading-[1.33] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${isActive ? "text-graphite" : "text-graphite/70"}`}
+                className={`relative px-2 font-normal leading-[1.33] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${isActive ? "text-graphite" : "text-graphite/70"}`}
               >
-                <span className="relative">
+                <motion.span
+                  className="relative inline-block"
+                  whileHover={{ scale: 1.05 }}
+                  transition={springs.snappy}
+                >
                   {link.label}
                   {isActive && (
                     <motion.span
@@ -137,47 +106,56 @@ export function StickyNav() {
                       className="absolute -bottom-[13px] left-1/2 h-[3px] w-[3px] -translate-x-1/2 rounded-full bg-graphite"
                     />
                   )}
-                </span>
+                </motion.span>
               </Link>
             )
           })}
         </motion.div>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-2 md:gap-5">
           <ThemeToggle />
-          <button aria-label="Search" onClick={() => setSearchOpen(true)} className="transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue">
+          <button aria-label="Search" onClick={() => setSearchOpen(true)} className="flex items-center justify-center transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue min-h-[44px] min-w-[44px]">
             <motion.svg
-              width="16"
-              height="44"
-              viewBox="0 0 16 44"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
+              strokeLinecap="round"
               aria-hidden="true"
-              style={{ scale: iconScale, transformOrigin: "center" }}
+              style={{ scale: iconScale }}
             >
-              <circle cx="7" cy="14" r="5.5" />
-              <path d="M11 18L14 21" strokeLinecap="round" />
+              <circle cx="11" cy="11" r="7" />
+              <path d="M16 16L21 21" />
             </motion.svg>
           </button>
-          <button aria-label="Bag" onClick={() => setBagOpen(true)} className="relative transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue">
+          <button aria-label="Bag" onClick={() => setBagOpen(true)} className="relative flex items-center justify-center transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue min-h-[44px] min-w-[44px]">
             {itemCount > 0 && (
-              <span className="absolute -right-1 top-1 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-button-blue px-1 font-sf-pro-text text-[10px] font-semibold leading-none text-paper">
+              <motion.span
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={springs.snappy}
+                className="absolute -right-0 top-0 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-button-blue px-1 font-sf-pro-text text-[10px] font-semibold leading-none text-paper"
+              >
                 {itemCount}
-              </span>
+              </motion.span>
             )}
             <motion.svg
-              width="16"
-              height="44"
-              viewBox="0 0 16 44"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
               aria-hidden="true"
-              style={{ scale: iconScale, transformOrigin: "center" }}
+              style={{ scale: iconScale }}
             >
-              <path d="M4 14V10C4 7.8 5.5 6 8 6C10.5 6 12 7.8 12 10V14" strokeLinecap="round" />
-              <rect x="2" y="14" width="12" height="12" rx="1.5" />
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <path d="M16 10a4 4 0 01-8 0" />
             </motion.svg>
           </button>
           <button
@@ -185,23 +163,25 @@ export function StickyNav() {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu-panel"
-            className="flex items-center md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+            className="flex items-center justify-center md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue min-h-[44px] min-w-[44px]"
             onClick={() => setMenuOpen((v) => !v)}
           >
             <motion.svg
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
+              strokeLinecap="round"
               aria-hidden="true"
-              style={{ scale: iconScale, transformOrigin: "center" }}
+              animate={{ rotate: menuOpen ? 90 : 0 }}
+              transition={springs.snappy}
             >
               {menuOpen ? (
-                <path d="M4 4L14 14M14 4L4 14" strokeLinecap="round" />
+                <path d="M18 6L6 18M6 6l12 12" />
               ) : (
-                <path d="M2 4H16M2 9H16M2 14H16" strokeLinecap="round" />
+                <path d="M4 6h16M4 12h16M4 18h16" />
               )}
             </motion.svg>
           </button>
@@ -210,13 +190,24 @@ export function StickyNav() {
 
       {menuOpen && (
         <>
-          <div className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm md:hidden" onClick={closeMenu} aria-hidden="true" />
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm md:hidden"
+            onClick={closeMenu}
+            aria-hidden="true"
+          />
+          <motion.div
             ref={menuRef}
             id="mobile-menu-panel"
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
             className="fixed right-0 top-[44px] z-50 flex h-[calc(100vh-44px)] w-72 flex-col bg-paper shadow-xl md:hidden"
           >
             <div className="flex-1 overflow-y-auto py-4">
@@ -235,7 +226,7 @@ export function StickyNav() {
                 )
               })}
             </div>
-          </div>
+          </motion.div>
         </>
       )}
       <SlidePanel open={searchOpen} onClose={() => setSearchOpen(false)} title="Search">
@@ -244,6 +235,7 @@ export function StickyNav() {
       <SlidePanel open={bagOpen} onClose={() => setBagOpen(false)} title="Bag">
         <BagPanel />
       </SlidePanel>
+      <MobileBottomNav />
     </motion.nav>
   )
 }
