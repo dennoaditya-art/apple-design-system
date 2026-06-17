@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, type ReactNode } from "react"
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
+import { motion, AnimatePresence, useReducedMotion } from "motion/react"
 import { springs, durations } from "@/lib/motion"
 import { useFocusTrap } from "@/hooks"
 

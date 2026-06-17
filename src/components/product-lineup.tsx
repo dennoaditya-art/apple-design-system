@@ -1,10 +1,11 @@
 "use client"
 
-import { motion, useReducedMotion } from "framer-motion"
+import { motion, useReducedMotion } from "motion/react"
 import Image from "next/image"
 import Link from "next/link"
 import { StaggerGrid, StaggerItem } from "@/components/reveal"
 import { easings, durations } from "@/lib/motion"
+import { DeviceMobile, Headphones, Watch, CaretRight } from "@phosphor-icons/react"
 
 interface ItemProps {
   name: string
@@ -41,44 +42,10 @@ interface LinkItemProps {
   icon: React.ReactNode
 }
 
-function WatchIcon() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="5" y="2" width="14" height="20" rx="4" />
-      <circle cx="12" cy="13" r="4" />
-      <line x1="12" y1="9" x2="12" y2="12" />
-      <line x1="12" y1="13" x2="14" y2="13" />
-      <line x1="9" y1="17" x2="15" y2="17" />
-    </svg>
-  )
-}
-
-function AirPodsIcon() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M7 6.5C7 4.5 8.5 3 10 3C11.5 3 13 4.5 13 6.5V12" />
-      <path d="M17 6.5C17 4.5 15.5 3 14 3C12.5 3 11 4.5 11 6.5V12" />
-      <path d="M7 12V16C7 18 8.5 19 10 19" />
-      <path d="M17 12V16C17 18 15.5 19 14 19" />
-      <path d="M10 19V22" />
-      <path d="M14 19V22" />
-    </svg>
-  )
-}
-
-function PhoneIcon() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <rect x="5" y="2" width="14" height="20" rx="3" />
-      <circle cx="12" cy="18" r="1" fill="currentColor" />
-    </svg>
-  )
-}
-
 const LINK_ITEMS: LinkItemProps[] = [
-  { name: "Apple Watch Ultra 2", href: "/watch", icon: <WatchIcon /> },
-  { name: "AirPods Pro 2", href: "/airpods", icon: <AirPodsIcon /> },
-  { name: "iPhone 16 Plus", href: "/iphone", icon: <PhoneIcon /> },
+  { name: "Apple Watch Ultra 2", href: "/watch", icon: <Watch size={24} weight="regular" /> },
+  { name: "AirPods Pro 2", href: "/airpods", icon: <Headphones size={24} weight="regular" /> },
+  { name: "iPhone 16 Plus", href: "/iphone", icon: <DeviceMobile size={24} weight="regular" /> },
 ]
 
 export function ProductLineup() {
@@ -193,7 +160,7 @@ export function ProductLineup() {
                   </div>
                 </div>
                 <span className="shrink-0 font-sf-pro-text text-[14px] font-normal leading-[1.43] text-apple-blue transition-all group-hover:translate-x-1">
-                  Learn more &rarr;
+                  Learn more <CaretRight size={14} weight="bold" className="inline" />
                 </span>
               </Link>
             </StaggerItem>
@@ -212,19 +179,7 @@ export function ProductLineup() {
                     {item.icon}
                     {item.name}
                   </span>
-                  <motion.svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    aria-hidden="true"
-                    className="transition-transform group-hover:translate-x-1"
-                  >
-                    <path d="M6 4L10 8L6 12" />
-                  </motion.svg>
+                  <CaretRight size={16} weight="bold" className="transition-transform group-hover:translate-x-1" />
                 </Link>
               </StaggerItem>
             ))}

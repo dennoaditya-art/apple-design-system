@@ -1,7 +1,7 @@
 import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
 import { MacBookHero } from "@/components/macbook-hero"
-import { ProductLineup } from "@/components/product-lineup"
+import { ProductSpecGrid } from "@/components/product-spec-grid"
 import { ProductGallery } from "@/components/product-gallery"
 import { ColoredProductSection } from "@/components/colored-product-section"
 import { FooterSection } from "@/components/footer-section"
@@ -33,7 +33,7 @@ export default function MacPage() {
         </Reveal>
         <ScrollParallax offset={30}>
           <Reveal delay={0.1}>
-            <ProductLineup />
+            <ProductSpecGrid />
           </Reveal>
         </ScrollParallax>
         <ScrollParallax offset={20} opacityRange={[0.85, 0.85]}>

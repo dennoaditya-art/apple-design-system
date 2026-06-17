@@ -1,12 +1,11 @@
 import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
 import { WatchHero } from "@/components/watch-hero"
-import { ProductLineup } from "@/components/product-lineup"
+import { LifestyleShowcase } from "@/components/lifestyle-showcase"
 import { MediaCardGrid } from "@/components/media-card-grid"
 import { FooterSection } from "@/components/footer-section"
 import { PillButton } from "@/components/pill-button"
 import { Reveal } from "@/components/reveal"
-import { ScrollParallax } from "@/components/scroll-parallax"
 
 export default function WatchPage() {
   return (
@@ -28,11 +27,9 @@ export default function WatchPage() {
             </div>
           </section>
         </Reveal>
-        <ScrollParallax offset={30}>
-          <Reveal delay={0.1}>
-            <ProductLineup />
-          </Reveal>
-        </ScrollParallax>
+        <Reveal delay={0.1}>
+          <LifestyleShowcase />
+        </Reveal>
         <Reveal delay={0.1}>
           <MediaCardGrid />
         </Reveal>

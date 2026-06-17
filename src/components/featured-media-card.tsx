@@ -1,9 +1,10 @@
 "use client"
 
 import Image from "next/image"
-import { motion, useReducedMotion } from "framer-motion"
+import { motion, useReducedMotion } from "motion/react"
 import { StaggerGrid, StaggerItem } from "@/components/reveal"
 import { easings, durations } from "@/lib/motion"
+import { Play, CaretRight } from "@phosphor-icons/react"
 
 interface ShowProps {
   name: string
@@ -74,11 +75,8 @@ export function FeaturedMediaCard() {
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-          <div className="absolute right-8 top-8">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-              <rect width="28" height="28" rx="6" fill="white" />
-              <path d="M10.5 8L19.5 14L10.5 20V8Z" fill="#1d1d1f" />
-            </svg>
+          <div className="absolute right-8 top-8 flex h-7 w-7 items-center justify-center rounded-lg bg-white">
+            <Play size={14} weight="fill" className="text-graphite" />
           </div>
           <div className="absolute bottom-8 left-8 right-8 flex items-end gap-5">
             <span className="inline-flex shrink-0 items-center rounded-[980px] border border-paper px-[15px] py-[8px] font-sf-pro-text text-[14px] text-paper transition-opacity group-hover:opacity-60">
@@ -122,7 +120,7 @@ export function FeaturedMediaCard() {
                     {show.tagline}
                   </p>
                   <span className="mt-2 inline-block font-sf-pro-text text-[12px] font-normal leading-[1.33] text-apple-blue transition-all group-hover:translate-x-0.5">
-                    Stream now &rarr;
+                    Stream now <CaretRight size={12} weight="bold" className="inline" />
                   </span>
                 </div>
               </a>

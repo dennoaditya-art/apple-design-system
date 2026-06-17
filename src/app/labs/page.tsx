@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion, useReducedMotion } from "framer-motion"
+import { motion, useReducedMotion } from "motion/react"
 import { springs } from "@/lib/motion"
 import { TiltCard } from "@/components/tilt-card"
 import Link from "next/link"
@@ -206,7 +206,7 @@ export default function LabsPage() {
 
   return (
     <div
-      className="min-h-screen"
+      className="min-h-[100dvh]"
       style={{ backgroundColor: "#f7f7f4", color: "#26251e" }}
     >
       <div className="mx-auto max-w-[980px] px-5 py-16">

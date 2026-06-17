@@ -76,14 +76,14 @@ export interface RaycastShadowOptions {
 
 const RAYCAST_SHADOWS = {
   dark: {
-    sm: "0 1px 2px rgba(0,0,0,0.3), inset 0 -1px 1px rgba(0,0,0,0.15), inset 0 1px 1px rgba(255,255,255,0.06), 0 0 0 1px rgba(255,255,255,0.02)",
-    md: "0 2px 4px rgba(0,0,0,0.35), inset 0 -1.5px 1.5px rgba(0,0,0,0.2), inset 0 1px 1.5px rgba(255,255,255,0.08), 0 0 0 1px rgba(255,255,255,0.03)",
-    lg: "0 4px 8px rgba(0,0,0,0.4), inset 0 -2px 2px rgba(0,0,0,0.25), inset 0 1px 2px rgba(255,255,255,0.1), 0 0 0 1px rgba(255,255,255,0.04)",
+    sm: "0 1px 2px rgba(29,29,31,0.3), inset 0 -1px 1px rgba(29,29,31,0.15), inset 0 1px 1px rgba(255,255,255,0.06), 0 0 0 1px rgba(255,255,255,0.02)",
+    md: "0 2px 4px rgba(29,29,31,0.35), inset 0 -1.5px 1.5px rgba(29,29,31,0.2), inset 0 1px 1.5px rgba(255,255,255,0.08), 0 0 0 1px rgba(255,255,255,0.03)",
+    lg: "0 4px 8px rgba(29,29,31,0.4), inset 0 -2px 2px rgba(29,29,31,0.25), inset 0 1px 2px rgba(255,255,255,0.1), 0 0 0 1px rgba(255,255,255,0.04)",
   },
   light: {
-    sm: "0 1px 2px rgba(0,0,0,0.08), inset 0 -1px 1px rgba(0,0,0,0.04), inset 0 1px 1px rgba(255,255,255,0.5), 0 0 0 1px rgba(0,0,0,0.02)",
-    md: "0 2px 4px rgba(0,0,0,0.1), inset 0 -1.5px 1.5px rgba(0,0,0,0.06), inset 0 1px 1.5px rgba(255,255,255,0.6), 0 0 0 1px rgba(0,0,0,0.03)",
-    lg: "0 4px 8px rgba(0,0,0,0.12), inset 0 -2px 2px rgba(0,0,0,0.08), inset 0 1px 2px rgba(255,255,255,0.7), 0 0 0 1px rgba(0,0,0,0.04)",
+    sm: "0 1px 2px rgba(29,29,31,0.08), inset 0 -1px 1px rgba(29,29,31,0.04), inset 0 1px 1px rgba(255,255,255,0.5), 0 0 0 1px rgba(29,29,31,0.02)",
+    md: "0 2px 4px rgba(29,29,31,0.1), inset 0 -1.5px 1.5px rgba(29,29,31,0.06), inset 0 1px 1.5px rgba(255,255,255,0.6), 0 0 0 1px rgba(29,29,31,0.03)",
+    lg: "0 4px 8px rgba(29,29,31,0.12), inset 0 -2px 2px rgba(29,29,31,0.08), inset 0 1px 2px rgba(255,255,255,0.7), 0 0 0 1px rgba(29,29,31,0.04)",
   },
 } as const
 

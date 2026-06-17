@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { motion, useReducedMotion, useSpring, useTransform, useInView } from "framer-motion"
+import { motion, useReducedMotion, useSpring, useTransform, useInView } from "motion/react"
 
 interface MotionNumberProps {
   from?: number

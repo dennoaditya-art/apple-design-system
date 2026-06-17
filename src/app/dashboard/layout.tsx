@@ -66,7 +66,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <div className="flex min-h-screen bg-cloud">
+    <div className="flex min-h-[100dvh] bg-cloud">
       <aside
         className={`fixed inset-y-0 left-0 z-40 w-64 shrink-0 border-r border-bone bg-paper transition-transform md:static md:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"

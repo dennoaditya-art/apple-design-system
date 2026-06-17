@@ -1,0 +1,78 @@
+"use client"
+
+import { motion, useReducedMotion } from "motion/react"
+import Link from "next/link"
+import { StaggerGrid, StaggerItem } from "@/components/reveal"
+import { easings, durations } from "@/lib/motion"
+import { PencilSimple, Keyboard, AppWindow, LinkSimple, CaretRight } from "@phosphor-icons/react"
+
+interface ActionItem {
+  icon: React.ReactNode
+  name: string
+  description: string
+}
+
+const ACTIONS: ActionItem[] = [
+  { icon: <PencilSimple size={24} weight="duotone" />, name: "Apple Pencil Pro", description: "Pixel-perfect precision with squeeze, barrel roll, and haptic feedback." },
+  { icon: <Keyboard size={24} weight="duotone" />, name: "Magic Keyboard", description: "Floating design with trackpad, backlit keys, and USB-C passthrough." },
+  { icon: <AppWindow size={24} weight="duotone" />, name: "Stage Manager", description: "Organize apps in overlapping windows for effortless multitasking." },
+  { icon: <LinkSimple size={24} weight="duotone" />, name: "Continuity", description: "Seamlessly connect to your Mac, iPhone, and Apple Watch." },
+]
+
+export function ProductActionGrid() {
+  const prefersReduced = useReducedMotion()
+
+  return (
+    <section className="bg-paper px-5 py-[80px]">
+      <div className="mx-auto max-w-[980px]">
+        <motion.h2
+          initial={prefersReduced ? undefined : { opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: durations.hero, ease: easings.dramatic }}
+          className="text-center font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite"
+        >
+          Your computer. Not a computer.
+        </motion.h2>
+        <motion.p
+          initial={prefersReduced ? undefined : { opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.12 }}
+          className="mt-2 text-center font-sf-pro-text text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog"
+        >
+          With the power of M4, iPad Pro is a creative powerhouse.
+        </motion.p>
+
+        <StaggerGrid className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
+          {ACTIONS.map((item) => (
+            <StaggerItem key={item.name}>
+              <div className="flex gap-4 rounded-[12px] border border-bone bg-cloud p-6 transition-all hover:border-apple-blue/20 hover:shadow-md">
+                <div className="shrink-0 text-graphite/60">{item.icon}</div>
+                <div>
+                  <h3 className="font-sf-pro-text text-[17px] font-semibold leading-[1.24] text-graphite">{item.name}</h3>
+                  <p className="mt-1 font-sf-pro-text text-[14px] font-normal leading-[1.43] text-fog">{item.description}</p>
+                </div>
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerGrid>
+
+        <motion.div
+          initial={prefersReduced ? undefined : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.3 }}
+          className="mt-10 text-center"
+        >
+          <Link
+            href="/store"
+            className="inline-flex items-center gap-1.5 font-sf-pro-text text-[17px] font-normal leading-[1.47] text-apple-blue transition-all hover:text-deep-link-blue"
+          >
+            Explore iPad accessories <CaretRight size={14} weight="bold" />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  )
+}

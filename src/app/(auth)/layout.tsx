@@ -3,7 +3,7 @@ import type { ReactNode } from "react"
 
 export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-cloud px-5">
+    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-cloud px-5">
       <div className="w-full max-w-[420px]">
         <Link href="/" className="mb-8 flex items-center justify-center gap-2" aria-label="Apple Design System">
           <svg width="20" height="48" viewBox="0 0 16 44" fill="#1d1d1f" aria-hidden="true">

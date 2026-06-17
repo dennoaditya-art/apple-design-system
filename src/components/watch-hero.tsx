@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion"
+import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 import { useRef } from "react"
 import Image from "next/image"
 import { PillButton } from "@/components/pill-button"

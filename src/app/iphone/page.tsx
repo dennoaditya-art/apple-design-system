@@ -2,6 +2,7 @@ import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
 import { IPhoneHero } from "@/components/iphone-hero"
 import { IPhoneShowcase } from "@/components/iphone-showcase"
+import { StickyStack } from "@/components/sticky-stack"
 import { ProductLineup } from "@/components/product-lineup"
 import { ProductGallery } from "@/components/product-gallery"
 import { FooterSection } from "@/components/footer-section"
@@ -34,6 +35,8 @@ export default function IPhonePage() {
         <Reveal delay={0.1}>
           <IPhoneShowcase />
         </Reveal>
+
+        <StickyStack />
         <ScrollParallax offset={30}>
           <Reveal delay={0.1}>
             <ProductLineup />

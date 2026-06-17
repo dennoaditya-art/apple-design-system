@@ -6,6 +6,7 @@ import { StickyNav } from "@/components/sticky-nav"
 import { ProductCard } from "@/components/product-card"
 import { MediaCardGrid } from "@/components/media-card-grid"
 import { FooterSection } from "@/components/footer-section"
+import { MagnifyingGlass } from "@phosphor-icons/react"
 import { PRODUCTS, CATEGORIES } from "@/lib/products"
 
 export default function StorePage() {
@@ -39,20 +40,7 @@ export default function StorePage() {
 
           <div className="mt-8 w-full max-w-[400px]">
             <div className="relative">
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 18 18"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-fog"
-                aria-hidden="true"
-              >
-                <circle cx="8" cy="8" r="5.5" />
-                <path d="M12 12L15.5 15.5" />
-              </svg>
+              <MagnifyingGlass size={18} weight="regular" className="absolute left-3 top-1/2 -translate-y-1/2 text-fog" />
               <input
                 type="search"
                 value={searchQuery}

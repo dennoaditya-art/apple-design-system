@@ -342,7 +342,7 @@ export default function PlaygroundPage() {
   }
 
   return (
-    <div className="flex min-h-screen bg-cloud">
+    <div className="flex min-h-[100dvh] bg-cloud">
       <aside className="hidden w-64 shrink-0 border-r border-bone bg-paper md:block">
         <div className="p-4">
           <h2 className="font-sf-pro-display text-[24px] font-semibold leading-[1.18] tracking-[-0.28px] text-graphite">

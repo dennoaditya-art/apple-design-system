@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { springs } from "@/lib/motion"
 import { MotionNumber } from "@/components/motion-number"
 import { MagneticButton } from "@/components/magnetic-button"

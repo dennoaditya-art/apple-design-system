@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { motion, useReducedMotion, useSpring } from "framer-motion"
+import { motion, useReducedMotion, useSpring } from "motion/react"
 
 export function CursorGlow() {
   const [mounted, setMounted] = useState(false)

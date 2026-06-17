@@ -1,8 +1,15 @@
 import type { Metadata, Viewport } from "next"
+import { Inter } from "next/font/google"
 import { LayoutClient } from "@/components/layout-client"
 import { CursorGlow } from "@/components/cursor-glow"
 import { BackToTop } from "@/components/back-to-top"
 import "./globals.css"
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+})
 
 export const metadata: Metadata = {
   title: "Apple Design System",
@@ -18,7 +25,7 @@ export const viewport: Viewport = {
   minimumScale: 1,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f5f5f7" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0a0c" },
   ],
 }
 
@@ -48,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="pb-[50px] md:pb-0">
+      <body className={`${inter.variable} pb-[50px] md:pb-0`}>
         <LayoutClient>{children}</LayoutClient>
         <CursorGlow />
         <BackToTop />

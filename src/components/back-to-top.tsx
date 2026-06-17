@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
+import { motion, useScroll, useTransform, useReducedMotion } from "motion/react"
 import { springs } from "@/lib/motion"
 
 export function BackToTop() {

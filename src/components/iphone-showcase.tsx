@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useReducedMotion } from "framer-motion"
+import { motion, useReducedMotion } from "motion/react"
 import { easings, durations } from "@/lib/motion"
 
 export function IPhoneShowcase() {

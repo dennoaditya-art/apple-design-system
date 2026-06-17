@@ -3,7 +3,8 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useCallback, useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform } from "motion/react"
+import { MagnifyingGlass, ShoppingBag, List, X } from "@phosphor-icons/react"
 import { SlidePanel } from "@/components/slide-panel"
 import { SearchPanel } from "@/components/search-panel"
 import { BagPanel } from "@/components/bag-panel"
@@ -24,7 +25,7 @@ const NAV_LINKS: NavLink[] = [
   { label: "iPad", href: "/ipad" },
   { label: "iPhone", href: "/iphone" },
   { label: "Watch", href: "/watch" },
-  { label: "Vision", href: "/store" },
+  { label: "Vision", href: "/tv" },
   { label: "AirPods", href: "/airpods" },
   { label: "TV & Home", href: "/tv" },
   { label: "Studio", href: "/studio" },
@@ -57,12 +58,13 @@ export function StickyNav() {
   return (
     <motion.nav
       style={{ height: navHeight }}
-      className="sticky top-0 z-50 backdrop-blur-xl"
+      className="sticky top-0 z-50 backdrop-blur-2xl"
     >
       <motion.div
         style={{ opacity: bgOpacity }}
         className="absolute inset-0 bg-[rgba(251,251,253,1)]"
       />
+      <div className="pointer-events-none absolute inset-0 border-t border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]" />
       <motion.div
         style={{ opacity: borderAlpha }}
         className="absolute inset-x-0 bottom-0 h-[1px] bg-graphite"
@@ -115,20 +117,9 @@ export function StickyNav() {
         <div className="flex items-center gap-2 md:gap-5">
           <ThemeToggle />
           <button aria-label="Search" onClick={() => setSearchOpen(true)} className="flex items-center justify-center transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue min-h-[44px] min-w-[44px]">
-            <motion.svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              aria-hidden="true"
-              style={{ scale: iconScale }}
-            >
-              <circle cx="11" cy="11" r="7" />
-              <path d="M16 16L21 21" />
-            </motion.svg>
+            <motion.span style={{ scale: iconScale, display: "flex" }}>
+              <MagnifyingGlass size={24} weight="regular" />
+            </motion.span>
           </button>
           <button aria-label="Bag" onClick={() => setBagOpen(true)} className="relative flex items-center justify-center transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue min-h-[44px] min-w-[44px]">
             {itemCount > 0 && (
@@ -141,22 +132,9 @@ export function StickyNav() {
                 {itemCount}
               </motion.span>
             )}
-            <motion.svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-              style={{ scale: iconScale }}
-            >
-              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <path d="M16 10a4 4 0 01-8 0" />
-            </motion.svg>
+            <motion.span style={{ scale: iconScale, display: "flex" }}>
+              <ShoppingBag size={24} weight="regular" />
+            </motion.span>
           </button>
           <button
             ref={hamburgerRef}
@@ -166,24 +144,12 @@ export function StickyNav() {
             className="flex items-center justify-center md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue min-h-[44px] min-w-[44px]"
             onClick={() => setMenuOpen((v) => !v)}
           >
-            <motion.svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              aria-hidden="true"
+            <motion.div
               animate={{ rotate: menuOpen ? 90 : 0 }}
               transition={springs.snappy}
             >
-              {menuOpen ? (
-                <path d="M18 6L6 18M6 6l12 12" />
-              ) : (
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </motion.svg>
+              {menuOpen ? <X size={24} weight="regular" /> : <List size={24} weight="regular" />}
+            </motion.div>
           </button>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
 import { IPadHero } from "@/components/ipad-hero"
-import { ProductLineup } from "@/components/product-lineup"
+import { ProductActionGrid } from "@/components/product-action-grid"
 import { ColoredProductSection } from "@/components/colored-product-section"
 import { MediaCardGrid } from "@/components/media-card-grid"
 import { FooterSection } from "@/components/footer-section"
@@ -15,11 +15,9 @@ export default function IPadPage() {
       <StickyNav />
       <main>
         <IPadHero as="h1" />
-        <ScrollParallax offset={30}>
-          <Reveal delay={0.1}>
-            <ProductLineup />
-          </Reveal>
-        </ScrollParallax>
+        <Reveal delay={0.1}>
+          <ProductActionGrid />
+        </Reveal>
         <ScrollParallax offset={20} opacityRange={[0.85, 0.85]}>
           <Reveal delay={0.1}>
             <ColoredProductSection />

@@ -1,7 +1,7 @@
 "use client"
 
 import { usePathname } from "next/navigation"
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
+import { AnimatePresence, motion, useReducedMotion } from "motion/react"
 import { easings, durations } from "@/lib/motion"
 
 export function PageTransition({ children }: { children: React.ReactNode }) {

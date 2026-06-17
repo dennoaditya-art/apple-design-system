@@ -1,7 +1,7 @@
 "use client"
 
-import { useRef, useState, type ReactNode } from "react"
-import { motion, useReducedMotion } from "framer-motion"
+import { useRef, type ReactNode } from "react"
+import { motion, useMotionValue, useReducedMotion } from "motion/react"
 
 interface MagneticButtonProps {
   children: ReactNode
@@ -24,7 +24,8 @@ export function MagneticButton({
 }: MagneticButtonProps) {
   const ref = useRef<HTMLButtonElement>(null)
   const prefersReduced = useReducedMotion()
-  const [position, setPosition] = useState({ x: 0, y: 0 })
+  const x = useMotionValue(0)
+  const y = useMotionValue(0)
 
   function handleMouseMove(e: React.MouseEvent) {
     if (prefersReduced || !ref.current) return
@@ -35,11 +36,13 @@ export function MagneticButton({
     const distY = e.clientY - centerY
     const maxDistance = Math.min(rect.width, rect.height) * 0.3
     const factor = Math.min(1, Math.sqrt(distX ** 2 + distY ** 2) / maxDistance) * 0.15
-    setPosition({ x: distX * factor, y: distY * factor })
+    x.set(distX * factor)
+    y.set(distY * factor)
   }
 
   function handleMouseLeave() {
-    setPosition({ x: 0, y: 0 })
+    x.set(0)
+    y.set(0)
   }
 
   return (
@@ -49,8 +52,7 @@ export function MagneticButton({
       onClick={onClick}
       disabled={disabled}
       aria-label={ariaLabel}
-      style={_style}
-      animate={{ x: position.x, y: position.y }}
+      style={{ ..._style, x, y }}
       transition={{ type: "spring", stiffness: 250, damping: 18, mass: 0.5 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
