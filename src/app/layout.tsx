@@ -43,12 +43,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         "@type": "Organization",
         name: "Nova Store",
         description: "Premium gadget store",
-        url: "https://toko-gadget.vercel.app",
+        url: "https://nova-store-gadget.vercel.app",
       },
       {
         "@type": "WebSite",
         name: "Nova Store",
-        url: "https://toko-gadget.vercel.app",
+        url: "https://nova-store-gadget.vercel.app",
       },
     ],
   }
