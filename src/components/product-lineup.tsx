@@ -76,7 +76,7 @@ export function ProductLineup() {
 
         <StaggerGrid className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <StaggerItem className="md:row-span-2">
-            <Link href="/iphone" className="group relative block h-full overflow-hidden rounded-[8px] bg-paper shadow-xl">
+            <Link href="/iphone" className="group relative block h-full overflow-hidden rounded-md bg-paper shadow-xl">
               <div className="relative h-full" style={{ minHeight: "500px" }}>
                 <Image
                   src={FEATURED.imageSrc}
@@ -105,7 +105,7 @@ export function ProductLineup() {
 
           {SIDE_ITEMS.map((item) => (
             <StaggerItem key={item.name}>
-              <Link href="/iphone" className="group relative block overflow-hidden rounded-[8px] bg-paper shadow-xl">
+              <Link href="/iphone" className="group relative block overflow-hidden rounded-md bg-paper shadow-xl">
                 <div className="relative" style={{ aspectRatio: "3 / 2" }}>
                   <Image
                     src={item.imageSrc}
@@ -134,9 +134,9 @@ export function ProductLineup() {
         <div className="mt-4">
           <StaggerGrid>
             <StaggerItem>
-              <Link href="/mac" className="group flex items-center justify-between rounded-[8px] bg-paper p-6 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg">
+              <Link href="/mac" className="group flex items-center justify-between rounded-md bg-paper p-6 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg">
                 <div className="flex items-center gap-4">
-                  <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-[4px]">
+                  <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xs">
                     <Image
                       src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=200&q=80"
                       alt="MacBook Air"
@@ -173,7 +173,7 @@ export function ProductLineup() {
               <StaggerItem key={item.name}>
                 <Link
                   href={item.href}
-                  className="group flex items-center justify-between rounded-[8px] bg-paper px-5 py-4 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                  className="group flex items-center justify-between rounded-md bg-paper px-5 py-4 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   <span className="flex items-center gap-3 font-sf-pro-text text-[14px] font-semibold leading-[1.43] text-graphite">
                     {item.icon}

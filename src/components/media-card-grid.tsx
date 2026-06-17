@@ -104,7 +104,7 @@ export function MediaCardGrid() {
             <StaggerItem key={service.name}>
               <a
                 href="/store"
-                className={`group flex h-full flex-col rounded-[8px] ${service.cardClass} p-6 shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg`}
+                className={`group flex h-full flex-col rounded-md ${service.cardClass} p-6 shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg`}
               >
                 <motion.div
                   className="text-graphite transition-colors group-hover:text-apple-blue"

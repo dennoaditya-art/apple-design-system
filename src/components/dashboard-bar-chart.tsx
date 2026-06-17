@@ -27,7 +27,7 @@ export function BarChart({ data, height = 180 }: BarChartProps) {
               initial={prefersReduced ? undefined : { height: 0 }}
               animate={{ height: `${pct}%` }}
               transition={prefersReduced ? { duration: 0 } : { duration: 0.6, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
-              className="w-full rounded-[4px]"
+              className="w-full rounded-xs"
               style={{
                 backgroundColor: d.color || "#2997ff",
                 minHeight: pct > 0 ? "4px" : "0",

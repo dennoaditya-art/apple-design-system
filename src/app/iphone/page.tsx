@@ -3,6 +3,8 @@ import { StickyNav } from "@/components/sticky-nav"
 import { IPhoneHero } from "@/components/iphone-hero"
 import { IPhoneShowcase } from "@/components/iphone-showcase"
 import { StickyStack } from "@/components/sticky-stack"
+import { HorizontalPan } from "@/components/horizontal-pan"
+import type { PanPanel } from "@/components/horizontal-pan"
 import { ProductLineup } from "@/components/product-lineup"
 import { ProductGallery } from "@/components/product-gallery"
 import { FooterSection } from "@/components/footer-section"
@@ -13,6 +15,30 @@ const IPHONE_GALLERY = [
   { src: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80", alt: "iPhone 16 Pro front view in natural lighting" },
   { src: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&q=80", alt: "iPhone 16 Pro angle view showing titanium frame" },
   { src: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&q=80", alt: "iPhone 16 Pro side profile" },
+]
+
+const IPHONE_PANELS: PanPanel[] = [
+  {
+    src: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80",
+    alt: "iPhone 16 Pro titanium design",
+    title: "Titanium design",
+    description: "Grade 5 titanium — strong, lightweight, corrosion-resistant.",
+    eyebrow: "iPhone 16 Pro",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&q=80",
+    alt: "iPhone 16 Pro camera system",
+    title: "Pro camera system",
+    description: "48 MP Fusion camera with 5x optical zoom. ProRAW and Log encoding.",
+    eyebrow: "iPhone 16 Pro",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1726732946451-98690db97aae?w=800&q=80",
+    alt: "iPhone 16 A18 chip",
+    title: "A18 Pro",
+    description: "Second-generation 3nm chip. 16-core Neural Engine for Apple Intelligence.",
+    eyebrow: "iPhone 16 Pro",
+  },
 ]
 
 export default function IPhonePage() {
@@ -37,6 +63,9 @@ export default function IPhonePage() {
         </Reveal>
 
         <StickyStack />
+
+        <HorizontalPan panels={IPHONE_PANELS} />
+
         <ScrollParallax offset={30}>
           <Reveal delay={0.1}>
             <ProductLineup />

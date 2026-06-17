@@ -110,14 +110,14 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        <div className="rounded-[12px] bg-paper p-6 shadow-sm lg:col-span-2">
+        <div className="rounded-xl bg-paper p-6 shadow-sm lg:col-span-2">
           <h3 className="font-sf-pro-text text-[15px] font-semibold leading-[1.47] text-graphite">Monthly Revenue</h3>
           <p className="mt-0.5 font-sf-pro-text text-[13px] leading-[1.38] text-fog">Total revenue over the last 8 months</p>
           <div className="mt-4">
             <LineChart data={MONTHLY_REVENUE} height={220} />
           </div>
         </div>
-        <div className="rounded-[12px] bg-paper p-6 shadow-sm">
+        <div className="rounded-xl bg-paper p-6 shadow-sm">
           <h3 className="font-sf-pro-text text-[15px] font-semibold leading-[1.47] text-graphite">Weekly Sales</h3>
           <p className="mt-0.5 font-sf-pro-text text-[13px] leading-[1.38] text-fog">Sales by day this week</p>
           <div className="mt-4">
@@ -127,7 +127,7 @@ export default function DashboardPage() {
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-        <div className="rounded-[12px] bg-paper shadow-sm lg:col-span-2">
+        <div className="rounded-xl bg-paper shadow-sm lg:col-span-2">
           <div className="flex items-center justify-between border-b border-bone px-6 py-4">
             <h3 className="font-sf-pro-text text-[15px] font-semibold leading-[1.47] text-graphite">Recent Orders</h3>
             <button
@@ -156,7 +156,7 @@ export default function DashboardPage() {
                     <td className="px-6 py-3.5 font-sf-pro-text text-[14px] leading-[1.43] text-fog">{order.product}</td>
                     <td className="px-6 py-3.5 font-sf-pro-text text-[14px] leading-[1.43] text-graphite">{order.amount}</td>
                     <td className="px-6 py-3.5">
-                      <span className={`inline-block rounded-[6px] border px-2.5 py-1 font-sf-pro-text text-[11px] font-semibold leading-[1.33] ${STATUS_STYLES[order.status]}`}>
+                      <span className={`inline-block rounded-sm border px-2.5 py-1 font-sf-pro-text text-[11px] font-semibold leading-[1.33] ${STATUS_STYLES[order.status]}`}>
                         {order.status}
                       </span>
                     </td>
@@ -167,7 +167,7 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="rounded-[12px] bg-paper shadow-sm">
+        <div className="rounded-xl bg-paper shadow-sm">
           <div className="border-b border-bone px-6 py-4">
             <h3 className="font-sf-pro-text text-[15px] font-semibold leading-[1.47] text-graphite">Top Products</h3>
           </div>

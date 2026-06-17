@@ -69,7 +69,7 @@ export function Dropdown({ trigger, items, onSelect, align = "start", label = "M
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -6 }}
             transition={prefersReduced ? { duration: 0 } : { duration: durations.fast, ease: easings.easeOut }}
-            className={`absolute ${align === "end" ? "right-0" : "left-0"} mt-2 min-w-[200px] overflow-hidden rounded-[10px] border border-bone bg-paper py-1 shadow-md z-50`}
+            className={`absolute ${align === "end" ? "right-0" : "left-0"} mt-2 min-w-[200px] overflow-hidden rounded-lg border border-bone bg-paper py-1 shadow-md z-50`}
           >
             {items.map((item) => (
               <motion.button

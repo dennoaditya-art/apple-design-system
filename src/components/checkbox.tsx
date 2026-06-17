@@ -18,7 +18,7 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             ref={ref}
             type="checkbox"
             id={checkboxId}
-            className={`mt-[3px] h-[18px] w-[18px] shrink-0 cursor-pointer appearance-none rounded-[4px] border-2 bg-cloud transition-colors checked:border-button-blue checked:bg-button-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
+            className={`mt-[3px] h-[18px] w-[18px] shrink-0 cursor-pointer appearance-none rounded-xs border-2 bg-cloud transition-colors checked:border-button-blue checked:bg-button-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
               error ? "border-red-500" : "border-bone"
             } ${className}`}
             aria-invalid={error ? "true" : undefined}

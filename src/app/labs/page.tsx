@@ -27,7 +27,7 @@ const LABS = [
 function CodeBlock({ children }: { children: React.ReactNode }) {
   return (
     <pre
-      className="overflow-x-auto rounded-[4px] p-4 font-mono text-[13px] leading-[1.6]"
+      className="overflow-x-auto rounded-xs p-4 font-mono text-[13px] leading-[1.6]"
       style={{
         backgroundColor: "#f0eee6",
         color: "#2c2c2c",
@@ -116,7 +116,7 @@ function TiltDemo() {
       <div className="mx-auto max-w-[240px]">
         <TiltCard tiltDegree={10} glare>
           <div
-            className="rounded-[4px] p-6 text-center"
+            className="rounded-xs p-6 text-center"
             style={{
               background: "linear-gradient(135deg, #fec5fb, #9d95ff)",
               color: "#0e100f",
@@ -231,7 +231,7 @@ export default function LabsPage() {
 
         {/* ── Tab Navigation ── */}
         <div
-          className="mb-10 flex gap-2 overflow-x-auto rounded-[4px] p-2"
+          className="mb-10 flex gap-2 overflow-x-auto rounded-xs p-2"
           style={{ backgroundColor: "#e6e5e0" }}
         >
           {LABS.map((lab) => (
@@ -241,7 +241,7 @@ export default function LabsPage() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={springs.snappy}
-              className="flex-1 cursor-pointer rounded-[4px] px-4 py-3 text-center font-sf-pro-text text-[14px] font-normal leading-[1.43] transition-colors"
+              className="flex-1 cursor-pointer rounded-xs px-4 py-3 text-center font-sf-pro-text text-[14px] font-normal leading-[1.43] transition-colors"
               style={{
                 backgroundColor: active === lab.id ? "#fff" : "transparent",
                 color: active === lab.id ? "#26251e" : "#5c5b57",
@@ -264,7 +264,7 @@ export default function LabsPage() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="rounded-[4px] p-8 shadow-sm"
+          className="rounded-xs p-8 shadow-sm"
           style={{ backgroundColor: "#fff" }}
         >
           {active === "spring" && <SpringDemo />}

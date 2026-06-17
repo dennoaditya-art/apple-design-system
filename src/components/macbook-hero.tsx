@@ -36,7 +36,7 @@ export function MacBookHero({ as: Heading = "h2" }: MacBookHeroProps) {
               <PillButton variant="outlined" href="/store">Buy</PillButton>
             </div>
           </div>
-          <div className="relative overflow-hidden rounded-[4px] shadow-xl">
+          <div className="relative overflow-hidden rounded-xs shadow-xl">
             <div className="relative" style={{ aspectRatio: "3 / 2" }}>
               <Image
                 src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200&q=80"
@@ -104,7 +104,7 @@ export function MacBookHero({ as: Heading = "h2" }: MacBookHeroProps) {
             style={{ transformStyle: "preserve-3d" }}
           >
             <motion.div className="relative h-full w-full" style={{ y: imageParallaxY }}>
-              <div className="relative overflow-hidden rounded-[4px] shadow-xl">
+              <div className="relative overflow-hidden rounded-xs shadow-xl">
                 <div className="relative" style={{ aspectRatio: "3 / 2" }}>
                   <Image
                     src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200&q=80"

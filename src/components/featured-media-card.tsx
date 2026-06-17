@@ -62,7 +62,7 @@ export function FeaturedMediaCard() {
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
           transition={prefersReduced ? { duration: 0 } : { duration: durations.slow, ease: easings.dramatic }}
-          className="group relative mb-8 block overflow-hidden rounded-[8px] shadow-xl"
+          className="group relative mb-8 block overflow-hidden rounded-md shadow-xl"
           style={{ aspectRatio: "2 / 1" }}
         >
           <Image
@@ -79,7 +79,7 @@ export function FeaturedMediaCard() {
             <Play size={14} weight="fill" className="text-graphite" />
           </div>
           <div className="absolute bottom-8 left-8 right-8 flex items-end gap-5">
-            <span className="inline-flex shrink-0 items-center rounded-[980px] border border-paper px-[15px] py-[8px] font-sf-pro-text text-[14px] text-paper transition-opacity group-hover:opacity-60">
+            <span className="inline-flex shrink-0 items-center rounded-full border border-paper px-[15px] py-[8px] font-sf-pro-text text-[14px] text-paper transition-opacity group-hover:opacity-60">
               Stream now
             </span>
             <div>
@@ -98,7 +98,7 @@ export function FeaturedMediaCard() {
             <StaggerItem key={show.name}>
               <a
                 href="/tv"
-                className="group block overflow-hidden rounded-[8px] bg-paper shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="group block overflow-hidden rounded-md bg-paper shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative" style={{ aspectRatio: "3 / 4" }}>
                   <Image

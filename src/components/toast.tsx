@@ -94,7 +94,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
                   removeToast(toast.id)
                 }
               }}
-              className={`flex w-[360px] cursor-grab items-center gap-3 rounded-[12px] border-l-4 ${BORDER_COLORS[toast.type]} bg-paper px-4 py-3 shadow-md active:cursor-grabbing`}
+              className={`flex w-[360px] cursor-grab items-center gap-3 rounded-xl border-l-4 ${BORDER_COLORS[toast.type]} bg-paper px-4 py-3 shadow-md active:cursor-grabbing`}
             >
               <span className={`shrink-0 ${TEXT_COLORS[toast.type]}`}>{ICONS[toast.type]}</span>
               <p className="flex-1 font-sf-pro-text text-[14px] leading-[1.43] text-graphite">{toast.message}</p>

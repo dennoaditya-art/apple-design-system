@@ -94,7 +94,7 @@ export function AirPodsHero({ as: Heading = "h2" }: AirPodsHeroProps) {
               rotate: [0, -2, 0, 2, 0],
             }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="relative overflow-hidden rounded-[8px] shadow-xl"
+            className="relative overflow-hidden rounded-md shadow-xl"
             style={{ aspectRatio: "1 / 1" }}
           >
             <Image

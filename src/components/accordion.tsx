@@ -29,7 +29,7 @@ export function Accordion({ items, allowMultiple = false, className = "" }: Acco
   }
 
   return (
-    <div className={`divide-y divide-bone rounded-[10px] border border-bone bg-paper ${className}`}>
+    <div className={`divide-y divide-bone rounded-lg border border-bone bg-paper ${className}`}>
       {items.map((item) => {
         const isOpen = openIds.includes(item.id)
         return (

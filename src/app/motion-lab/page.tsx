@@ -62,7 +62,7 @@ function DemoCard({
   return (
     <div className="flex flex-col items-center gap-4">
       <div
-        className="flex min-h-[160px] w-full items-center justify-center rounded-[8px] p-8"
+        className="flex min-h-[160px] w-full items-center justify-center rounded-md p-8"
         style={{ backgroundColor: VOID, border: `1px solid ${OLIVE}` }}
       >
         {children}
@@ -148,7 +148,7 @@ export default function MotionLabPage() {
         <BracketTag color={ACCENTS.pink}>Typography</BracketTag>
         <SectionHeading color={ACCENTS.pink}>Text Reveal</SectionHeading>
         <div
-          className="rounded-[8px] p-10"
+          className="rounded-md p-10"
           style={{ backgroundColor: VOID, border: `1px solid ${OLIVE}` }}
         >
           <TextReveal
@@ -177,7 +177,7 @@ export default function MotionLabPage() {
         <div className="mx-auto max-w-[320px]">
           <TiltCard tiltDegree={8} glare>
             <div
-              className="rounded-[8px] p-8 text-center"
+              className="rounded-md p-8 text-center"
               style={{
                 background: `linear-gradient(135deg, ${ACCENTS.green}, ${ACCENTS.blue})`,
                 color: VOID,
@@ -230,7 +230,7 @@ export default function MotionLabPage() {
           {Array.from({ length: 8 }, (_, i) => (
             <StaggerItem key={i} variant={1}>
               <div
-                className="flex h-24 items-center justify-center rounded-[8px] font-sf-pro-text text-[15px] font-semibold"
+                className="flex h-24 items-center justify-center rounded-md font-sf-pro-text text-[15px] font-semibold"
                 style={{
                   backgroundColor: VOID,
                   border: `1px solid ${[ACCENTS.green, ACCENTS.pink, ACCENTS.blue, ACCENTS.orange][i % 4]}`,

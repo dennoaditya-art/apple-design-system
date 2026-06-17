@@ -21,7 +21,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
 
   return (
     <div className="mx-auto max-w-[600px]">
-      <div className="relative overflow-hidden rounded-[8px] shadow-xl" style={{ aspectRatio: "4 / 5" }}>
+      <div className="relative overflow-hidden rounded-md shadow-xl" style={{ aspectRatio: "4 / 5" }}>
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
@@ -52,7 +52,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             type="button"
             onClick={() => setActive(i)}
             aria-label={`View ${img.alt}`}
-            className={`relative h-16 w-16 overflow-hidden rounded-[6px] border-2 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
+            className={`relative h-16 w-16 overflow-hidden rounded-sm border-2 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
               i === active
                 ? "border-button-blue opacity-100 shadow-md"
                 : "border-transparent opacity-50 hover:opacity-80"

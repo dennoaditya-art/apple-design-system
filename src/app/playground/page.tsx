@@ -158,7 +158,7 @@ export default function PlaygroundPage() {
               <Input label="Text" value={pbText} onChange={(e) => setPbText(e.target.value)} className="w-[160px]" />
               <Checkbox label="Render as link" checked={pbAsLink} onChange={(e) => setPbAsLink(e.target.checked)} />
             </div>
-            <div className="flex items-center gap-4 rounded-[11px] border border-bone bg-paper p-8">
+            <div className="flex items-center gap-4 rounded-lg border border-bone bg-paper p-8">
               <PillButton variant={pbVariant} href={pbAsLink ? "#" : undefined}>{pbText}</PillButton>
             </div>
           </div>
@@ -172,7 +172,7 @@ export default function PlaygroundPage() {
               <Checkbox label="Show error" checked={inError} onChange={(e) => setInError(e.target.checked)} />
               <Checkbox label="Disabled" checked={inDisabled} onChange={(e) => setInDisabled(e.target.checked)} />
             </div>
-            <div className="max-w-[360px] rounded-[11px] border border-bone bg-paper p-8">
+            <div className="max-w-[360px] rounded-lg border border-bone bg-paper p-8">
               <Input label={inLabel || undefined} placeholder={inPlaceholder} error={inError ? "Please enter a valid email" : undefined} disabled={inDisabled} />
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function PlaygroundPage() {
               <Input label="Label" value={selLabel} onChange={(e) => setSelLabel(e.target.value)} className="w-[160px]" />
               <Checkbox label="Show error" checked={selError} onChange={(e) => setSelError(e.target.checked)} />
             </div>
-            <div className="max-w-[360px] rounded-[11px] border border-bone bg-paper p-8">
+            <div className="max-w-[360px] rounded-lg border border-bone bg-paper p-8">
               <Select label={selLabel || undefined} options={[{ value: "us", label: "United States" }, { value: "sg", label: "Singapore" }, { value: "id", label: "Indonesia" }]} placeholder="Select a country" error={selError ? "Please select a country" : undefined} />
             </div>
           </div>
@@ -196,7 +196,7 @@ export default function PlaygroundPage() {
               <Input label="Label" value={cbLabel} onChange={(e) => setCbLabel(e.target.value)} className="w-[220px]" />
               <Checkbox label="Show error" checked={cbError} onChange={(e) => setCbError(e.target.checked)} />
             </div>
-            <div className="max-w-[400px] rounded-[11px] border border-bone bg-paper p-8">
+            <div className="max-w-[400px] rounded-lg border border-bone bg-paper p-8">
               <Checkbox label={cbLabel} error={cbError ? "You must agree to continue" : undefined} />
             </div>
           </div>
@@ -209,7 +209,7 @@ export default function PlaygroundPage() {
               <Input label="Placeholder" value={taPlaceholder} onChange={(e) => setTaPlaceholder(e.target.value)} className="w-[200px]" />
               <Checkbox label="Show error" checked={taError} onChange={(e) => setTaError(e.target.checked)} />
             </div>
-            <div className="max-w-[400px] rounded-[11px] border border-bone bg-paper p-8">
+            <div className="max-w-[400px] rounded-lg border border-bone bg-paper p-8">
               <TextArea label={taLabel || undefined} placeholder={taPlaceholder} error={taError ? "Message is required" : undefined} rows={4} />
             </div>
           </div>
@@ -220,7 +220,7 @@ export default function PlaygroundPage() {
             <div className="flex flex-wrap items-center gap-6">
               <Checkbox label="Show color indicator" checked={pcColor} onChange={(e) => setPcColor(e.target.checked)} />
             </div>
-            <div className="max-w-[280px] rounded-[11px] border border-bone bg-paper p-4">
+            <div className="max-w-[280px] rounded-lg border border-bone bg-paper p-4">
               <ProductCard product={{ ...PRODUCTS[0], color: pcColor ? PRODUCTS[0].color : undefined }} />
             </div>
           </div>
@@ -231,9 +231,9 @@ export default function PlaygroundPage() {
             <div className="flex flex-wrap items-center gap-6">
               <Input label="Delay (s)" value={revDuration} onChange={(e) => setRevDuration(e.target.value)} className="w-[100px]" />
             </div>
-            <div className="flex items-center justify-center rounded-[11px] border border-bone bg-paper p-12">
+            <div className="flex items-center justify-center rounded-lg border border-bone bg-paper p-12">
               <Reveal delay={Number(revDuration) || 0}>
-                <div className="flex h-24 w-48 items-center justify-center rounded-[11px] bg-apple-blue text-paper font-sf-pro-text text-[17px] font-semibold">
+                <div className="flex h-24 w-48 items-center justify-center rounded-lg bg-apple-blue text-paper font-sf-pro-text text-[17px] font-semibold">
                   Scroll to reveal
                 </div>
               </Reveal>
@@ -258,7 +258,7 @@ export default function PlaygroundPage() {
         )
       case "tabs":
         return (
-          <div className="max-w-[600px] rounded-[11px] border border-bone bg-paper p-6">
+          <div className="max-w-[600px] rounded-lg border border-bone bg-paper p-6">
             <Tabs
               tabs={[
                 { id: "design", label: "Design", content: <div className="p-4 font-sf-pro-text text-[15px] text-fog">Design content with typography, color, and layout guidelines.</div> },
@@ -270,11 +270,11 @@ export default function PlaygroundPage() {
         )
       case "dropdown":
         return (
-          <div className="flex items-start rounded-[11px] border border-bone bg-paper p-8">
+          <div className="flex items-start rounded-lg border border-bone bg-paper p-8">
             <Dropdown
               label="Actions"
               trigger={
-                <div className="flex items-center gap-2 rounded-[8px] bg-cloud px-4 py-2.5 font-sf-pro-text text-[14px] font-semibold text-graphite transition-colors hover:bg-bone">
+                <div className="flex items-center gap-2 rounded-md bg-cloud px-4 py-2.5 font-sf-pro-text text-[14px] font-semibold text-graphite transition-colors hover:bg-bone">
                   Actions
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M3 4.5L6 7.5L9 4.5" /></svg>
                 </div>
@@ -363,7 +363,7 @@ export default function PlaygroundPage() {
                   key={comp.key}
                   type="button"
                   onClick={() => setActiveKey(comp.key)}
-                  className={`w-full rounded-[8px] px-3 py-2 text-left font-sf-pro-text text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
+                  className={`w-full rounded-md px-3 py-2 text-left font-sf-pro-text text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
                     activeKey === comp.key
                       ? "bg-cloud font-semibold text-graphite"
                       : "text-fog hover:bg-cloud/50 hover:text-graphite"
@@ -393,7 +393,7 @@ export default function PlaygroundPage() {
                 <button
                   key={size}
                   type="button"
-                  className="rounded-[8px] bg-cloud px-3 py-1.5 font-sf-pro-text text-[12px] font-semibold leading-[1.33] text-fog transition-colors hover:bg-bone"
+                  className="rounded-md bg-cloud px-3 py-1.5 font-sf-pro-text text-[12px] font-semibold leading-[1.33] text-fog transition-colors hover:bg-bone"
                 >
                   {size}
                 </button>
@@ -412,13 +412,13 @@ export default function PlaygroundPage() {
               <h3 className="font-sf-pro-text text-[13px] font-semibold leading-[1.38] text-graphite">
                 Code
               </h3>
-              <pre className="mt-3 overflow-x-auto rounded-[8px] bg-graphite p-4 font-['JetBrains_Mono',monospace] text-[13px] leading-[1.5] text-cloud">
+              <pre className="mt-3 overflow-x-auto rounded-md bg-graphite p-4 font-['JetBrains_Mono',monospace] text-[13px] leading-[1.5] text-cloud">
                 <code>{getCode()}</code>
               </pre>
               <button
                 type="button"
                 onClick={() => { navigator.clipboard.writeText(getCode()).catch(() => {}) }}
-                className="mt-3 w-full rounded-[8px] bg-cloud py-2 font-sf-pro-text text-[13px] font-semibold leading-[1.38] text-graphite transition-colors hover:bg-bone"
+                className="mt-3 w-full rounded-md bg-cloud py-2 font-sf-pro-text text-[13px] font-semibold leading-[1.38] text-graphite transition-colors hover:bg-bone"
               >
                 Copy code
               </button>

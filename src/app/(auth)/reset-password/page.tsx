@@ -32,7 +32,7 @@ export default function ResetPasswordPage() {
   }
 
   return (
-    <div className="w-full rounded-[14px] bg-paper px-8 py-8 shadow-sm">
+    <div className="w-full rounded-2xl bg-paper px-8 py-8 shadow-sm">
       <div className="mb-6 text-center">
         {sent ? (
           <>

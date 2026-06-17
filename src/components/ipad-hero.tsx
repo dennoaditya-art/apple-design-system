@@ -92,7 +92,7 @@ export function IPadHero({ as: Heading = "h2" }: IPadHeroProps) {
           transition={{ duration: 1.4, delay: 0.3, ease: easings.dramatic }}
           style={{ transformStyle: "preserve-3d" }}
         >
-          <div className="relative overflow-hidden rounded-[4px] shadow-xl" style={{ aspectRatio: "4 / 3" }}>
+          <div className="relative overflow-hidden rounded-xs shadow-xl" style={{ aspectRatio: "4 / 3" }}>
             <motion.div
               style={{ y: imageParallaxY }}
               className="absolute inset-0"

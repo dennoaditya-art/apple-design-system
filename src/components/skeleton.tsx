@@ -1,5 +1,5 @@
 function SkeletonBlock({ className = "", style }: { className?: string; style?: React.CSSProperties }) {
-  return <div className={`animate-pulse rounded-[8px] bg-bone ${className}`} style={style} aria-hidden="true" />
+  return <div className={`animate-pulse rounded-md bg-bone ${className}`} style={style} aria-hidden="true" />
 }
 
 export function SkeletonLine({ width = "100%", className = "" }: { width?: string; className?: string }) {
@@ -16,7 +16,7 @@ export function SkeletonImage({ className = "" }: { className?: string }) {
 
 export function SkeletonCard({ className = "" }: { className?: string }) {
   return (
-    <div className={`overflow-hidden rounded-[8px] bg-paper shadow-xl ${className}`}>
+    <div className={`overflow-hidden rounded-md bg-paper shadow-xl ${className}`}>
       <SkeletonImage className="aspect-[3/2]" />
       <div className="space-y-2 p-4">
         <SkeletonLine width="70%" />
@@ -52,7 +52,7 @@ export function SkeletonHomePage() {
     <>
       <SkeletonNav />
       <main className="space-y-[80px] px-5 py-[40px]">
-        <SkeletonBlock className="h-[500px] w-full max-w-[980px] mx-auto rounded-[11px]" />
+        <SkeletonBlock className="h-[500px] w-full max-w-[980px] mx-auto rounded-lg" />
         <div className="mx-auto max-w-[980px] space-y-4">
           <SkeletonHeading className="mx-auto" />
           <SkeletonLine width="40%" className="mx-auto" />
@@ -62,7 +62,7 @@ export function SkeletonHomePage() {
             <SkeletonCard />
           </div>
         </div>
-        <SkeletonBlock className="h-[500px] w-full max-w-[980px] mx-auto rounded-[11px]" />
+        <SkeletonBlock className="h-[500px] w-full max-w-[980px] mx-auto rounded-lg" />
       </main>
     </>
   )
@@ -77,7 +77,7 @@ export function SkeletonProductPage() {
           <SkeletonHeading className="mx-auto" />
           <SkeletonLine width="60%" className="mx-auto" />
         </div>
-        <SkeletonBlock className="aspect-video w-full rounded-[11px]" />
+        <SkeletonBlock className="aspect-video w-full rounded-lg" />
         <div className="space-y-4">
           <SkeletonHeading />
           <SkeletonLine width="80%" />
@@ -99,10 +99,10 @@ export function SkeletonStorePage() {
             <SkeletonHeading className="mx-auto" />
             <SkeletonLine width="50%" className="mx-auto" />
           </div>
-          <SkeletonBlock className="mx-auto h-[44px] w-full max-w-[400px] rounded-[10px]" />
+          <SkeletonBlock className="mx-auto h-[44px] w-full max-w-[400px] rounded-lg" />
           <div className="flex flex-wrap justify-center gap-2">
             {Array.from({ length: 7 }).map((_, i) => (
-              <SkeletonBlock key={i} className="h-[34px] w-[70px] rounded-[980px]" />
+              <SkeletonBlock key={i} className="h-[34px] w-[70px] rounded-full" />
             ))}
           </div>
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">

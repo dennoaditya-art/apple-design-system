@@ -12,7 +12,7 @@ export function ErrorFallback({ reset }: ShareErrorProps) {
       <button
         type="button"
         onClick={reset}
-        className="mt-4 rounded-[980px] bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[14px] text-paper transition-colors hover:bg-deep-link-blue"
+        className="mt-4 rounded-full bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[14px] text-paper transition-colors hover:bg-deep-link-blue"
       >
         Try again
       </button>

@@ -31,7 +31,7 @@ export function BagPanel() {
         </p>
         <Link
           href="/store"
-          className="mt-6 inline-block rounded-[980px] bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[14px] leading-[1.47] text-paper transition-colors hover:bg-deep-link-blue"
+          className="mt-6 inline-block rounded-full bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[14px] leading-[1.47] text-paper transition-colors hover:bg-deep-link-blue"
         >
           Start shopping
         </Link>
@@ -45,8 +45,8 @@ export function BagPanel() {
     <div className="flex flex-col h-full">
       <div className="flex-1 space-y-3">
         {items.map((item) => (
-          <div key={item.product.id} className="flex gap-3 rounded-[8px] bg-cloud p-3">
-            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-[6px] bg-paper">
+          <div key={item.product.id} className="flex gap-3 rounded-md bg-cloud p-3">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-sm bg-paper">
               <Image
                 src={item.product.imageSrc}
                 alt={item.product.name}
@@ -91,7 +91,7 @@ export function BagPanel() {
         </div>
         <button
           type="button"
-          className="mt-3 w-full rounded-[980px] bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[14px] leading-[1.47] text-paper transition-colors hover:bg-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+          className="mt-3 w-full rounded-full bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[14px] leading-[1.47] text-paper transition-colors hover:bg-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
         >
           Checkout
         </button>

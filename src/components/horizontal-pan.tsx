@@ -1,6 +1,6 @@
 "use client"
 
-import { useRef, useEffect, type ReactNode } from "react"
+import { useRef, useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useReducedMotion } from "motion/react"
@@ -8,28 +8,20 @@ import Image from "next/image"
 
 gsap.registerPlugin(ScrollTrigger)
 
-const PANELS = [
-  {
-    src: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80",
-    alt: "iPhone 16 Pro front view",
-    title: "Titanium design",
-    description: "Grade 5 titanium — same alloy used on Mars rovers.",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&q=80",
-    alt: "iPhone 16 Pro angle view",
-    title: "Camera Control",
-    description: "A new way to quickly launch the camera and snap photos.",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1726732946451-98690db97aae?w=800&q=80",
-    alt: "iPhone 16 color options",
-    title: "A18 chip",
-    description: "3nm technology powers Apple Intelligence at blazing speed.",
-  },
-]
+export interface PanPanel {
+  src: string
+  alt: string
+  title: string
+  description: string
+  eyebrow?: string
+}
 
-export function HorizontalPan() {
+interface HorizontalPanProps {
+  panels: PanPanel[]
+  bgClass?: string
+}
+
+export function HorizontalPan({ panels, bgClass = "bg-ink" }: HorizontalPanProps) {
   const wrap = useRef<HTMLDivElement>(null)
   const track = useRef<HTMLDivElement>(null)
   const prefersReduced = useReducedMotion()
@@ -56,15 +48,20 @@ export function HorizontalPan() {
 
   if (prefersReduced) {
     return (
-      <section className="bg-ink px-5 py-[80px]">
+      <section className={`px-5 py-[80px] ${bgClass}`}>
         <div className="mx-auto max-w-[980px] space-y-10">
-          {PANELS.map((panel) => (
+          {panels.map((panel) => (
             <div key={panel.title} className="flex flex-col gap-6 md:flex-row md:items-center">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[16px] md:w-1/2">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl md:w-1/2">
                 <Image src={panel.src} alt={panel.alt} fill className="object-cover" sizes="50vw" />
               </div>
               <div className="md:w-1/2 md:pl-8">
-                <h3 className="font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
+                {panel.eyebrow && (
+                  <span className="font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-paper/40">
+                    {panel.eyebrow}
+                  </span>
+                )}
+                <h3 className="mt-2 font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
                   {panel.title}
                 </h3>
                 <p className="mt-2 font-sf-pro-text text-[17px] font-light leading-[1.47] text-paper/60">
@@ -79,15 +76,15 @@ export function HorizontalPan() {
   }
 
   return (
-    <section ref={wrap} className="relative overflow-hidden bg-ink">
+    <section ref={wrap} className={`relative overflow-hidden ${bgClass}`}>
       <div ref={track} className="flex h-[100dvh] items-center">
-        {PANELS.map((panel) => (
+        {panels.map((panel) => (
           <div
             key={panel.title}
             className="flex h-full w-screen shrink-0 items-center justify-center px-10 md:px-20"
           >
             <div className="flex w-full max-w-[1200px] flex-col items-center gap-8 md:flex-row md:gap-16">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[16px] md:w-1/2">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl md:w-1/2">
                 <Image
                   src={panel.src}
                   alt={panel.alt}
@@ -97,9 +94,11 @@ export function HorizontalPan() {
                 />
               </div>
               <div className="md:w-1/2">
-                <span className="font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-paper/30">
-                  iPhone 16 Pro
-                </span>
+                {panel.eyebrow && (
+                  <span className="font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-paper/30">
+                    {panel.eyebrow}
+                  </span>
+                )}
                 <h3 className="mt-2 font-sf-pro-display text-[32px] font-semibold leading-[1.1] tracking-[-0.6px] text-paper md:text-[48px]">
                   {panel.title}
                 </h3>

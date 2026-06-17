@@ -47,7 +47,7 @@ export function ProductActionGrid() {
         <StaggerGrid className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
           {ACTIONS.map((item) => (
             <StaggerItem key={item.name}>
-              <div className="flex gap-4 rounded-[12px] border border-bone bg-cloud p-6 transition-all hover:border-apple-blue/20 hover:shadow-md">
+              <div className="flex gap-4 rounded-xl border border-bone bg-cloud p-6 transition-all hover:border-apple-blue/20 hover:shadow-md">
                 <div className="shrink-0 text-graphite/60">{item.icon}</div>
                 <div>
                   <h3 className="font-sf-pro-text text-[17px] font-semibold leading-[1.24] text-graphite">{item.name}</h3>

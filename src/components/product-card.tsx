@@ -15,7 +15,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart()
 
   return (
-    <div className="overflow-hidden rounded-[12px] bg-paper shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
+    <div className="overflow-hidden rounded-xl bg-paper shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
       <Link href={`/${product.category}`} className="block">
         <div className="relative w-full overflow-hidden bg-cloud" style={{ paddingBottom: "100%" }}>
           <Image
@@ -56,7 +56,7 @@ export function ProductCard({ product }: ProductCardProps) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={springs.snappy}
-            className="mt-3 w-full rounded-[980px] bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[14px] leading-[1.47] text-paper transition-all hover:bg-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+            className="mt-3 w-full rounded-full bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[14px] leading-[1.47] text-paper transition-all hover:bg-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
           >
             Add to Bag
           </motion.button>

@@ -18,7 +18,7 @@ export default function ErrorPage({
       <button
         type="button"
         onClick={reset}
-        className="mt-8 inline-block rounded-[980px] bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[17px] leading-[1.47] tracking-[-0.05px] text-paper transition-all hover:bg-deep-link-blue"
+        className="mt-8 inline-block rounded-full bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[17px] leading-[1.47] tracking-[-0.05px] text-paper transition-all hover:bg-deep-link-blue"
       >
         Try again
       </button>

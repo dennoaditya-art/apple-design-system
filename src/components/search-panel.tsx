@@ -56,7 +56,7 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search 17 products..."
-          className="w-full rounded-[10px] border border-bone bg-cloud py-3 pl-10 pr-4 font-sf-pro-text text-[15px] text-graphite outline-none transition-colors placeholder:text-fog focus:border-apple-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+          className="w-full rounded-lg border border-bone bg-cloud py-3 pl-10 pr-4 font-sf-pro-text text-[15px] text-graphite outline-none transition-colors placeholder:text-fog focus:border-apple-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
           aria-label="Search products"
         />
       </div>
@@ -74,9 +74,9 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
               <Link
                 href={`/${product.category}`}
                 onClick={onClose}
-                className="flex items-center gap-3 rounded-[8px] p-2 transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+                className="flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
               >
-                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-[6px] bg-cloud">
+                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-sm bg-cloud">
                   <Image
                     src={product.imageSrc}
                     alt=""
@@ -100,7 +100,7 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
                     addItem(product)
                   }}
                   aria-label={`Add ${product.name} to bag`}
-                  className="shrink-0 rounded-[980px] bg-button-blue px-3 py-1 font-sf-pro-text text-[12px] leading-[1.33] text-paper transition-colors hover:bg-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+                  className="shrink-0 rounded-full bg-button-blue px-3 py-1 font-sf-pro-text text-[12px] leading-[1.33] text-paper transition-colors hover:bg-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
                 >
                   Add
                 </button>
@@ -121,9 +121,9 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
                 key={product.id}
                 href={`/${product.category}`}
                 onClick={onClose}
-                className="flex items-center gap-3 rounded-[8px] p-2 transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+                className="flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
               >
-                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-[6px] bg-cloud">
+                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-sm bg-cloud">
                   <Image
                     src={product.imageSrc}
                     alt=""

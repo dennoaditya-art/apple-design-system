@@ -47,8 +47,8 @@ export function AudioFeatureGrid() {
         <StaggerGrid className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
           {FEATURES.map((f) => (
             <StaggerItem key={f.name}>
-              <div className={`flex items-start gap-5 rounded-[12px] ${f.bgClass} p-6 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg`}>
-                <div className="shrink-0 rounded-[10px] bg-graphite/[0.04] p-3 text-graphite/70">
+              <div className={`flex items-start gap-5 rounded-xl ${f.bgClass} p-6 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg`}>
+                <div className="shrink-0 rounded-lg bg-graphite/[0.04] p-3 text-graphite/70">
                   {f.icon}
                 </div>
                 <div>

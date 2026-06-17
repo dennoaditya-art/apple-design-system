@@ -57,7 +57,7 @@ export function Modal({ open, onClose, title, children, size = "md" }: ModalProp
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 20 }}
             transition={prefersReduced ? { duration: 0 } : springs.standard}
-            className={`relative w-full ${SIZE_MAP[size]} rounded-[14px] bg-paper shadow-xl`}
+            className={`relative w-full ${SIZE_MAP[size]} rounded-2xl bg-paper shadow-xl`}
           >
             <div className="flex items-center justify-between border-b border-bone px-6 py-4">
               <h2 className="font-sf-pro-display text-[20px] font-semibold leading-[1.2] tracking-[-0.3px] text-graphite">

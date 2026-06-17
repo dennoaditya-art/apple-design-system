@@ -75,7 +75,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <div className="flex h-full flex-col">
           <div className="flex h-[60px] items-center gap-3 border-b border-bone px-5">
             <Link href="/dashboard" className="flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-[8px] bg-apple-blue text-paper">
+              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-apple-blue text-paper">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
                   <rect x="1" y="1" width="5" height="5" rx="1" />
                   <rect x="8" y="1" width="5" height="5" rx="1" />
@@ -95,7 +95,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`flex items-center gap-3 rounded-[8px] px-3 py-2.5 font-sf-pro-text text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
+                  className={`flex items-center gap-3 rounded-md px-3 py-2.5 font-sf-pro-text text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
                     isActive
                       ? "bg-cloud font-semibold text-graphite"
                       : "text-fog hover:bg-cloud/50 hover:text-graphite"
@@ -110,7 +110,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <div className="border-t border-bone p-4">
             <Link
               href="/"
-              className="flex items-center gap-2 rounded-[8px] px-3 py-2 font-sf-pro-text text-[13px] leading-[1.38] text-fog transition-colors hover:bg-cloud hover:text-graphite"
+              className="flex items-center gap-2 rounded-md px-3 py-2 font-sf-pro-text text-[13px] leading-[1.38] text-fog transition-colors hover:bg-cloud hover:text-graphite"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M1 7H13M7 1V13" />
@@ -154,7 +154,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <input
                   type="search"
                   placeholder="Search..."
-                  className="w-[200px] rounded-[8px] bg-cloud py-2 pl-9 pr-3 font-sf-pro-text text-[13px] text-graphite outline-none placeholder:text-fog focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+                  className="w-[200px] rounded-md bg-cloud py-2 pl-9 pr-3 font-sf-pro-text text-[13px] text-graphite outline-none placeholder:text-fog focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
                   aria-label="Search dashboard"
                 />
               </div>

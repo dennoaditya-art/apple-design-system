@@ -51,7 +51,7 @@ export function ProductSpecGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: easings.easeOut }}
-              className="rounded-[16px] border border-paper/10 bg-paper/5 p-6"
+              className="rounded-3xl border border-paper/10 bg-paper/5 p-6"
             >
               <div className="text-paper/80">{spec.icon}</div>
               <h3 className="mt-4 font-sf-pro-display text-[20px] font-semibold leading-[1.2] tracking-[-0.3px] text-paper">

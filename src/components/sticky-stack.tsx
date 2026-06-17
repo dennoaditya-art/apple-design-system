@@ -72,7 +72,7 @@ export function StickyStack() {
           {CARDS.map((card) => (
             <div
               key={card.title}
-              className={`rounded-[16px] bg-gradient-to-br ${card.gradient} p-10`}
+              className={`rounded-3xl bg-gradient-to-br ${card.gradient} p-10`}
             >
               <h3 className="font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
                 {card.title}
@@ -95,7 +95,7 @@ export function StickyStack() {
           className="stack-card sticky top-0 flex min-h-[100dvh] items-center justify-center px-5 py-20"
         >
           <div
-            className={`w-full max-w-[980px] rounded-[16px] bg-gradient-to-br ${card.gradient} p-10 md:p-16`}
+            className={`w-full max-w-[980px] rounded-3xl bg-gradient-to-br ${card.gradient} p-10 md:p-16`}
           >
             <span className="font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-paper/40">
               0{i + 1}

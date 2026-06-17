@@ -48,7 +48,7 @@ export function LifestyleShowcase() {
           <StaggerItem>
             <div className="flex flex-col gap-5">
               {FEATURES.slice(0, 2).map((f) => (
-                <div key={f.name} className={`flex items-start gap-5 rounded-[12px] ${f.bgClass} p-6 shadow-xl`}>
+                <div key={f.name} className={`flex items-start gap-5 rounded-xl ${f.bgClass} p-6 shadow-xl`}>
                   <div className="shrink-0 text-graphite/70">{f.icon}</div>
                   <div>
                     <h3 className="font-sf-pro-text text-[17px] font-semibold leading-[1.24] text-graphite">{f.name}</h3>
@@ -61,7 +61,7 @@ export function LifestyleShowcase() {
           <StaggerItem>
             <div className="flex flex-col gap-5">
               {FEATURES.slice(2).map((f) => (
-                <div key={f.name} className={`flex items-start gap-5 rounded-[12px] ${f.bgClass} p-6 shadow-xl`}>
+                <div key={f.name} className={`flex items-start gap-5 rounded-xl ${f.bgClass} p-6 shadow-xl`}>
                   <div className="shrink-0 text-graphite/70">{f.icon}</div>
                   <div>
                     <h3 className="font-sf-pro-text text-[17px] font-semibold leading-[1.24] text-graphite">{f.name}</h3>
