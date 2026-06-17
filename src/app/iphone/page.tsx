@@ -1,7 +1,7 @@
 import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
-import { IPhoneHero } from "@/components/iphone-hero"
-import { IPhoneShowcase } from "@/components/iphone-showcase"
+import { PhoneHero } from "@/components/phone-hero"
+import { PhoneShowcase } from "@/components/phone-showcase"
 import { StickyStack } from "@/components/sticky-stack"
 import { HorizontalPan } from "@/components/horizontal-pan"
 import type { PanPanel } from "@/components/horizontal-pan"
@@ -36,7 +36,7 @@ const IPHONE_PANELS: PanPanel[] = [
     src: "https://images.unsplash.com/photo-1726732946451-98690db97aae?w=800&q=80",
     alt: "iPhone 16 A18 chip",
     title: "A18 Pro",
-    description: "Second-generation 3nm chip. 16-core Neural Engine for Apple Intelligence.",
+    description: "Second-generation 3nm chip. 16-core Neural Engine for next-gen AI.",
     eyebrow: "iPhone 16 Pro",
   },
 ]
@@ -47,11 +47,11 @@ export default function IPhonePage() {
       <TopNotificationBar />
       <StickyNav />
       <main>
-        <IPhoneHero />
+        <PhoneHero />
         <Reveal delay={0.1}>
           <section className="bg-paper px-5 py-[80px]">
             <div className="mx-auto max-w-[980px]">
-              <h2 className="mb-6 text-center font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
+              <h2 className="mb-6 text-center font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
                 View in detail
               </h2>
               <ProductGallery images={IPHONE_GALLERY} productName="iPhone 16 Pro" />
@@ -59,7 +59,7 @@ export default function IPhonePage() {
           </section>
         </Reveal>
         <Reveal delay={0.1}>
-          <IPhoneShowcase />
+          <PhoneShowcase />
         </Reveal>
 
         <StickyStack />

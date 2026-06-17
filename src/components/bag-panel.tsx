@@ -23,15 +23,15 @@ export function BagPanel() {
           <path d="M12 24V16C12 11 16 7 24 7C32 7 36 11 36 16V24" strokeLinecap="round" />
           <rect x="6" y="24" width="36" height="18" rx="3" />
         </svg>
-        <h3 className="mt-4 font-sf-pro-text text-[17px] font-semibold leading-[1.47] tracking-[-0.05px] text-graphite">
+        <h3 className="mt-4 font-font-body text-[17px] font-semibold leading-[1.47] tracking-[-0.05px] text-graphite">
           Your bag is empty.
         </h3>
-        <p className="mt-1 font-sf-pro-text text-[14px] font-light leading-[1.43] text-fog">
+        <p className="mt-1 font-font-body text-[14px] font-light leading-[1.43] text-fog">
           Add products to your bag to get started.
         </p>
         <Link
           href="/store"
-          className="mt-6 inline-block rounded-full bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[14px] leading-[1.47] text-paper transition-colors hover:bg-deep-link-blue"
+          className="mt-6 inline-block rounded-full bg-accent-solid px-[15px] py-[8px] font-font-body text-[14px] leading-[1.47] text-paper transition-colors hover:bg-accent-dark"
         >
           Start shopping
         </Link>
@@ -56,10 +56,10 @@ export function BagPanel() {
               />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="font-sf-pro-text text-[14px] font-semibold leading-[1.43] text-graphite">
+              <p className="font-font-body text-[14px] font-semibold leading-[1.43] text-graphite">
                 {item.product.name}
               </p>
-              <p className="font-sf-pro-text text-[12px] font-light leading-[1.33] text-fog">
+              <p className="font-font-body text-[12px] font-light leading-[1.33] text-fog">
                 {item.product.price}
               </p>
               <div className="mt-1 flex items-center gap-2">
@@ -67,11 +67,11 @@ export function BagPanel() {
                   type="button"
                   onClick={() => removeItem(item.product.id)}
                   aria-label={`Remove one ${item.product.name}`}
-                  className="font-sf-pro-text text-[12px] leading-[1.33] text-apple-blue transition-colors hover:text-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+                  className="font-font-body text-[12px] leading-[1.33] text-accent transition-colors hover:text-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                 >
                   Remove
                 </button>
-                <span className="font-sf-pro-text text-[12px] leading-[1.33] text-fog">
+                <span className="font-font-body text-[12px] leading-[1.33] text-fog">
                   Qty: {item.quantity}
                 </span>
               </div>
@@ -82,23 +82,23 @@ export function BagPanel() {
 
       <div className="mt-4 border-t border-bone pt-4">
         <div className="flex items-center justify-between">
-          <p className="font-sf-pro-text text-[15px] font-semibold leading-[1.24] text-graphite">
+          <p className="font-font-body text-[15px] font-semibold leading-[1.24] text-graphite">
             Total
           </p>
-          <p className="font-sf-pro-text text-[15px] font-semibold leading-[1.24] text-graphite">
+          <p className="font-font-body text-[15px] font-semibold leading-[1.24] text-graphite">
             ${total.toLocaleString("en-US", { minimumFractionDigits: 2 })}
           </p>
         </div>
         <button
           type="button"
-          className="mt-3 w-full rounded-full bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[14px] leading-[1.47] text-paper transition-colors hover:bg-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+          className="mt-3 w-full rounded-full bg-accent-solid px-[15px] py-[8px] font-font-body text-[14px] leading-[1.47] text-paper transition-colors hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Checkout
         </button>
         <button
           type="button"
           onClick={clearCart}
-          className="mt-2 w-full text-center font-sf-pro-text text-[12px] leading-[1.33] text-fog transition-colors hover:text-graphite focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+          className="mt-2 w-full text-center font-font-body text-[12px] leading-[1.33] text-fog transition-colors hover:text-graphite focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Clear bag
         </button>

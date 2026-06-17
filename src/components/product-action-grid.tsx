@@ -13,10 +13,10 @@ interface ActionItem {
 }
 
 const ACTIONS: ActionItem[] = [
-  { icon: <PencilSimple size={24} weight="duotone" />, name: "Apple Pencil Pro", description: "Pixel-perfect precision with squeeze, barrel roll, and haptic feedback." },
+  { icon: <PencilSimple size={24} weight="duotone" />, name: "Pencil Pro", description: "Pixel-perfect precision with squeeze, barrel roll, and haptic feedback." },
   { icon: <Keyboard size={24} weight="duotone" />, name: "Magic Keyboard", description: "Floating design with trackpad, backlit keys, and USB-C passthrough." },
   { icon: <AppWindow size={24} weight="duotone" />, name: "Stage Manager", description: "Organize apps in overlapping windows for effortless multitasking." },
-  { icon: <LinkSimple size={24} weight="duotone" />, name: "Continuity", description: "Seamlessly connect to your Mac, iPhone, and Apple Watch." },
+  { icon: <LinkSimple size={24} weight="duotone" />, name: "Continuity", description: "Seamlessly connect across all your devices." },
 ]
 
 export function ProductActionGrid() {
@@ -30,7 +30,7 @@ export function ProductActionGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: durations.hero, ease: easings.dramatic }}
-          className="text-center font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite"
+          className="text-center font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite"
         >
           Your computer. Not a computer.
         </motion.h2>
@@ -39,19 +39,19 @@ export function ProductActionGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.12 }}
-          className="mt-2 text-center font-sf-pro-text text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog"
+          className="mt-2 text-center font-font-body text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog"
         >
-          With the power of M4, iPad Pro is a creative powerhouse.
+          A creative powerhouse for work and play.
         </motion.p>
 
         <StaggerGrid className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
           {ACTIONS.map((item) => (
             <StaggerItem key={item.name}>
-              <div className="flex gap-4 rounded-xl border border-bone bg-cloud p-6 transition-all hover:border-apple-blue/20 hover:shadow-md">
+              <div className="flex gap-4 rounded-xl border border-bone bg-cloud p-6 transition-all hover:border-accent/20 hover:shadow-md">
                 <div className="shrink-0 text-graphite/60">{item.icon}</div>
                 <div>
-                  <h3 className="font-sf-pro-text text-[17px] font-semibold leading-[1.24] text-graphite">{item.name}</h3>
-                  <p className="mt-1 font-sf-pro-text text-[14px] font-normal leading-[1.43] text-fog">{item.description}</p>
+                  <h3 className="font-font-body text-[17px] font-semibold leading-[1.24] text-graphite">{item.name}</h3>
+                  <p className="mt-1 font-font-body text-[14px] font-normal leading-[1.43] text-fog">{item.description}</p>
                 </div>
               </div>
             </StaggerItem>
@@ -67,9 +67,9 @@ export function ProductActionGrid() {
         >
           <Link
             href="/store"
-            className="inline-flex items-center gap-1.5 font-sf-pro-text text-[17px] font-normal leading-[1.47] text-apple-blue transition-all hover:text-deep-link-blue"
+            className="inline-flex items-center gap-1.5 font-font-body text-[17px] font-normal leading-[1.47] text-accent transition-all hover:text-accent-dark"
           >
-            Explore iPad accessories <CaretRight size={14} weight="bold" />
+            Explore tablet accessories <CaretRight size={14} weight="bold" />
           </Link>
         </motion.div>
       </div>

@@ -37,7 +37,7 @@ export function Tabs({ tabs, defaultTab, className = "" }: TabsProps) {
               aria-selected={isActive}
               aria-controls={`panel-${tab.id}`}
               onClick={() => setActiveId(tab.id)}
-              className={`relative px-5 py-3 font-sf-pro-text text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
+              className={`relative px-5 py-3 font-font-body text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                 isActive ? "font-semibold text-graphite" : "font-normal text-fog hover:text-graphite"
               }`}
             >
@@ -45,7 +45,7 @@ export function Tabs({ tabs, defaultTab, className = "" }: TabsProps) {
               {isActive && (
                 <motion.span
                   layoutId="tab-active"
-                  className="absolute inset-x-0 bottom-0 h-[2px] bg-apple-blue"
+                  className="absolute inset-x-0 bottom-0 h-[2px] bg-accent"
                   transition={prefersReduced ? { duration: 0 } : { duration: durations.normal, ease: easings.easeOut }}
                 />
               )}

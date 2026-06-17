@@ -6,7 +6,7 @@ import Image from "next/image"
 import { PillButton } from "@/components/pill-button"
 import { easings, durations } from "@/lib/motion"
 
-export function IPhoneHero() {
+export function PhoneHero() {
   const prefersReduced = useReducedMotion()
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -21,14 +21,14 @@ export function IPhoneHero() {
   if (prefersReduced) {
     return (
       <section className="relative flex flex-col items-center justify-center overflow-hidden bg-paper px-5 pb-0 pt-[80px] text-center">
-        <h1 className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
-          iPhone 16 Pro
+        <h1 className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+          UltraPhone X
         </h1>
-        <p className="mt-3 max-w-[640px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
-          Built for Apple Intelligence.
+        <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
+          Built for next-gen intelligence.
         </p>
         <div className="mt-6 flex items-center gap-3">
-          <PillButton variant="filled" href="/iphone">Learn more</PillButton>
+          <PillButton variant="filled" href="/phones">Learn more</PillButton>
           <PillButton variant="outlined" href="/store">Buy</PillButton>
         </div>
         <div className="relative mt-12 w-full max-w-[400px]">
@@ -55,7 +55,7 @@ export function IPhoneHero() {
     <section ref={ref} className="relative flex flex-col items-center justify-center overflow-hidden bg-paper px-5 pb-0 pt-[80px] text-center">
       <motion.div
         style={{ y: bgParallax }}
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-apple-blue/3 to-transparent"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-accent/3 to-transparent"
         aria-hidden="true"
       />
 
@@ -63,18 +63,18 @@ export function IPhoneHero() {
         initial={{ opacity: 0, y: 30, filter: "blur(6px)" }}
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: durations.hero, ease: easings.dramatic }}
-        className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite"
+        className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite"
       >
-        iPhone 16 Pro
+        UltraPhone X
       </motion.h1>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.2 }}
-        className="mt-3 max-w-[640px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite"
+        className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite"
       >
-        Built for Apple Intelligence.
+        Built for next-gen intelligence.
       </motion.p>
 
       <motion.div
@@ -83,7 +83,7 @@ export function IPhoneHero() {
         transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.35 }}
         className="mt-6 flex items-center gap-3"
       >
-        <PillButton variant="filled" href="/iphone">Learn more</PillButton>
+        <PillButton variant="filled" href="/phones">Learn more</PillButton>
         <PillButton variant="outlined" href="/store">Buy</PillButton>
       </motion.div>
 
@@ -104,7 +104,7 @@ export function IPhoneHero() {
               >
                 <Image
                   src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&q=80"
-                  alt="iPhone 16 Pro"
+                alt="UltraPhone X"
                   fill
                   sizes="(max-width: 400px) 100vw, 400px"
                   className="object-cover"

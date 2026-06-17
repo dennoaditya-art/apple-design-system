@@ -42,26 +42,26 @@ export default function ResetPasswordPage() {
                 <path d="M2 4H22V20H2V4Z" />
               </svg>
             </div>
-            <h1 className="font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
+            <h1 className="font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
               Check your email
             </h1>
-            <p className="mt-2 font-sf-pro-text text-[15px] leading-[1.47] text-fog">
+            <p className="mt-2 font-font-body text-[15px] leading-[1.47] text-fog">
               We&apos;ve sent a password reset link to{" "}
               <span className="font-semibold text-graphite">{email}</span>
             </p>
             <Link
               href="/login"
-              className="mt-6 inline-block font-sf-pro-text text-[14px] font-semibold leading-[1.43] text-apple-blue transition-colors hover:text-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+              className="mt-6 inline-block font-font-body text-[14px] font-semibold leading-[1.43] text-accent transition-colors hover:text-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               Back to Sign in
             </Link>
           </>
         ) : (
           <>
-            <h1 className="font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
+            <h1 className="font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
               Reset Password
             </h1>
-            <p className="mt-1 font-sf-pro-text text-[15px] leading-[1.47] text-fog">
+            <p className="mt-1 font-font-body text-[15px] leading-[1.47] text-fog">
               Enter your email and we&apos;ll send you a reset link.
             </p>
           </>
@@ -93,11 +93,11 @@ export default function ResetPasswordPage() {
       )}
 
       {!sent && (
-        <p className="mt-6 text-center font-sf-pro-text text-[14px] leading-[1.43] text-fog">
+        <p className="mt-6 text-center font-font-body text-[14px] leading-[1.43] text-fog">
           Remember your password?{" "}
           <Link
             href="/login"
-            className="font-semibold text-apple-blue transition-colors hover:text-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+            className="font-semibold text-accent transition-colors hover:text-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             Sign in
           </Link>

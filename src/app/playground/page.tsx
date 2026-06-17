@@ -145,7 +145,7 @@ export default function PlaygroundPage() {
           <div className="space-y-8">
             <div className="flex flex-wrap items-center gap-6">
               <div className="flex items-center gap-3">
-                <label className="font-sf-pro-text text-[14px] font-semibold text-graphite">Variant</label>
+                <label className="font-font-body text-[14px] font-semibold text-graphite">Variant</label>
                 <Select
                   options={[
                     { value: "filled", label: "Filled" },
@@ -233,7 +233,7 @@ export default function PlaygroundPage() {
             </div>
             <div className="flex items-center justify-center rounded-lg border border-bone bg-paper p-12">
               <Reveal delay={Number(revDuration) || 0}>
-                <div className="flex h-24 w-48 items-center justify-center rounded-lg bg-apple-blue text-paper font-sf-pro-text text-[17px] font-semibold">
+                <div className="flex h-24 w-48 items-center justify-center rounded-lg bg-accent text-paper font-font-body text-[17px] font-semibold">
                   Scroll to reveal
                 </div>
               </Reveal>
@@ -246,7 +246,7 @@ export default function PlaygroundPage() {
           <div className="space-y-8">
             <PillButton onClick={() => setModalOpen(true)}>Open Modal</PillButton>
             <Modal open={modalOpen} onClose={() => setModalOpen(false)} title="Modal Title">
-              <p className="font-sf-pro-text text-[15px] leading-[1.57] text-fog">
+              <p className="font-font-body text-[15px] leading-[1.57] text-fog">
                 This is a modal dialog with focus trap, keyboard dismiss (Escape), and backdrop blur.
               </p>
               <div className="mt-6 flex justify-end gap-3">
@@ -261,9 +261,9 @@ export default function PlaygroundPage() {
           <div className="max-w-[600px] rounded-lg border border-bone bg-paper p-6">
             <Tabs
               tabs={[
-                { id: "design", label: "Design", content: <div className="p-4 font-sf-pro-text text-[15px] text-fog">Design content with typography, color, and layout guidelines.</div> },
-                { id: "code", label: "Code", content: <div className="p-4 font-sf-pro-text text-[15px] text-fog">Code examples and implementation details for developers.</div> },
-                { id: "accessibility", label: "Accessibility", content: <div className="p-4 font-sf-pro-text text-[15px] text-fog">ARIA roles, keyboard navigation, and screen reader support.</div> },
+                { id: "design", label: "Design", content: <div className="p-4 font-font-body text-[15px] text-fog">Design content with typography, color, and layout guidelines.</div> },
+                { id: "code", label: "Code", content: <div className="p-4 font-font-body text-[15px] text-fog">Code examples and implementation details for developers.</div> },
+                { id: "accessibility", label: "Accessibility", content: <div className="p-4 font-font-body text-[15px] text-fog">ARIA roles, keyboard navigation, and screen reader support.</div> },
               ]}
             />
           </div>
@@ -274,7 +274,7 @@ export default function PlaygroundPage() {
             <Dropdown
               label="Actions"
               trigger={
-                <div className="flex items-center gap-2 rounded-md bg-cloud px-4 py-2.5 font-sf-pro-text text-[14px] font-semibold text-graphite transition-colors hover:bg-bone">
+                <div className="flex items-center gap-2 rounded-md bg-cloud px-4 py-2.5 font-font-body text-[14px] font-semibold text-graphite transition-colors hover:bg-bone">
                   Actions
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"><path d="M3 4.5L6 7.5L9 4.5" /></svg>
                 </div>
@@ -293,8 +293,8 @@ export default function PlaygroundPage() {
           <div className="max-w-[600px]">
             <Accordion
               items={[
-                { id: "what", title: "What is this design system?", content: "A premium design system reference implementation inspired by Apple's design language, built with Next.js 16, TypeScript, Tailwind CSS v4, and Framer Motion." },
-                { id: "why", title: "Why use it?", content: "It provides a consistent, accessible, and performant foundation for building modern web applications with Apple-inspired aesthetics." },
+                { id: "what", title: "What is this design system?", content: "A premium design system reference implementation inspired by modern design principles, built with Next.js 16, TypeScript, Tailwind CSS v4, and Framer Motion." },
+                { id: "why", title: "Why use it?", content: "It provides a consistent, accessible, and performant foundation for building modern web applications with premium aesthetics." },
                 { id: "how", title: "How do I customize it?", content: "All design tokens are defined as CSS custom properties in globals.css. Colors, typography, spacing, and shadows can be overridden by modifying the @theme block." },
               ]}
             />
@@ -303,7 +303,7 @@ export default function PlaygroundPage() {
       case "toast":
         return (
           <div className="space-y-6">
-            <p className="font-sf-pro-text text-[15px] leading-[1.57] text-fog">
+            <p className="font-font-body text-[15px] leading-[1.57] text-fog">
               Click a button to trigger a toast notification.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -345,17 +345,17 @@ export default function PlaygroundPage() {
     <div className="flex min-h-[100dvh] bg-cloud">
       <aside className="hidden w-64 shrink-0 border-r border-bone bg-paper md:block">
         <div className="p-4">
-          <h2 className="font-sf-pro-display text-[24px] font-semibold leading-[1.18] tracking-[-0.28px] text-graphite">
+          <h2 className="font-font-heading text-[24px] font-semibold leading-[1.18] tracking-[-0.28px] text-graphite">
             Components
           </h2>
-          <p className="mt-1 font-sf-pro-text text-[12px] leading-[1.33] text-fog">
+          <p className="mt-1 font-font-body text-[12px] leading-[1.33] text-fog">
             {COMPONENTS.length} components
           </p>
         </div>
         <nav className="space-y-1 px-3 pb-4" aria-label="Component list">
           {CATEGORIES.map((cat) => (
             <div key={cat}>
-              <h3 className="px-3 pt-4 pb-1 font-sf-pro-text text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
+              <h3 className="px-3 pt-4 pb-1 font-font-body text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
                 {cat}
               </h3>
               {COMPONENTS.filter((c) => c.category === cat).map((comp) => (
@@ -363,7 +363,7 @@ export default function PlaygroundPage() {
                   key={comp.key}
                   type="button"
                   onClick={() => setActiveKey(comp.key)}
-                  className={`w-full rounded-md px-3 py-2 text-left font-sf-pro-text text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
+                  className={`w-full rounded-md px-3 py-2 text-left font-font-body text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                     activeKey === comp.key
                       ? "bg-cloud font-semibold text-graphite"
                       : "text-fog hover:bg-cloud/50 hover:text-graphite"
@@ -381,10 +381,10 @@ export default function PlaygroundPage() {
         <header className="border-b border-bone bg-paper px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
+              <h1 className="font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
                 {active.name}
               </h1>
-              <p className="font-sf-pro-text text-[14px] leading-[1.43] text-fog">
+              <p className="font-font-body text-[14px] leading-[1.43] text-fog">
                 {active.description}
               </p>
             </div>
@@ -393,7 +393,7 @@ export default function PlaygroundPage() {
                 <button
                   key={size}
                   type="button"
-                  className="rounded-md bg-cloud px-3 py-1.5 font-sf-pro-text text-[12px] font-semibold leading-[1.33] text-fog transition-colors hover:bg-bone"
+                  className="rounded-md bg-cloud px-3 py-1.5 font-font-body text-[12px] font-semibold leading-[1.33] text-fog transition-colors hover:bg-bone"
                 >
                   {size}
                 </button>
@@ -409,7 +409,7 @@ export default function PlaygroundPage() {
 
           <aside className="w-full border-t border-bone bg-paper lg:w-[400px] lg:border-t-0 lg:border-l">
             <div className="p-4">
-              <h3 className="font-sf-pro-text text-[13px] font-semibold leading-[1.38] text-graphite">
+              <h3 className="font-font-body text-[13px] font-semibold leading-[1.38] text-graphite">
                 Code
               </h3>
               <pre className="mt-3 overflow-x-auto rounded-md bg-graphite p-4 font-['JetBrains_Mono',monospace] text-[13px] leading-[1.5] text-cloud">
@@ -418,7 +418,7 @@ export default function PlaygroundPage() {
               <button
                 type="button"
                 onClick={() => { navigator.clipboard.writeText(getCode()).catch(() => {}) }}
-                className="mt-3 w-full rounded-md bg-cloud py-2 font-sf-pro-text text-[13px] font-semibold leading-[1.38] text-graphite transition-colors hover:bg-bone"
+                className="mt-3 w-full rounded-md bg-cloud py-2 font-font-body text-[13px] font-semibold leading-[1.38] text-graphite transition-colors hover:bg-bone"
               >
                 Copy code
               </button>

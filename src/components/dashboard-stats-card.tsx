@@ -27,7 +27,7 @@ export function StatsCard({ title, value, change, trend, icon, index = 0 }: Stat
       className="rounded-xl bg-paper p-5 shadow-sm transition-shadow hover:shadow-md"
     >
       <div className="flex items-start justify-between">
-        <p className="font-sf-pro-text text-[13px] font-semibold leading-[1.38] text-fog">{title}</p>
+        <p className="font-font-body text-[13px] font-semibold leading-[1.38] text-fog">{title}</p>
         <motion.span
           className="text-fog"
           whileHover={{ rotate: 10, scale: 1.1 }}
@@ -36,7 +36,7 @@ export function StatsCard({ title, value, change, trend, icon, index = 0 }: Stat
           {icon}
         </motion.span>
       </div>
-      <p className="mt-2 font-sf-pro-display text-[32px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
+      <p className="mt-2 font-font-heading text-[32px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
         {isNumeric ? (
           <MotionNumber to={numericValue} duration={1.2} delay={index * 0.1} format={false} />
         ) : (
@@ -45,7 +45,7 @@ export function StatsCard({ title, value, change, trend, icon, index = 0 }: Stat
       </p>
       <div className="mt-1 flex items-center gap-1.5">
         <span
-          className={`inline-flex items-center gap-0.5 font-sf-pro-text text-[13px] font-semibold leading-[1.38] ${
+          className={`inline-flex items-center gap-0.5 font-font-body text-[13px] font-semibold leading-[1.38] ${
             trend === "up" ? "text-green-600" : "text-red-500"
           }`}
         >
@@ -62,7 +62,7 @@ export function StatsCard({ title, value, change, trend, icon, index = 0 }: Stat
           )}
           {change}
         </span>
-        <span className="font-sf-pro-text text-[12px] leading-[1.33] text-fog">vs last month</span>
+        <span className="font-font-body text-[12px] leading-[1.33] text-fog">vs last month</span>
       </div>
     </motion.div>
   )

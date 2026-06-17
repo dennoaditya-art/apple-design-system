@@ -1,6 +1,6 @@
 import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
-import { MacBookHero } from "@/components/macbook-hero"
+import { LaptopHero } from "@/components/laptop-hero"
 import { ProductSpecGrid } from "@/components/product-spec-grid"
 import { ProductGallery } from "@/components/product-gallery"
 import { HorizontalPan } from "@/components/horizontal-pan"
@@ -46,11 +46,11 @@ export default function MacPage() {
       <TopNotificationBar />
       <StickyNav />
       <main>
-        <MacBookHero as="h1" />
+        <LaptopHero as="h1" />
         <Reveal delay={0.1}>
           <section className="bg-paper px-5 py-[80px]">
             <div className="mx-auto max-w-[980px]">
-              <h2 className="mb-6 text-center font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
+              <h2 className="mb-6 text-center font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
                 View in detail
               </h2>
               <ProductGallery images={MAC_GALLERY} productName="MacBook Pro" />

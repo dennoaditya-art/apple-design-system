@@ -18,20 +18,20 @@ export function ColoredProductSection() {
   if (prefersReduced) {
     return (
       <section className="flex flex-col items-center justify-center px-5 py-[80px] text-center" style={{ backgroundColor: "var(--color-bone, #e2e2e5)" }}>
-        <h2 className="font-sf-pro-display md:text-[56px] text-[36px] font-semibold leading-[1.07] tracking-[-1.23px] text-graphite">
-          iPad Air
+        <h2 className="font-font-heading md:text-[56px] text-[36px] font-semibold leading-[1.07] tracking-[-1.23px] text-graphite">
+          Tablet Air
         </h2>
-        <p className="mt-3 max-w-[640px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
-          Supercharged by M3.
+        <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
+          Supercharged performance.
         </p>
         <div className="mt-5 flex items-center gap-3">
-          <PillButton variant="filled" href="/ipad">Learn more</PillButton>
+          <PillButton variant="filled" href="/tablets">Learn more</PillButton>
           <PillButton variant="outlined" href="/store" className="border-graphite text-graphite hover:border-graphite hover:text-graphite">Buy</PillButton>
         </div>
         <div className="relative mt-10 w-full max-w-[65vw] shadow-xl" style={{ aspectRatio: "4 / 3" }}>
           <Image
             src="https://images.unsplash.com/photo-1682426526490-667d4912b8de?w=1000&q=80"
-            alt="iPad Air"
+            alt="Tablet Air"
             fill
             sizes="65vw"
             className="object-contain"
@@ -50,18 +50,18 @@ export function ColoredProductSection() {
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: durations.hero, ease: easings.dramatic }}
-        className="font-sf-pro-display md:text-[56px] text-[36px] font-semibold leading-[1.07] tracking-[-1.23px] text-graphite"
+        className="font-font-heading md:text-[56px] text-[36px] font-semibold leading-[1.07] tracking-[-1.23px] text-graphite"
       >
-        iPad Air
+        Tablet Air
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.2 }}
-        className="mt-3 max-w-[640px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite"
+        className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite"
       >
-        Supercharged by M3.
+        Supercharged performance.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}

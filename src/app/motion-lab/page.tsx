@@ -29,7 +29,7 @@ function SectionDivider() {
 function BracketTag({ children, color }: { children: React.ReactNode; color?: string }) {
   return (
     <p
-      className="mb-6 font-sf-pro-text text-[14px] font-normal leading-[1.38]"
+      className="mb-6 font-font-body text-[14px] font-normal leading-[1.38]"
       style={{ color: color ?? ASH }}
     >
       <span>{`{ `}</span>
@@ -42,7 +42,7 @@ function BracketTag({ children, color }: { children: React.ReactNode; color?: st
 function SectionHeading({ children, color }: { children: React.ReactNode; color?: string }) {
   return (
     <h2
-      className="mb-8 text-center font-sf-pro-display text-[34px] font-normal leading-[1.15] md:text-[44px]"
+      className="mb-8 text-center font-font-heading text-[34px] font-normal leading-[1.15] md:text-[44px]"
       style={{ color: color ?? CREAM, letterSpacing: "-0.48px" }}
     >
       {children}
@@ -67,7 +67,7 @@ function DemoCard({
       >
         {children}
       </div>
-      <p className="font-sf-pro-text text-[14px] font-normal leading-[1.38]" style={{ color: accent }}>
+      <p className="font-font-body text-[14px] font-normal leading-[1.38]" style={{ color: accent }}>
         {label}
       </p>
     </div>
@@ -87,14 +87,14 @@ export default function MotionLabPage() {
         <BracketTag color={ACCENTS.green}>Motion Lab</BracketTag>
         <TextReveal
           as="h1"
-          className="font-sf-pro-display text-[48px] font-normal leading-[1.07] md:text-[89px]"
+          className="font-font-heading text-[48px] font-normal leading-[1.07] md:text-[89px]"
           wordDelay={0.06}
           style={{ color: CREAM, letterSpacing: "-1.78px" }}
         >
           Motion Playground
         </TextReveal>
         <p
-          className="mt-4 max-w-[640px] font-sf-pro-text text-[18px] font-normal leading-[1.38]"
+          className="mt-4 max-w-[640px] font-font-body text-[18px] font-normal leading-[1.38]"
           style={{ color: ASH }}
         >
           Every animation is a tool. Pick what fits your context, leave the rest.
@@ -108,7 +108,7 @@ export default function MotionLabPage() {
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           <DemoCard label="Revenue" accent={ACCENTS.green}>
             <p
-              className="font-sf-pro-display text-[36px] font-semibold leading-[1.14]"
+              className="font-font-heading text-[36px] font-semibold leading-[1.14]"
               style={{ color: CREAM }}
             >
               $<MotionNumber to={2847} duration={2} format />
@@ -116,7 +116,7 @@ export default function MotionLabPage() {
           </DemoCard>
           <DemoCard label="Users" accent={ACCENTS.blue}>
             <p
-              className="font-sf-pro-display text-[36px] font-semibold leading-[1.14]"
+              className="font-font-heading text-[36px] font-semibold leading-[1.14]"
               style={{ color: CREAM }}
             >
               <MotionNumber to={12843} duration={2} format />+
@@ -124,7 +124,7 @@ export default function MotionLabPage() {
           </DemoCard>
           <DemoCard label="Orders" accent={ACCENTS.orange}>
             <p
-              className="font-sf-pro-display text-[36px] font-semibold leading-[1.14]"
+              className="font-font-heading text-[36px] font-semibold leading-[1.14]"
               style={{ color: CREAM }}
             >
               <MotionNumber to={567} duration={2} format />
@@ -132,7 +132,7 @@ export default function MotionLabPage() {
           </DemoCard>
           <DemoCard label="Growth" accent={ACCENTS.pink}>
             <p
-              className="font-sf-pro-display text-[36px] font-semibold leading-[1.14]"
+              className="font-font-heading text-[36px] font-semibold leading-[1.14]"
               style={{ color: CREAM }}
             >
               <MotionNumber to={24} duration={1.5} format={false} />%
@@ -153,7 +153,7 @@ export default function MotionLabPage() {
         >
           <TextReveal
             as="h3"
-            className="font-sf-pro-display text-[28px] font-normal leading-[1.2]"
+            className="font-font-heading text-[28px] font-normal leading-[1.2]"
             wordDelay={0.05}
             style={{ color: CREAM }}
           >
@@ -169,7 +169,7 @@ export default function MotionLabPage() {
         <BracketTag color={ACCENTS.violet}>Interaction</BracketTag>
         <SectionHeading color={ACCENTS.violet}>3D Tilt Card</SectionHeading>
         <p
-          className="mb-8 text-center font-sf-pro-text text-[16px] font-normal leading-[1.4]"
+          className="mb-8 text-center font-font-body text-[16px] font-normal leading-[1.4]"
           style={{ color: ASH }}
         >
           Hover the card — it follows your cursor in 3D
@@ -183,8 +183,8 @@ export default function MotionLabPage() {
                 color: VOID,
               }}
             >
-              <p className="font-sf-pro-display text-[22px] font-semibold">Hover me</p>
-              <p className="mt-2 font-sf-pro-text text-[14px] font-light leading-[1.43] opacity-80">
+              <p className="font-font-heading text-[22px] font-semibold">Hover me</p>
+              <p className="mt-2 font-font-body text-[14px] font-light leading-[1.43] opacity-80">
                 Move your mouse around
               </p>
             </div>
@@ -199,7 +199,7 @@ export default function MotionLabPage() {
         <BracketTag color={ACCENTS.orange}>Interaction</BracketTag>
         <SectionHeading color={ACCENTS.orange}>Magnetic Button</SectionHeading>
         <p
-          className="mb-8 text-center font-sf-pro-text text-[16px] font-normal leading-[1.4]"
+          className="mb-8 text-center font-font-body text-[16px] font-normal leading-[1.4]"
           style={{ color: ASH }}
         >
           Move your mouse near the button — it follows your cursor
@@ -207,7 +207,7 @@ export default function MotionLabPage() {
         <div className="flex justify-center">
           <MagneticButton
             onClick={() => setCount((c) => c + 1)}
-            className="cursor-pointer rounded-full px-6 py-3 font-sf-pro-text text-[17px] font-normal leading-[1.38]"
+            className="cursor-pointer rounded-full px-6 py-3 font-font-body text-[17px] font-normal leading-[1.38]"
             ariaLabel="Magnetic button demo"
             style={{
               color: CREAM,
@@ -230,7 +230,7 @@ export default function MotionLabPage() {
           {Array.from({ length: 8 }, (_, i) => (
             <StaggerItem key={i} variant={1}>
               <div
-                className="flex h-24 items-center justify-center rounded-md font-sf-pro-text text-[15px] font-semibold"
+                className="flex h-24 items-center justify-center rounded-md font-font-body text-[15px] font-semibold"
                 style={{
                   backgroundColor: VOID,
                   border: `1px solid ${[ACCENTS.green, ACCENTS.pink, ACCENTS.blue, ACCENTS.orange][i % 4]}`,
@@ -299,7 +299,7 @@ export default function MotionLabPage() {
         <BracketTag color={ACCENTS.orange}>Navigation</BracketTag>
         <SectionHeading color={ACCENTS.orange}>Page Transitions</SectionHeading>
         <p
-          className="mb-8 text-center font-sf-pro-text text-[16px] font-normal leading-[1.4]"
+          className="mb-8 text-center font-font-body text-[16px] font-normal leading-[1.4]"
           style={{ color: ASH }}
         >
           Navigate to see the blur + fade transition
@@ -310,7 +310,7 @@ export default function MotionLabPage() {
               <Link
                 key={href}
                 href={href}
-                className="inline-block rounded-full px-4 py-2 font-sf-pro-text text-[15px] font-normal leading-[1.38] no-underline transition-all hover:scale-[1.03]"
+                className="inline-block rounded-full px-4 py-2 font-font-body text-[15px] font-normal leading-[1.38] no-underline transition-all hover:scale-[1.03]"
                 style={{
                   color: ACCENTS.blue,
                   border: `1px solid ${ACCENTS.blue}`,

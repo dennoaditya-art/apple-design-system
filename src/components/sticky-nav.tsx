@@ -21,15 +21,12 @@ interface NavLink {
 
 const NAV_LINKS: NavLink[] = [
   { label: "Store", href: "/store" },
-  { label: "Mac", href: "/mac" },
-  { label: "iPad", href: "/ipad" },
-  { label: "iPhone", href: "/iphone" },
-  { label: "Watch", href: "/watch" },
-  { label: "Vision", href: "/tv" },
-  { label: "AirPods", href: "/airpods" },
-  { label: "TV & Home", href: "/tv" },
-  { label: "Studio", href: "/studio" },
-  { label: "Labs", href: "/labs" },
+  { label: "Laptops", href: "/laptops" },
+  { label: "Tablets", href: "/tablets" },
+  { label: "Phones", href: "/phones" },
+  { label: "Watches", href: "/watches" },
+  { label: "Audio", href: "/audio" },
+  { label: "Entertainment", href: "/entertainment" },
 ]
 
 export function StickyNav() {
@@ -70,7 +67,7 @@ export function StickyNav() {
         className="absolute inset-x-0 bottom-0 h-[1px] bg-graphite"
       />
       <div className="relative mx-auto flex h-full max-w-[980px] items-center justify-between px-5 text-graphite">
-        <Link href="/" aria-label="Apple" className="flex-shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue">
+        <Link href="/" aria-label="Nova Store" className="flex-shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
           <motion.svg
             width="16"
             height="44"
@@ -94,7 +91,7 @@ export function StickyNav() {
                 key={link.label}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`relative px-2 font-normal leading-[1.33] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${isActive ? "text-graphite" : "text-graphite/70"}`}
+                className={`relative px-2 font-normal leading-[1.33] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${isActive ? "text-graphite" : "text-graphite/70"}`}
               >
                 <motion.span
                   className="relative inline-block"
@@ -116,18 +113,18 @@ export function StickyNav() {
 
         <div className="flex items-center gap-2 md:gap-5">
           <ThemeToggle />
-          <button aria-label="Search" onClick={() => setSearchOpen(true)} className="flex items-center justify-center transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue min-h-[44px] min-w-[44px]">
+          <button aria-label="Search" onClick={() => setSearchOpen(true)} className="flex items-center justify-center transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px] min-w-[44px]">
             <motion.span style={{ scale: iconScale, display: "flex" }}>
               <MagnifyingGlass size={24} weight="regular" />
             </motion.span>
           </button>
-          <button aria-label="Bag" onClick={() => setBagOpen(true)} className="relative flex items-center justify-center transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue min-h-[44px] min-w-[44px]">
+          <button aria-label="Bag" onClick={() => setBagOpen(true)} className="relative flex items-center justify-center transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px] min-w-[44px]">
             {itemCount > 0 && (
               <motion.span
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={springs.snappy}
-                className="absolute -right-0 top-0 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-button-blue px-1 font-sf-pro-text text-[10px] font-semibold leading-none text-paper"
+                className="absolute -right-0 top-0 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-accent-solid px-1 font-font-body text-[10px] font-semibold leading-none text-paper"
               >
                 {itemCount}
               </motion.span>
@@ -141,7 +138,7 @@ export function StickyNav() {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-menu-panel"
-            className="flex items-center justify-center md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue min-h-[44px] min-w-[44px]"
+            className="flex items-center justify-center md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px] min-w-[44px]"
             onClick={() => setMenuOpen((v) => !v)}
           >
             <motion.div
@@ -185,7 +182,7 @@ export function StickyNav() {
                     href={link.href}
                     aria-current={isActive ? "page" : undefined}
                     onClick={closeMenu}
-                    className={`block px-6 py-3 font-sf-pro-text text-[17px] transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${isActive ? "font-semibold text-graphite" : "font-normal text-graphite/70"}`}
+                    className={`block px-6 py-3 font-font-body text-[17px] transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${isActive ? "font-semibold text-graphite" : "font-normal text-graphite/70"}`}
                   >
                     {link.label}
                   </Link>

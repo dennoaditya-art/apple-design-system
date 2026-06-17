@@ -55,7 +55,7 @@ export function Dropdown({ trigger, items, onSelect, align = "start", label = "M
         aria-expanded={open}
         aria-label={label}
         onClick={() => setOpen((v) => !v)}
-        className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+        className="focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       >
         {trigger}
       </button>
@@ -80,7 +80,7 @@ export function Dropdown({ trigger, items, onSelect, align = "start", label = "M
                 onClick={() => { onSelect(item.value); close() }}
                 whileHover={{ x: 4 }}
                 transition={prefersReduced ? { duration: 0 } : { duration: durations.fast, ease: easings.easeOut }}
-                className={`flex w-full items-center gap-3 px-4 py-2.5 text-left font-sf-pro-text text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
+                className={`flex w-full items-center gap-3 px-4 py-2.5 text-left font-font-body text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                   item.disabled
                     ? "cursor-not-allowed text-ash"
                     : item.danger

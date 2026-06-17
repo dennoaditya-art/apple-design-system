@@ -22,12 +22,12 @@ export function PillButton({
   className = "",
   ...props
 }: PillButtonProps) {
-  const base = "inline-block px-[15px] py-[8px] font-sf-pro-text text-[17px] font-normal leading-[1.47] tracking-[-0.05px] transition-all duration-200"
+  const base = "inline-block px-[15px] py-[8px] font-font-body text-[17px] font-normal leading-[1.47] tracking-[-0.05px] transition-all duration-200"
   const styles = {
     filled:
-      "rounded-full bg-button-blue text-paper hover:bg-deep-link-blue active:bg-deep-link-blue",
+      "rounded-full bg-accent-solid text-paper hover:bg-accent-dark active:bg-accent-dark",
     outlined:
-      "rounded-full border border-apple-blue bg-transparent text-apple-blue hover:border-deep-link-blue hover:text-deep-link-blue",
+      "rounded-full border border-accent bg-transparent text-accent hover:border-accent-dark hover:text-accent-dark",
   }
 
   if (href) {

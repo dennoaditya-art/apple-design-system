@@ -28,26 +28,26 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </Link>
       <div className="p-4">
-          <p className="font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
-            {product.category === "iphone"
-              ? "iPhone"
-              : product.category === "mac"
-                ? "Mac"
-                : product.category === "ipad"
-                  ? "iPad"
-                  : product.category === "watch"
-                    ? "Watch"
-                    : product.category === "airpods"
-                      ? "AirPods"
+          <p className="font-font-body text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
+            {product.category === "phones"
+              ? "Phones"
+              : product.category === "laptops"
+                ? "Laptops"
+                : product.category === "tablets"
+                  ? "Tablets"
+                  : product.category === "watches"
+                    ? "Watches"
+                    : product.category === "audio"
+                      ? "Audio"
                       : "Accessories"}
           </p>
-          <h3 className="mt-0.5 font-sf-pro-text text-[15px] font-semibold leading-[1.24] text-graphite hover:text-apple-blue transition-colors">
+          <h3 className="mt-0.5 font-font-body text-[15px] font-semibold leading-[1.24] text-graphite hover:text-accent transition-colors">
             {product.name}
           </h3>
-          <p className="mt-0.5 font-sf-pro-text text-[13px] font-light leading-[1.38] text-fog line-clamp-1">
+          <p className="mt-0.5 font-font-body text-[13px] font-light leading-[1.38] text-fog line-clamp-1">
             {product.tagline}
           </p>
-          <p className="mt-1 font-sf-pro-text text-[15px] font-normal leading-[1.24] text-graphite">
+          <p className="mt-1 font-font-body text-[15px] font-normal leading-[1.24] text-graphite">
             {product.price}
           </p>
           <motion.button
@@ -56,7 +56,7 @@ export function ProductCard({ product }: ProductCardProps) {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             transition={springs.snappy}
-            className="mt-3 w-full rounded-full bg-button-blue px-[15px] py-[8px] font-sf-pro-text text-[14px] leading-[1.47] text-paper transition-all hover:bg-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+            className="mt-3 w-full rounded-full bg-accent-solid px-[15px] py-[8px] font-font-body text-[14px] leading-[1.47] text-paper transition-all hover:bg-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             Add to Bag
           </motion.button>

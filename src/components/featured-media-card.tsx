@@ -47,16 +47,16 @@ export function FeaturedMediaCard() {
           transition={prefersReduced ? { duration: 0 } : { duration: durations.slow, ease: easings.easeOut }}
           className="mb-8 text-center"
         >
-          <p className="font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
-            Apple TV+
+          <p className="font-font-body text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
+            Stream+
           </p>
-          <h2 className="mt-1 font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
+          <h2 className="mt-1 font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
             Watch now
           </h2>
         </motion.div>
 
         <motion.a
-              href="/tv"
+                href="/entertainment"
               aria-label="Watch Silo, a dystopian mystery in the bunker"
           initial={prefersReduced ? undefined : { opacity: 0, y: 30, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -79,14 +79,14 @@ export function FeaturedMediaCard() {
             <Play size={14} weight="fill" className="text-graphite" />
           </div>
           <div className="absolute bottom-8 left-8 right-8 flex items-end gap-5">
-            <span className="inline-flex shrink-0 items-center rounded-full border border-paper px-[15px] py-[8px] font-sf-pro-text text-[14px] text-paper transition-opacity group-hover:opacity-60">
+            <span className="inline-flex shrink-0 items-center rounded-full border border-paper px-[15px] py-[8px] font-font-body text-[14px] text-paper transition-opacity group-hover:opacity-60">
               Stream now
             </span>
             <div>
-              <h3 className="font-sf-pro-display md:text-[28px] text-[22px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
+              <h3 className="font-font-heading md:text-[28px] text-[22px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
                 Silo
               </h3>
-              <p className="mt-0.5 font-sf-pro-text text-[14px] font-light leading-[1.43] text-paper/80">
+              <p className="mt-0.5 font-font-body text-[14px] font-light leading-[1.43] text-paper/80">
                 A dystopian mystery in the bunker.
               </p>
             </div>
@@ -97,7 +97,7 @@ export function FeaturedMediaCard() {
           {SHOWS.map((show) => (
             <StaggerItem key={show.name}>
               <a
-                href="/tv"
+              href="/entertainment"
                 className="group block overflow-hidden rounded-md bg-paper shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="relative" style={{ aspectRatio: "3 / 4" }}>
@@ -113,13 +113,13 @@ export function FeaturedMediaCard() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
                 <div className="p-4">
-                  <h4 className="font-sf-pro-text text-[15px] font-semibold leading-[1.24] text-graphite">
+                  <h4 className="font-font-body text-[15px] font-semibold leading-[1.24] text-graphite">
                     {show.name}
                   </h4>
-                  <p className="mt-0.5 font-sf-pro-text text-[12px] font-light leading-[1.33] text-fog">
+                  <p className="mt-0.5 font-font-body text-[12px] font-light leading-[1.33] text-fog">
                     {show.tagline}
                   </p>
-                  <span className="mt-2 inline-block font-sf-pro-text text-[12px] font-normal leading-[1.33] text-apple-blue transition-all group-hover:translate-x-0.5">
+                  <span className="mt-2 inline-block font-font-body text-[12px] font-normal leading-[1.33] text-accent transition-all group-hover:translate-x-0.5">
                     Stream now <CaretRight size={12} weight="bold" className="inline" />
                   </span>
                 </div>

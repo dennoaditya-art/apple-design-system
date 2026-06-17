@@ -1,6 +1,6 @@
 import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
-import { IPadHero } from "@/components/ipad-hero"
+import { TabletHero } from "@/components/tablet-hero"
 import { ProductActionGrid } from "@/components/product-action-grid"
 import { ColoredProductSection } from "@/components/colored-product-section"
 import { MediaCardGrid } from "@/components/media-card-grid"
@@ -14,7 +14,7 @@ export default function IPadPage() {
       <TopNotificationBar />
       <StickyNav />
       <main>
-        <IPadHero as="h1" />
+        <TabletHero as="h1" />
         <Reveal delay={0.1}>
           <ProductActionGrid />
         </Reveal>

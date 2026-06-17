@@ -28,7 +28,7 @@ export function ProductSpecGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: durations.hero, ease: easings.dramatic }}
-          className="font-sf-pro-display md:text-[48px] text-[32px] font-semibold leading-[1.08] tracking-[-0.8px] text-paper"
+          className="font-font-heading md:text-[48px] text-[32px] font-semibold leading-[1.08] tracking-[-0.8px] text-paper"
         >
           Pro performance <br />redefined.
         </motion.h2>
@@ -38,7 +38,7 @@ export function ProductSpecGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.12 }}
-          className="mt-3 max-w-[560px] font-sf-pro-text text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-ash"
+          className="mt-3 max-w-[560px] font-font-body text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-ash"
         >
           The most powerful chip ever created for a personal computer.
         </motion.p>
@@ -54,10 +54,10 @@ export function ProductSpecGrid() {
               className="rounded-3xl border border-paper/10 bg-paper/5 p-6"
             >
               <div className="text-paper/80">{spec.icon}</div>
-              <h3 className="mt-4 font-sf-pro-display text-[20px] font-semibold leading-[1.2] tracking-[-0.3px] text-paper">
+              <h3 className="mt-4 font-font-heading text-[20px] font-semibold leading-[1.2] tracking-[-0.3px] text-paper">
                 {spec.name}
               </h3>
-              <p className="mt-1.5 font-sf-pro-text text-[14px] font-normal leading-[1.5] text-ash">
+              <p className="mt-1.5 font-font-body text-[14px] font-normal leading-[1.5] text-ash">
                 {spec.description}
               </p>
             </motion.div>

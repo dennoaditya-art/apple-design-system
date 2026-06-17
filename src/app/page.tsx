@@ -1,32 +1,32 @@
 import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
-import { IPhoneHero } from "@/components/iphone-hero"
-import { MacBookHero } from "@/components/macbook-hero"
-import { IPhoneShowcase } from "@/components/iphone-showcase"
+import { PhoneHero } from "@/components/phone-hero"
+import { LaptopHero } from "@/components/laptop-hero"
+import { PhoneShowcase } from "@/components/phone-showcase"
 import { HorizontalPan } from "@/components/horizontal-pan"
 import type { PanPanel } from "@/components/horizontal-pan"
 
-const IPHONE_PANELS: PanPanel[] = [
+const PHONE_PANELS: PanPanel[] = [
   {
     src: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80",
-    alt: "iPhone 16 Pro front view",
-    title: "Titanium design",
-    description: "Grade 5 titanium — same alloy used on Mars rovers.",
-    eyebrow: "iPhone 16 Pro",
+    alt: "UltraPhone X front view",
+    title: "Premium design",
+    description: "Grade 5 titanium — strong and lightweight.",
+    eyebrow: "UltraPhone X",
   },
   {
     src: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&q=80",
-    alt: "iPhone 16 Pro angle view",
+    alt: "UltraPhone X angle view",
     title: "Camera Control",
     description: "A new way to quickly launch the camera and snap photos.",
-    eyebrow: "iPhone 16 Pro",
+    eyebrow: "UltraPhone X",
   },
   {
     src: "https://images.unsplash.com/photo-1726732946451-98690db97aae?w=800&q=80",
-    alt: "iPhone 16 color options",
-    title: "A18 chip",
-    description: "3nm technology powers Apple Intelligence at blazing speed.",
-    eyebrow: "iPhone 16 Pro",
+    alt: "UltraPhone X color options",
+    title: "Next-gen chip",
+    description: "Cutting-edge 3nm technology powers AI at blazing speed.",
+    eyebrow: "UltraPhone X",
   },
 ]
 import { ProductLineup } from "@/components/product-lineup"
@@ -43,15 +43,15 @@ export default function Home() {
       <TopNotificationBar />
       <StickyNav />
       <main>
-        <IPhoneHero />
+        <PhoneHero />
 
-        <IPhoneShowcase />
+        <PhoneShowcase />
 
         <MorphGradient>
           <ProductLineup />
         </MorphGradient>
 
-        <MacBookHero />
+        <LaptopHero />
 
         <ColoredProductSection />
 
@@ -59,7 +59,7 @@ export default function Home() {
 
         <MediaCardGrid />
 
-        <HorizontalPan panels={IPHONE_PANELS} />
+        <HorizontalPan panels={PHONE_PANELS} />
       </main>
       <FooterSection />
     </>

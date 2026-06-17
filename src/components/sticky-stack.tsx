@@ -74,10 +74,10 @@ export function StickyStack() {
               key={card.title}
               className={`rounded-3xl bg-gradient-to-br ${card.gradient} p-10`}
             >
-              <h3 className="font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
+              <h3 className="font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
                 {card.title}
               </h3>
-              <p className="mt-2 max-w-[480px] font-sf-pro-text text-[17px] font-light leading-[1.47] text-paper/70">
+              <p className="mt-2 max-w-[480px] font-font-body text-[17px] font-light leading-[1.47] text-paper/70">
                 {card.description}
               </p>
             </div>
@@ -97,13 +97,13 @@ export function StickyStack() {
           <div
             className={`w-full max-w-[980px] rounded-3xl bg-gradient-to-br ${card.gradient} p-10 md:p-16`}
           >
-            <span className="font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-paper/40">
+            <span className="font-font-body text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-paper/40">
               0{i + 1}
             </span>
-            <h3 className="mt-4 font-sf-pro-display text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-paper md:text-[40px]">
+            <h3 className="mt-4 font-font-heading text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-paper md:text-[40px]">
               {card.title}
             </h3>
-            <p className="mt-3 max-w-[520px] font-sf-pro-text text-[17px] font-light leading-[1.38] tracking-[-0.11px] text-paper/60 md:text-[21px]">
+            <p className="mt-3 max-w-[520px] font-font-body text-[17px] font-light leading-[1.38] tracking-[-0.11px] text-paper/60 md:text-[21px]">
               {card.description}
             </p>
           </div>

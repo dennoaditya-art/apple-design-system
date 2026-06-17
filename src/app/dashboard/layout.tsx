@@ -75,7 +75,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <div className="flex h-full flex-col">
           <div className="flex h-[60px] items-center gap-3 border-b border-bone px-5">
             <Link href="/dashboard" className="flex items-center gap-3">
-              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-apple-blue text-paper">
+              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-accent text-paper">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
                   <rect x="1" y="1" width="5" height="5" rx="1" />
                   <rect x="8" y="1" width="5" height="5" rx="1" />
@@ -83,7 +83,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                   <rect x="8" y="8" width="5" height="5" rx="1" />
                 </svg>
               </div>
-              <span className="font-sf-pro-display text-[17px] font-semibold leading-[1.24] tracking-[-0.3px] text-graphite">
+              <span className="font-font-heading text-[17px] font-semibold leading-[1.24] tracking-[-0.3px] text-graphite">
                 Dashboard
               </span>
             </Link>
@@ -95,7 +95,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`flex items-center gap-3 rounded-md px-3 py-2.5 font-sf-pro-text text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
+                  className={`flex items-center gap-3 rounded-md px-3 py-2.5 font-font-body text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                     isActive
                       ? "bg-cloud font-semibold text-graphite"
                       : "text-fog hover:bg-cloud/50 hover:text-graphite"
@@ -110,7 +110,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <div className="border-t border-bone p-4">
             <Link
               href="/"
-              className="flex items-center gap-2 rounded-md px-3 py-2 font-sf-pro-text text-[13px] leading-[1.38] text-fog transition-colors hover:bg-cloud hover:text-graphite"
+              className="flex items-center gap-2 rounded-md px-3 py-2 font-font-body text-[13px] leading-[1.38] text-fog transition-colors hover:bg-cloud hover:text-graphite"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M1 7H13M7 1V13" />
@@ -135,14 +135,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             type="button"
             aria-label="Toggle sidebar"
             onClick={() => setSidebarOpen((v) => !v)}
-            className="p-3 md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+            className="p-3 md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
               <path d="M3 5H17M3 10H17M3 15H17" />
             </svg>
           </button>
           <div className="flex flex-1 items-center justify-between">
-            <h1 className="font-sf-pro-display text-[20px] font-semibold leading-[1.2] tracking-[-0.3px] text-graphite">
+            <h1 className="font-font-heading text-[20px] font-semibold leading-[1.2] tracking-[-0.3px] text-graphite">
               Overview
             </h1>
             <div className="flex items-center gap-4">
@@ -154,7 +154,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <input
                   type="search"
                   placeholder="Search..."
-                  className="w-[200px] rounded-md bg-cloud py-2 pl-9 pr-3 font-sf-pro-text text-[13px] text-graphite outline-none placeholder:text-fog focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+                  className="w-[200px] rounded-md bg-cloud py-2 pl-9 pr-3 font-font-body text-[13px] text-graphite outline-none placeholder:text-fog focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                   aria-label="Search dashboard"
                 />
               </div>
@@ -164,7 +164,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                   <path d="M6 11C6 12 7 13 8 13C9 13 10 12 10 11" />
                 </svg>
               </div>
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-apple-blue text-[12px] font-semibold text-paper" aria-label="Profile">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-[12px] font-semibold text-paper" aria-label="Profile">
                 A
               </div>
             </div>

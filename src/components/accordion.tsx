@@ -39,7 +39,7 @@ export function Accordion({ items, allowMultiple = false, className = "" }: Acco
               onClick={() => toggle(item.id)}
               aria-expanded={isOpen}
               aria-controls={`accordion-content-${item.id}`}
-              className="flex w-full items-center justify-between px-5 py-4 text-left font-sf-pro-text text-[15px] font-semibold leading-[1.47] text-graphite transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+              className="flex w-full items-center justify-between px-5 py-4 text-left font-font-body text-[15px] font-semibold leading-[1.47] text-graphite transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               {item.title}
               <motion.svg
@@ -68,7 +68,7 @@ export function Accordion({ items, allowMultiple = false, className = "" }: Acco
                   transition={prefersReduced ? { duration: 0 } : { duration: durations.fast, ease: easings.easeOut }}
                   className="overflow-hidden"
                 >
-                  <div className="px-5 pb-4 font-sf-pro-text text-[14px] leading-[1.57] text-fog">
+                  <div className="px-5 pb-4 font-font-body text-[14px] leading-[1.57] text-fog">
                     {item.content}
                   </div>
                 </motion.div>

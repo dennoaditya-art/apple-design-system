@@ -52,9 +52,9 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             type="button"
             onClick={() => setActive(i)}
             aria-label={`View ${img.alt}`}
-            className={`relative h-16 w-16 overflow-hidden rounded-sm border-2 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
+            className={`relative h-16 w-16 overflow-hidden rounded-sm border-2 transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
               i === active
-                ? "border-button-blue opacity-100 shadow-md"
+                ? "border-accent-solid opacity-100 shadow-md"
                 : "border-transparent opacity-50 hover:opacity-80"
             }`}
           >
@@ -72,7 +72,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
       </div>
 
       <div className="mt-4 text-center">
-        <p className="font-sf-pro-text text-[14px] font-light leading-[1.43] text-fog">
+        <p className="font-font-body text-[14px] font-light leading-[1.43] text-fog">
           {productName} · {active + 1} of {images.length}
         </p>
       </div>

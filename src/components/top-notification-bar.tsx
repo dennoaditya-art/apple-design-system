@@ -1,10 +1,10 @@
 export function TopNotificationBar() {
   return (
     <div className="flex h-[44px] items-center gap-2 bg-cloud px-5 text-[12px] leading-[1.33] text-graphite">
-      <span className="hidden flex-1 md:block">Shop the latest Apple products.</span>
+      <span className="hidden flex-1 md:block">Shop the latest gadgets and tech.</span>
       <div className="flex items-center gap-2">
         <span className="md:hidden">Ship to:</span>
-        <select aria-label="Select your country or region" className="cursor-pointer border border-graphite bg-transparent px-2 py-0.5 text-[12px] outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue">
+        <select aria-label="Select your country or region" className="cursor-pointer border border-graphite bg-transparent px-2 py-0.5 text-[12px] outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
           <option>US</option>
         </select>
       </div>

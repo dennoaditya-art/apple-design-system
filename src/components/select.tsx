@@ -23,7 +23,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         {label && (
           <label
             htmlFor={selectId}
-            className="mb-1.5 block font-sf-pro-text text-[14px] font-semibold leading-[1.43] text-graphite"
+            className="mb-1.5 block font-font-body text-[14px] font-semibold leading-[1.43] text-graphite"
           >
             {label}
           </label>
@@ -32,10 +32,10 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           <select
             ref={ref}
             id={selectId}
-            className={`w-full appearance-none rounded-lg border px-4 py-3 pr-10 font-sf-pro-text text-[15px] outline-none transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue ${
+            className={`w-full appearance-none rounded-lg border px-4 py-3 pr-10 font-font-body text-[15px] outline-none transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
               error
                 ? "border-red-500 bg-red-50 text-red-700"
-                : "border-bone bg-cloud text-graphite focus:border-apple-blue"
+                : "border-bone bg-cloud text-graphite focus:border-accent"
             } ${className}`}
             aria-invalid={error ? "true" : undefined}
             {...props}
@@ -66,7 +66,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           </svg>
         </div>
         {error && (
-          <p className="mt-1 font-sf-pro-text text-[12px] leading-[1.33] text-red-500" role="alert">
+          <p className="mt-1 font-font-body text-[12px] leading-[1.33] text-red-500" role="alert">
             {error}
           </p>
         )}

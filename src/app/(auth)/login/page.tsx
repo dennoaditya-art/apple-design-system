@@ -43,10 +43,10 @@ export default function LoginPage() {
   return (
     <div className="w-full rounded-2xl bg-paper px-8 py-8 shadow-sm">
       <div className="mb-6 text-center">
-        <h1 className="font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
+        <h1 className="font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
           Sign in
         </h1>
-        <p className="mt-1 font-sf-pro-text text-[15px] leading-[1.47] text-fog">
+        <p className="mt-1 font-font-body text-[15px] leading-[1.47] text-fog">
           Enter your credentials to continue.
         </p>
       </div>
@@ -74,7 +74,7 @@ export default function LoginPage() {
           <div className="mt-1 text-right">
             <Link
               href="/reset-password"
-              className="font-sf-pro-text text-[13px] leading-[1.38] text-apple-blue transition-colors hover:text-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+              className="font-font-body text-[13px] leading-[1.38] text-accent transition-colors hover:text-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             >
               Forgot password?
             </Link>
@@ -99,11 +99,11 @@ export default function LoginPage() {
         </PillButton>
       </form>
 
-      <p className="mt-6 text-center font-sf-pro-text text-[14px] leading-[1.43] text-fog">
+      <p className="mt-6 text-center font-font-body text-[14px] leading-[1.43] text-fog">
         Don&apos;t have an account?{" "}
         <Link
           href="/register"
-          className="font-semibold text-apple-blue transition-colors hover:text-deep-link-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+          className="font-semibold text-accent transition-colors hover:text-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
         >
           Create one
         </Link>

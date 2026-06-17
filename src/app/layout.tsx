@@ -1,19 +1,25 @@
 import type { Metadata, Viewport } from "next"
-import { Inter } from "next/font/google"
+import { Geist, Geist_Mono } from "next/font/google"
 import { LayoutClient } from "@/components/layout-client"
 import { CursorGlow } from "@/components/cursor-glow"
 import { BackToTop } from "@/components/back-to-top"
 import "./globals.css"
 
-const inter = Inter({
+const geistSans = Geist({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-geist-sans",
+})
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-geist-mono",
 })
 
 export const metadata: Metadata = {
-  title: "Apple Design System",
-  description: "A reference implementation of the Apple design system",
+  title: "Nova Store — Premium Gadgets",
+  description: "Discover the latest gadgets, phones, laptops, tablets, and more at Nova Store.",
   icons: {
     icon: "/favicon.svg",
   },
@@ -35,14 +41,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "@graph": [
       {
         "@type": "Organization",
-        name: "Apple Design System",
-        description: "A reference implementation of the Apple design system",
-        url: "https://apple-design-system.vercel.app",
+        name: "Nova Store",
+        description: "Premium gadget store",
+        url: "https://nova-store.vercel.app",
       },
       {
         "@type": "WebSite",
-        name: "Apple Design System",
-        url: "https://apple-design-system.vercel.app",
+        name: "Nova Store",
+        url: "https://nova-store.vercel.app",
       },
     ],
   }
@@ -55,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} pb-[50px] md:pb-0`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} pb-[50px] md:pb-0`}>
         <LayoutClient>{children}</LayoutClient>
         <CursorGlow />
         <BackToTop />

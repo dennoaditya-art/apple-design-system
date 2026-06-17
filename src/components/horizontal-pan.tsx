@@ -57,14 +57,14 @@ export function HorizontalPan({ panels, bgClass = "bg-ink" }: HorizontalPanProps
               </div>
               <div className="md:w-1/2 md:pl-8">
                 {panel.eyebrow && (
-                  <span className="font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-paper/40">
+                  <span className="font-font-body text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-paper/40">
                     {panel.eyebrow}
                   </span>
                 )}
-                <h3 className="mt-2 font-sf-pro-display text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
+                <h3 className="mt-2 font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
                   {panel.title}
                 </h3>
-                <p className="mt-2 font-sf-pro-text text-[17px] font-light leading-[1.47] text-paper/60">
+                <p className="mt-2 font-font-body text-[17px] font-light leading-[1.47] text-paper/60">
                   {panel.description}
                 </p>
               </div>
@@ -95,14 +95,14 @@ export function HorizontalPan({ panels, bgClass = "bg-ink" }: HorizontalPanProps
               </div>
               <div className="md:w-1/2">
                 {panel.eyebrow && (
-                  <span className="font-sf-pro-text text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-paper/30">
+                  <span className="font-font-body text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-paper/30">
                     {panel.eyebrow}
                   </span>
                 )}
-                <h3 className="mt-2 font-sf-pro-display text-[32px] font-semibold leading-[1.1] tracking-[-0.6px] text-paper md:text-[48px]">
+                <h3 className="mt-2 font-font-heading text-[32px] font-semibold leading-[1.1] tracking-[-0.6px] text-paper md:text-[48px]">
                   {panel.title}
                 </h3>
-                <p className="mt-3 max-w-[400px] font-sf-pro-text text-[17px] font-light leading-[1.47] text-paper/50 md:text-[21px]">
+                <p className="mt-3 max-w-[400px] font-font-body text-[17px] font-light leading-[1.47] text-paper/50 md:text-[21px]">
                   {panel.description}
                 </p>
               </div>

@@ -69,7 +69,7 @@ function SpringDemo() {
       </motion.button>
       <div className="space-y-3">
         <div>
-          <label className="block font-sf-pro-text text-[12px] font-normal leading-[1.33]"             style={{ color: "#5a5a51" }}>
+          <label className="block font-font-body text-[12px] font-normal leading-[1.33]"             style={{ color: "#5a5a51" }}>
             Stiffness: {stiffness}
           </label>
           <input
@@ -83,7 +83,7 @@ function SpringDemo() {
           />
         </div>
         <div>
-          <label className="block font-sf-pro-text text-[12px] font-normal leading-[1.33]"             style={{ color: "#5a5a51" }}>
+          <label className="block font-font-body text-[12px] font-normal leading-[1.33]"             style={{ color: "#5a5a51" }}>
             Damping: {damping}
           </label>
           <input
@@ -122,8 +122,8 @@ function TiltDemo() {
               color: "#0e100f",
             }}
           >
-            <p className="font-sf-pro-display text-[20px] font-semibold">3D Tilt</p>
-            <p className="mt-1 font-sf-pro-text text-[13px] font-light opacity-80">
+            <p className="font-font-heading text-[20px] font-semibold">3D Tilt</p>
+            <p className="mt-1 font-font-body text-[13px] font-light opacity-80">
               Move your mouse
             </p>
           </div>
@@ -167,7 +167,7 @@ function CounterDemo() {
           key={val}
           initial={prefersReduced ? undefined : { y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="font-sf-pro-display text-[48px] font-bold leading-[1]"
+          className="font-font-heading text-[48px] font-bold leading-[1]"
           style={{ color: "#fffce1" }}
         >
           {val}
@@ -213,16 +213,16 @@ export default function LabsPage() {
         {/* ── Header ── */}
         <div className="mb-16">
           <p
-            className="mb-2 font-sf-pro-text text-[13px] font-semibold uppercase tracking-[0.08em]"
+            className="mb-2 font-font-body text-[13px] font-semibold uppercase tracking-[0.08em]"
             style={{ color: "#5c5b57" }}
           >
             Interactive Lab
           </p>
-          <h1 className="font-sf-pro-display text-[40px] font-bold leading-[1.1] tracking-[-0.6px] md:text-[56px]">
+          <h1 className="font-font-heading text-[40px] font-bold leading-[1.1] tracking-[-0.6px] md:text-[56px]">
             Labs
           </h1>
           <p
-            className="mt-2 max-w-[480px] font-sf-pro-text text-[17px] font-light leading-[1.47]"
+            className="mt-2 max-w-[480px] font-font-body text-[17px] font-light leading-[1.47]"
             style={{ color: "#5c5b57" }}
           >
             Interactive code playgrounds. Tune parameters, see results in real time.
@@ -241,7 +241,7 @@ export default function LabsPage() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               transition={springs.snappy}
-              className="flex-1 cursor-pointer rounded-xs px-4 py-3 text-center font-sf-pro-text text-[14px] font-normal leading-[1.43] transition-colors"
+              className="flex-1 cursor-pointer rounded-xs px-4 py-3 text-center font-font-body text-[14px] font-normal leading-[1.43] transition-colors"
               style={{
                 backgroundColor: active === lab.id ? "#fff" : "transparent",
                 color: active === lab.id ? "#26251e" : "#5c5b57",
@@ -276,7 +276,7 @@ export default function LabsPage() {
         <div className="mt-16 text-center">
           <Link
             href="/motion-lab"
-            className="font-sf-pro-text text-[14px] font-normal leading-[1.43] transition-opacity hover:opacity-70"
+            className="font-font-body text-[14px] font-normal leading-[1.43] transition-opacity hover:opacity-70"
             style={{ color: "#5c5b57" }}
           >
             See all animations &rarr;

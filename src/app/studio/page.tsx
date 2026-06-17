@@ -57,14 +57,14 @@ function GalleryFrame({
           className="mb-8"
         >
           <p
-            className="mb-2 font-sf-pro-text text-[13px] font-semibold uppercase tracking-[0.08em]"
+            className="mb-2 font-font-body text-[13px] font-semibold uppercase tracking-[0.08em]"
             style={{ color: isDark ? "rgba(255,255,255,0.65)" : "rgba(0,0,0,0.65)" }}
           >
             {String(index + 1).padStart(2, "0")}
           </p>
           {index === 0 ? (
             <h1
-              className={`font-sf-pro-display text-[32px] font-bold leading-[1.1] tracking-[-0.6px] md:text-[56px] ${
+              className={`font-font-heading text-[32px] font-bold leading-[1.1] tracking-[-0.6px] md:text-[56px] ${
                 isDark ? "text-white" : "text-graphite"
               }`}
             >
@@ -72,7 +72,7 @@ function GalleryFrame({
             </h1>
           ) : (
             <h2
-              className={`font-sf-pro-display text-[32px] font-bold leading-[1.1] tracking-[-0.6px] md:text-[56px] ${
+              className={`font-font-heading text-[32px] font-bold leading-[1.1] tracking-[-0.6px] md:text-[56px] ${
                 isDark ? "text-white" : "text-graphite"
               }`}
             >
@@ -80,7 +80,7 @@ function GalleryFrame({
             </h2>
           )}
           <p
-            className="mt-2 max-w-[480px] font-sf-pro-text text-[17px] font-light leading-[1.47]"
+            className="mt-2 max-w-[480px] font-font-body text-[17px] font-light leading-[1.47]"
             style={{ color: isDark ? "rgba(255,255,255,0.75)" : "rgba(0,0,0,0.65)" }}
           >
             {item.subtitle}
@@ -121,12 +121,12 @@ export default function StudioPage() {
       <footer
         className="flex flex-col items-center justify-center gap-4 bg-black px-6 py-16 text-center text-white"
       >
-        <p className="font-sf-pro-text text-[14px] font-light leading-[1.43] opacity-60">
+        <p className="font-font-body text-[14px] font-light leading-[1.43] opacity-60">
           Studio &mdash; A gallery of light and shadow
         </p>
         <Link
           href="/"
-          className="font-sf-pro-text text-[14px] font-normal leading-[1.43] opacity-60 transition-opacity hover:opacity-100"
+          className="font-font-body text-[14px] font-normal leading-[1.43] opacity-60 transition-opacity hover:opacity-100"
         >
           &larr; Back to home
         </Link>

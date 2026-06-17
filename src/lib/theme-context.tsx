@@ -12,7 +12,7 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | null>(null)
 
-const STORAGE_KEY = "apple-design-system-theme"
+const STORAGE_KEY = "nova-store-theme"
 
 function getInitialTheme(): Theme {
   if (typeof window === "undefined") return "light"

@@ -6,11 +6,11 @@ import Image from "next/image"
 import { PillButton } from "@/components/pill-button"
 import { easings, durations } from "@/lib/motion"
 
-interface IPadHeroProps {
+interface TabletHeroProps {
   as?: "h1" | "h2"
 }
 
-export function IPadHero({ as: Heading = "h2" }: IPadHeroProps) {
+export function TabletHero({ as: Heading = "h2" }: TabletHeroProps) {
   const prefersReduced = useReducedMotion()
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -23,14 +23,14 @@ export function IPadHero({ as: Heading = "h2" }: IPadHeroProps) {
   if (prefersReduced) {
     return (
       <section className="relative flex flex-col items-center justify-center overflow-hidden bg-paper px-5 pb-0 pt-[80px] text-center">
-        <Heading className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
-          iPad Pro
+        <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+          Tablet Pro
         </Heading>
-        <p className="mt-3 max-w-[640px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
-          The ultimate iPad experience.
+        <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
+          The ultimate tablet experience.
         </p>
         <div className="mt-6 flex items-center gap-3">
-          <PillButton variant="filled" href="/ipad">Learn more</PillButton>
+          <PillButton variant="filled" href="/tablets">Learn more</PillButton>
           <PillButton variant="outlined" href="/store">Buy</PillButton>
         </div>
         <div className="relative mt-12 w-full max-w-[500px]">
@@ -55,7 +55,7 @@ export function IPadHero({ as: Heading = "h2" }: IPadHeroProps) {
     <section ref={ref} className="relative flex flex-col items-center justify-center overflow-hidden bg-paper px-5 pb-0 pt-[80px] text-center">
       <motion.div
         style={{ y: bgParallax }}
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-apple-blue/2 to-transparent"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-accent/2 to-transparent"
         aria-hidden="true"
       />
       <motion.div
@@ -63,17 +63,17 @@ export function IPadHero({ as: Heading = "h2" }: IPadHeroProps) {
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: durations.hero, ease: easings.dramatic }}
       >
-        <Heading className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
-          iPad Pro
+        <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+          Tablet Pro
         </Heading>
       </motion.div>
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.15 }}
-        className="mt-3 max-w-[640px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite"
+        className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite"
       >
-        The ultimate iPad experience.
+        The ultimate tablet experience.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -104,7 +104,7 @@ export function IPadHero({ as: Heading = "h2" }: IPadHeroProps) {
               >
                 <Image
                   src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80"
-                  alt="iPad Pro with Magic Keyboard"
+                  alt="Tablet Pro"
                   fill
                   sizes="(max-width: 500px) 100vw, 500px"
                   className="object-cover"

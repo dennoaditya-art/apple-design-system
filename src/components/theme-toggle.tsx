@@ -19,7 +19,7 @@ export function ThemeToggle() {
       <button
         type="button"
         aria-label="Toggle theme"
-        className="flex items-center justify-center p-2 opacity-0 transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue min-h-[44px] min-w-[44px]"
+        className="flex items-center justify-center p-2 opacity-0 transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px] min-w-[44px]"
       >
         <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" />
       </button>
@@ -33,7 +33,7 @@ export function ThemeToggle() {
       type="button"
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="flex items-center justify-center p-2 transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue min-h-[44px] min-w-[44px]"
+      className="flex items-center justify-center p-2 transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent min-h-[44px] min-w-[44px]"
     >
       {prefersReduced ? (
         isDark ? (

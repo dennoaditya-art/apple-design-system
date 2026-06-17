@@ -30,49 +30,49 @@ interface ServiceProps {
 
 const SERVICES: ServiceProps[] = [
   {
-    name: "Apple Music",
+    name: "Music+",
     tagline: "65 million songs. 3 months free.",
     icon: <MusicNote size={28} weight="regular" />,
     cardClass: "bg-gradient-to-br from-paper to-paper via-paper",
   },
   {
-    name: "Apple Arcade",
+    name: "Arcade+",
     tagline: "Over 200 games. No ads. No in-app purchases.",
     icon: <GameController size={28} weight="regular" />,
     cardClass: "bg-gradient-to-br from-paper to-sky-50/60",
   },
   {
-    name: "Apple Fitness+",
+    name: "Fitness+",
     tagline: "Studio workouts from home.",
     icon: <Heart size={28} weight="regular" />,
     cardClass: "bg-gradient-to-br from-paper to-rose-50/60",
   },
   {
-    name: "Apple News+",
+    name: "News+",
     tagline: "Leading stories. Curated for you.",
     icon: <Newspaper size={28} weight="regular" />,
     cardClass: "bg-gradient-to-br from-paper to-amber-50/60",
   },
   {
-    name: "iCloud+",
+    name: "Cloud+",
     tagline: "Store, sync, and share securely.",
     icon: <Cloud size={28} weight="regular" />,
     cardClass: "bg-gradient-to-br from-paper to-blue-50/60",
   },
   {
-    name: "Apple TV+",
+    name: "Stream+",
     tagline: "Original stories from the best minds.",
     icon: <Television size={28} weight="regular" />,
     cardClass: "bg-gradient-to-br from-paper to-indigo-50/60",
   },
   {
-    name: "Apple Books",
+    name: "Books+",
     tagline: "Millions of books. Yours to discover.",
     icon: <BookOpen size={28} weight="regular" />,
     cardClass: "bg-gradient-to-br from-paper to-orange-50/60",
   },
   {
-    name: "Apple Maps",
+    name: "Maps+",
     tagline: "Explore the world around you.",
     icon: <MapPin size={28} weight="regular" />,
     cardClass: "bg-gradient-to-br from-paper to-emerald-50/60",
@@ -91,10 +91,10 @@ export function MediaCardGrid() {
           transition={prefersReduced ? { duration: 0 } : { duration: durations.hero, ease: easings.dramatic }}
           className="mb-10 text-center"
         >
-          <h2 className="font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
-            More from Apple
+          <h2 className="font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
+            More from Nova
           </h2>
-          <p className="mt-2 font-sf-pro-text text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog">
+          <p className="mt-2 font-font-body text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog">
             Discover services that power your digital life.
           </p>
         </motion.div>
@@ -107,19 +107,19 @@ export function MediaCardGrid() {
                 className={`group flex h-full flex-col rounded-md ${service.cardClass} p-6 shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg`}
               >
                 <motion.div
-                  className="text-graphite transition-colors group-hover:text-apple-blue"
+                  className="text-graphite transition-colors group-hover:text-accent"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
                 >
                   {service.icon}
                 </motion.div>
-                <h3 className="mt-4 font-sf-pro-text text-[17px] font-semibold leading-[1.24] text-graphite">
+                <h3 className="mt-4 font-font-body text-[17px] font-semibold leading-[1.24] text-graphite">
                   {service.name}
                 </h3>
-                <p className="mt-1 font-sf-pro-text text-[14px] font-normal leading-[1.43] text-fog">
+                <p className="mt-1 font-font-body text-[14px] font-normal leading-[1.43] text-fog">
                   {service.tagline}
                 </p>
-                <span className="mt-auto inline-flex items-center gap-1 pt-4 font-sf-pro-text text-[14px] font-normal leading-[1.43] text-apple-blue transition-all group-hover:translate-x-0.5">
+                <span className="mt-auto inline-flex items-center gap-1 pt-4 font-font-body text-[14px] font-normal leading-[1.43] text-accent transition-all group-hover:translate-x-0.5">
                   Learn more
                   <CaretRight size={14} weight="bold" />
                 </span>

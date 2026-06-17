@@ -30,7 +30,7 @@ export function AudioFeatureGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: durations.hero, ease: easings.dramatic }}
-          className="text-center font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite"
+          className="text-center font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite"
         >
           Sound intelligence.
         </motion.h2>
@@ -39,9 +39,9 @@ export function AudioFeatureGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.12 }}
-          className="mt-2 text-center font-sf-pro-text text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog"
+          className="mt-2 text-center font-font-body text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog"
         >
-          AirPods Pro adapt to you and your environment in real time.
+          Earbuds adapt to you and your environment in real time.
         </motion.p>
 
         <StaggerGrid className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -52,8 +52,8 @@ export function AudioFeatureGrid() {
                   {f.icon}
                 </div>
                 <div>
-                  <h3 className="font-sf-pro-text text-[17px] font-semibold leading-[1.24] text-graphite">{f.name}</h3>
-                  <p className="mt-1 font-sf-pro-text text-[14px] font-normal leading-[1.43] text-fog">{f.description}</p>
+                  <h3 className="font-font-body text-[17px] font-semibold leading-[1.24] text-graphite">{f.name}</h3>
+                  <p className="mt-1 font-font-body text-[14px] font-normal leading-[1.43] text-fog">{f.description}</p>
                 </div>
               </div>
             </StaggerItem>

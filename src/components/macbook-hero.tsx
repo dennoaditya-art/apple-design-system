@@ -6,11 +6,11 @@ import Image from "next/image"
 import { PillButton } from "@/components/pill-button"
 import { easings, durations } from "@/lib/motion"
 
-interface MacBookHeroProps {
+interface LaptopHeroProps {
   as?: "h1" | "h2"
 }
 
-export function MacBookHero({ as: Heading = "h2" }: MacBookHeroProps) {
+export function LaptopHero({ as: Heading = "h2" }: LaptopHeroProps) {
   const prefersReduced = useReducedMotion()
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -25,14 +25,14 @@ export function MacBookHero({ as: Heading = "h2" }: MacBookHeroProps) {
       <section className="relative overflow-hidden bg-paper px-5 py-[80px]">
         <div className="mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <div className="text-left">
-            <Heading className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
-              MacBook Pro
+            <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+              Laptop Pro
             </Heading>
-            <p className="mt-3 max-w-[440px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-fog">
-              M4 Max. Built for the impossible.
+            <p className="mt-3 max-w-[440px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-fog">
+              Built for the impossible.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              <PillButton variant="filled" href="/mac">Learn more</PillButton>
+              <PillButton variant="filled" href="/laptops">Learn more</PillButton>
               <PillButton variant="outlined" href="/store">Buy</PillButton>
             </div>
           </div>
@@ -59,7 +59,7 @@ export function MacBookHero({ as: Heading = "h2" }: MacBookHeroProps) {
     <section ref={ref} className="relative overflow-hidden bg-paper px-5 py-[80px]">
       <motion.div
         style={{ y: bgParallax }}
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-apple-blue/2 to-transparent"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-accent/2 to-transparent"
         aria-hidden="true"
       />
       <div className="mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
@@ -70,8 +70,8 @@ export function MacBookHero({ as: Heading = "h2" }: MacBookHeroProps) {
             viewport={{ once: true }}
             transition={{ duration: durations.hero, ease: easings.dramatic }}
           >
-            <Heading className="font-sf-pro-display md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
-              MacBook Pro
+            <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+              Laptop Pro
             </Heading>
           </motion.div>
           <motion.p
@@ -79,9 +79,9 @@ export function MacBookHero({ as: Heading = "h2" }: MacBookHeroProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.15 }}
-            className="mt-3 max-w-[440px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-fog"
+            className="mt-3 max-w-[440px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-fog"
           >
-            M4 Max. Built for the impossible.
+            Built for the impossible.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ export function MacBookHero({ as: Heading = "h2" }: MacBookHeroProps) {
             transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.3 }}
             className="mt-6 flex items-center gap-3"
           >
-            <PillButton variant="filled" href="/mac">Learn more</PillButton>
+            <PillButton variant="filled" href="/laptops">Learn more</PillButton>
             <PillButton variant="outlined" href="/store">Buy</PillButton>
           </motion.div>
         </div>
@@ -108,7 +108,7 @@ export function MacBookHero({ as: Heading = "h2" }: MacBookHeroProps) {
                 <div className="relative" style={{ aspectRatio: "3 / 2" }}>
                   <Image
                     src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200&q=80"
-                    alt="MacBook Pro with M4 Max"
+                alt="Laptop Pro"
                     fill
                     sizes="(max-width: 768px) 100vw, 600px"
                     className="object-cover"

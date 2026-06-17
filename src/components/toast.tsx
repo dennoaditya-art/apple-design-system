@@ -41,13 +41,13 @@ const ICONS: Record<ToastType, ReactNode> = {
 const BORDER_COLORS: Record<ToastType, string> = {
   success: "border-green-500",
   error: "border-red-500",
-  info: "border-apple-blue",
+  info: "border-accent",
 }
 
 const TEXT_COLORS: Record<ToastType, string> = {
   success: "text-green-600",
   error: "text-red-600",
-  info: "text-apple-blue",
+  info: "text-accent",
 }
 
 export function ToastProvider({ children }: { children: ReactNode }) {
@@ -97,12 +97,12 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               className={`flex w-[360px] cursor-grab items-center gap-3 rounded-xl border-l-4 ${BORDER_COLORS[toast.type]} bg-paper px-4 py-3 shadow-md active:cursor-grabbing`}
             >
               <span className={`shrink-0 ${TEXT_COLORS[toast.type]}`}>{ICONS[toast.type]}</span>
-              <p className="flex-1 font-sf-pro-text text-[14px] leading-[1.43] text-graphite">{toast.message}</p>
+              <p className="flex-1 font-font-body text-[14px] leading-[1.43] text-graphite">{toast.message}</p>
               <button
                 type="button"
                 onClick={() => removeToast(toast.id)}
                 aria-label="Dismiss"
-                className="shrink-0 p-3 text-fog transition-colors hover:text-graphite focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-apple-blue"
+                className="shrink-0 p-3 text-fog transition-colors hover:text-graphite focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
                   <path d="M3 3L11 11M11 3L3 11" />

@@ -1,6 +1,6 @@
 import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
-import { AirPodsHero } from "@/components/airpods-hero"
+import { AudioHero } from "@/components/audio-hero"
 import { AudioFeatureGrid } from "@/components/audio-feature-grid"
 import { FeaturedMediaCard } from "@/components/featured-media-card"
 import { MediaCardGrid } from "@/components/media-card-grid"
@@ -14,13 +14,13 @@ export default function AirPodsPage() {
       <TopNotificationBar />
       <StickyNav />
       <main>
-        <AirPodsHero as="h1" />
+        <AudioHero as="h1" />
         <Reveal delay={0.1}>
           <section className="flex flex-col items-center justify-center bg-cloud px-5 py-[80px] text-center">
-            <h2 className="font-sf-pro-display md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
+            <h2 className="font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
               A magical experience.
             </h2>
-            <p className="mt-3 max-w-[640px] font-sf-pro-text text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
+            <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
               Adaptive Audio. Personalized Volume. Conversation Awareness.
             </p>
             <div className="mt-5">
