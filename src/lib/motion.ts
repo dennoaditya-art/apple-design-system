@@ -93,10 +93,9 @@ export function raycastShadow(options: RaycastShadowOptions = {}) {
 }
 
 /** Raycast-inspired radial gradient atmosphere — subtle glow behind content */
-export function raycastAtmosphere(color: "blue" | "violet" | "amber" = "violet") {
+export function raycastAtmosphere(color: "blue" | "amber" = "blue") {
   const gradients = {
     blue: "radial-gradient(ellipse 80% 50% at 50% 100%, rgba(59,130,246,0.08), transparent)",
-    violet: "radial-gradient(ellipse 80% 50% at 50% 100%, rgba(139,92,246,0.08), transparent)",
     amber: "radial-gradient(ellipse 80% 50% at 50% 100%, rgba(245,158,11,0.08), transparent)",
   }
   return gradients[color]

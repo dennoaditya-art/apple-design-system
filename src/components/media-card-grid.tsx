@@ -21,46 +21,61 @@ interface ServiceProps {
   icon: React.ReactNode
 }
 
+interface ServiceProps {
+  name: string
+  tagline: string
+  icon: React.ReactNode
+  cardClass?: string
+}
+
 const SERVICES: ServiceProps[] = [
   {
     name: "Apple Music",
     tagline: "65 million songs. 3 months free.",
     icon: <MusicNote size={28} weight="regular" />,
+    cardClass: "bg-gradient-to-br from-paper to-paper via-paper",
   },
   {
     name: "Apple Arcade",
     tagline: "Over 200 games. No ads. No in-app purchases.",
     icon: <GameController size={28} weight="regular" />,
+    cardClass: "bg-gradient-to-br from-paper to-sky-50/60",
   },
   {
     name: "Apple Fitness+",
     tagline: "Studio workouts from home.",
     icon: <Heart size={28} weight="regular" />,
+    cardClass: "bg-gradient-to-br from-paper to-rose-50/60",
   },
   {
     name: "Apple News+",
     tagline: "Leading stories. Curated for you.",
     icon: <Newspaper size={28} weight="regular" />,
+    cardClass: "bg-gradient-to-br from-paper to-amber-50/60",
   },
   {
     name: "iCloud+",
     tagline: "Store, sync, and share securely.",
     icon: <Cloud size={28} weight="regular" />,
+    cardClass: "bg-gradient-to-br from-paper to-blue-50/60",
   },
   {
     name: "Apple TV+",
     tagline: "Original stories from the best minds.",
     icon: <Television size={28} weight="regular" />,
+    cardClass: "bg-gradient-to-br from-paper to-indigo-50/60",
   },
   {
     name: "Apple Books",
     tagline: "Millions of books. Yours to discover.",
     icon: <BookOpen size={28} weight="regular" />,
+    cardClass: "bg-gradient-to-br from-paper to-orange-50/60",
   },
   {
     name: "Apple Maps",
     tagline: "Explore the world around you.",
     icon: <MapPin size={28} weight="regular" />,
+    cardClass: "bg-gradient-to-br from-paper to-emerald-50/60",
   },
 ]
 
@@ -89,7 +104,7 @@ export function MediaCardGrid() {
             <StaggerItem key={service.name}>
               <a
                 href="/store"
-                className="group flex h-full flex-col rounded-[8px] bg-paper p-6 shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg"
+                className={`group flex h-full flex-col rounded-[8px] ${service.cardClass} p-6 shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg`}
               >
                 <motion.div
                   className="text-graphite transition-colors group-hover:text-apple-blue"

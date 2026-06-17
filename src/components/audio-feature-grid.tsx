@@ -9,13 +9,14 @@ interface AudioFeature {
   icon: React.ReactNode
   name: string
   description: string
+  bgClass?: string
 }
 
 const FEATURES: AudioFeature[] = [
-  { icon: <Waveform size={28} weight="duotone" />, name: "Adaptive Audio", description: "Dynamically blends Transparency and Noise Cancellation based on your environment." },
-  { icon: <Sliders size={28} weight="duotone" />, name: "Personalized Volume", description: "Learns your listening preferences over time and adjusts volume automatically." },
-  { icon: <Ear size={28} weight="duotone" />, name: "Conversation Awareness", description: "Lowers music volume when you start speaking, then brings it back up." },
-  { icon: <Microphone size={28} weight="duotone" />, name: "Voice Isolation", description: "Advanced algorithm filters out background noise so your voice comes through loud and clear." },
+  { icon: <Waveform size={28} weight="duotone" />, name: "Adaptive Audio", description: "Dynamically blends Transparency and Noise Cancellation based on your environment.", bgClass: "bg-gradient-to-br from-paper to-paper" },
+  { icon: <Sliders size={28} weight="duotone" />, name: "Personalized Volume", description: "Learns your listening preferences over time and adjusts volume automatically.", bgClass: "bg-gradient-to-br from-paper to-blue-50/80" },
+  { icon: <Ear size={28} weight="duotone" />, name: "Conversation Awareness", description: "Lowers music volume when you start speaking, then brings it back up.", bgClass: "bg-gradient-to-br from-paper to-indigo-50/80" },
+  { icon: <Microphone size={28} weight="duotone" />, name: "Voice Isolation", description: "Advanced algorithm filters out background noise so your voice comes through loud and clear.", bgClass: "bg-gradient-to-br from-paper to-sky-50/80" },
 ]
 
 export function AudioFeatureGrid() {
@@ -46,8 +47,8 @@ export function AudioFeatureGrid() {
         <StaggerGrid className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
           {FEATURES.map((f) => (
             <StaggerItem key={f.name}>
-              <div className="flex items-start gap-5 rounded-[12px] bg-paper p-6 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg">
-                <div className="shrink-0 rounded-[10px] bg-graphite/5 p-3 text-graphite/70">
+              <div className={`flex items-start gap-5 rounded-[12px] ${f.bgClass} p-6 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg`}>
+                <div className="shrink-0 rounded-[10px] bg-graphite/[0.04] p-3 text-graphite/70">
                   {f.icon}
                 </div>
                 <div>

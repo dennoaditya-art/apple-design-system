@@ -73,7 +73,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
 
       <div className="mt-4 text-center">
         <p className="font-sf-pro-text text-[14px] font-light leading-[1.43] text-fog">
-          {productName} — {active + 1} of {images.length}
+          {productName} · {active + 1} of {images.length}
         </p>
       </div>
     </div>

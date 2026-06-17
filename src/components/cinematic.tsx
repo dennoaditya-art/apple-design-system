@@ -73,9 +73,9 @@ export function MorphGradient({ children, className = "" }: MorphGradientProps) 
     [0, 0.3, 0.7, 1],
     [
       "linear-gradient(180deg, rgba(41,151,255,0.02) 0%, transparent 100%)",
-      "linear-gradient(180deg, rgba(41,151,255,0.06) 0%, rgba(99,102,241,0.03) 50%, transparent 100%)",
-      "linear-gradient(180deg, rgba(99,102,241,0.03) 0%, rgba(236,72,153,0.02) 50%, transparent 100%)",
-      "linear-gradient(180deg, rgba(236,72,153,0.02) 0%, transparent 100%)",
+      "linear-gradient(180deg, rgba(41,151,255,0.06) 0%, transparent 100%)",
+      "linear-gradient(180deg, rgba(41,151,255,0.04) 0%, transparent 100%)",
+      "linear-gradient(180deg, rgba(41,151,255,0.02) 0%, transparent 100%)",
     ]
   )
 

@@ -9,13 +9,14 @@ interface LifestyleFeature {
   icon: React.ReactNode
   name: string
   description: string
+  bgClass?: string
 }
 
 const FEATURES: LifestyleFeature[] = [
-  { icon: <Heart size={28} weight="duotone" />, name: "Health Monitoring", description: "ECG, blood oxygen, temperature sensing" },
-  { icon: <Compass size={28} weight="duotone" />, name: "Outdoor GPS", description: "Precision dual-frequency GPS with maps" },
-  { icon: <Timer size={28} weight="duotone" />, name: "Endurance", description: "Up to 36 hours of battery life" },
-  { icon: <Waveform size={28} weight="duotone" />, name: "Action Button", description: "Customizable shortcut for your workouts" },
+  { icon: <Heart size={28} weight="duotone" />, name: "Health Monitoring", description: "ECG, blood oxygen, temperature sensing", bgClass: "bg-gradient-to-br from-paper to-rose-50/60" },
+  { icon: <Compass size={28} weight="duotone" />, name: "Outdoor GPS", description: "Precision dual-frequency GPS with maps", bgClass: "bg-gradient-to-br from-paper to-emerald-50/60" },
+  { icon: <Timer size={28} weight="duotone" />, name: "Endurance", description: "Up to 36 hours of battery life", bgClass: "bg-gradient-to-br from-paper to-amber-50/60" },
+  { icon: <Waveform size={28} weight="duotone" />, name: "Action Button", description: "Customizable shortcut for your workouts", bgClass: "bg-gradient-to-br from-paper to-blue-50/60" },
 ]
 
 export function LifestyleShowcase() {
@@ -47,7 +48,7 @@ export function LifestyleShowcase() {
           <StaggerItem>
             <div className="flex flex-col gap-5">
               {FEATURES.slice(0, 2).map((f) => (
-                <div key={f.name} className="flex items-start gap-5 rounded-[12px] bg-paper p-6 shadow-xl">
+                <div key={f.name} className={`flex items-start gap-5 rounded-[12px] ${f.bgClass} p-6 shadow-xl`}>
                   <div className="shrink-0 text-graphite/70">{f.icon}</div>
                   <div>
                     <h3 className="font-sf-pro-text text-[17px] font-semibold leading-[1.24] text-graphite">{f.name}</h3>
@@ -60,7 +61,7 @@ export function LifestyleShowcase() {
           <StaggerItem>
             <div className="flex flex-col gap-5">
               {FEATURES.slice(2).map((f) => (
-                <div key={f.name} className="flex items-start gap-5 rounded-[12px] bg-paper p-6 shadow-xl">
+                <div key={f.name} className={`flex items-start gap-5 rounded-[12px] ${f.bgClass} p-6 shadow-xl`}>
                   <div className="shrink-0 text-graphite/70">{f.icon}</div>
                   <div>
                     <h3 className="font-sf-pro-text text-[17px] font-semibold leading-[1.24] text-graphite">{f.name}</h3>
