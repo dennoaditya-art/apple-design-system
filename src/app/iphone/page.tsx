@@ -11,37 +11,37 @@ import { FooterSection } from "@/components/footer-section"
 import { Reveal } from "@/components/reveal"
 import { ScrollParallax } from "@/components/scroll-parallax"
 
-const IPHONE_GALLERY = [
-  { src: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80", alt: "iPhone 16 Pro front view in natural lighting" },
-  { src: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&q=80", alt: "iPhone 16 Pro angle view showing titanium frame" },
-  { src: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&q=80", alt: "iPhone 16 Pro side profile" },
+const PHONE_GALLERY = [
+  { src: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80", alt: "UltraPhone X front view" },
+  { src: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&q=80", alt: "UltraPhone X angle view" },
+  { src: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=800&q=80", alt: "UltraPhone X side profile" },
 ]
 
-const IPHONE_PANELS: PanPanel[] = [
+const PHONE_PANELS: PanPanel[] = [
   {
     src: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80",
-    alt: "iPhone 16 Pro titanium design",
+    alt: "UltraPhone X titanium design",
     title: "Titanium design",
     description: "Grade 5 titanium — strong, lightweight, corrosion-resistant.",
-    eyebrow: "iPhone 16 Pro",
+    eyebrow: "UltraPhone X",
   },
   {
     src: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&q=80",
-    alt: "iPhone 16 Pro camera system",
+    alt: "UltraPhone X camera system",
     title: "Pro camera system",
     description: "48 MP Fusion camera with 5x optical zoom. ProRAW and Log encoding.",
-    eyebrow: "iPhone 16 Pro",
+    eyebrow: "UltraPhone X",
   },
   {
     src: "https://images.unsplash.com/photo-1726732946451-98690db97aae?w=800&q=80",
-    alt: "iPhone 16 A18 chip",
+    alt: "UltraPhone X chip",
     title: "A18 Pro",
     description: "Second-generation 3nm chip. 16-core Neural Engine for next-gen AI.",
-    eyebrow: "iPhone 16 Pro",
+    eyebrow: "UltraPhone X",
   },
 ]
 
-export default function IPhonePage() {
+export default function PhonePage() {
   return (
     <>
       <TopNotificationBar />
@@ -54,7 +54,7 @@ export default function IPhonePage() {
               <h2 className="mb-6 text-center font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
                 View in detail
               </h2>
-              <ProductGallery images={IPHONE_GALLERY} productName="iPhone 16 Pro" />
+              <ProductGallery images={PHONE_GALLERY} productName="UltraPhone X" />
             </div>
           </section>
         </Reveal>
@@ -64,7 +64,7 @@ export default function IPhonePage() {
 
         <StickyStack />
 
-        <HorizontalPan panels={IPHONE_PANELS} />
+        <HorizontalPan panels={PHONE_PANELS} />
 
         <ScrollParallax offset={30}>
           <Reveal delay={0.1}>

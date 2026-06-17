@@ -40,7 +40,7 @@ export function LaptopHero({ as: Heading = "h2" }: LaptopHeroProps) {
             <div className="relative" style={{ aspectRatio: "3 / 2" }}>
               <Image
                 src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200&q=80"
-                alt="MacBook Pro with M4 Max"
+                alt="Laptop Pro"
                 fill
                 sizes="(max-width: 768px) 100vw, 600px"
                 className="object-cover"

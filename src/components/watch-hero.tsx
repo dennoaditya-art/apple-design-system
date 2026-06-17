@@ -24,7 +24,7 @@ export function WatchHero({ as: Heading = "h2" }: WatchHeroProps) {
     return (
       <section className="relative flex flex-col items-center justify-center overflow-hidden bg-paper px-5 pb-0 pt-[80px] text-center">
         <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
-          Watch Ultra 2
+          Watch Pro
         </Heading>
         <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
           Adventure awaits.
@@ -37,7 +37,7 @@ export function WatchHero({ as: Heading = "h2" }: WatchHeroProps) {
           <div className="relative overflow-hidden shadow-xl" style={{ aspectRatio: "1 / 1" }}>
             <Image
               src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600&q=80"
-              alt="Watch Ultra 2 on wrist"
+              alt="Watch Pro on wrist"
               fill
               sizes="(max-width: 400px) 100vw, 400px"
               className="object-cover"
@@ -59,7 +59,7 @@ export function WatchHero({ as: Heading = "h2" }: WatchHeroProps) {
         transition={{ duration: durations.hero, ease: easings.dramatic }}
       >
         <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
-          Watch Ultra 2
+          Watch Pro
         </Heading>
       </motion.div>
       <motion.p
@@ -96,7 +96,7 @@ export function WatchHero({ as: Heading = "h2" }: WatchHeroProps) {
           >
             <Image
               src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600&q=80"
-              alt="Watch Ultra 2 on wrist"
+              alt="Watch Pro on wrist"
               fill
               sizes="(max-width: 400px) 100vw, 400px"
               className="object-cover"

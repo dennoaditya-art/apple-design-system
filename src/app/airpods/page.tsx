@@ -8,7 +8,7 @@ import { FooterSection } from "@/components/footer-section"
 import { PillButton } from "@/components/pill-button"
 import { Reveal } from "@/components/reveal"
 
-export default function AirPodsPage() {
+export default function AudioPage() {
   return (
     <>
       <TopNotificationBar />

@@ -83,7 +83,7 @@ export function ColoredProductSection() {
       >
         <Image
           src="https://images.unsplash.com/photo-1682426526490-667d4912b8de?w=1000&q=80"
-          alt="iPad Air"
+          alt="Tablet Air"
           fill
           sizes="65vw"
           className="object-contain"

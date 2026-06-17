@@ -37,7 +37,7 @@ export function TabletHero({ as: Heading = "h2" }: TabletHeroProps) {
           <div className="relative overflow-hidden shadow-xl" style={{ aspectRatio: "4 / 3" }}>
             <Image
               src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80"
-              alt="iPad Pro with Magic Keyboard"
+              alt="Tablet Pro"
               fill
               sizes="(max-width: 500px) 100vw, 500px"
               className="object-cover"

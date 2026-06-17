@@ -8,7 +8,7 @@ import { FooterSection } from "@/components/footer-section"
 import { Reveal } from "@/components/reveal"
 import { ScrollParallax } from "@/components/scroll-parallax"
 
-export default function IPadPage() {
+export default function TabletPage() {
   return (
     <>
       <TopNotificationBar />

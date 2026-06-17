@@ -10,37 +10,37 @@ import { FooterSection } from "@/components/footer-section"
 import { Reveal } from "@/components/reveal"
 import { ScrollParallax } from "@/components/scroll-parallax"
 
-const MAC_GALLERY = [
-  { src: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80", alt: "MacBook Pro with M4 Max on desk" },
-  { src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80", alt: "MacBook Pro open showing Liquid Retina display" },
-  { src: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80", alt: "MacBook Pro angled view highlighting Space Black finish" },
+const LAPTOP_GALLERY = [
+  { src: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80", alt: "Laptop Pro on desk" },
+  { src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80", alt: "Laptop Pro open display" },
+  { src: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80", alt: "Laptop Pro angled view" },
 ]
 
-const MAC_PANELS: PanPanel[] = [
+const LAPTOP_PANELS: PanPanel[] = [
   {
     src: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80",
-    alt: "MacBook Pro with M4 Max",
-    title: "M4 Max",
+    alt: "Laptop Pro chip",
+    title: "Pro Chip",
     description: "Up to 16-core CPU and 40-core GPU. Pro performance beyond imagination.",
-    eyebrow: "MacBook Pro",
+    eyebrow: "Laptop Pro",
   },
   {
     src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80",
-    alt: "MacBook Pro Liquid Retina display",
-    title: "Liquid Retina XDR",
+    alt: "Laptop Pro display",
+    title: "Pro Display XDR",
     description: "Extreme dynamic range with 1600 nits peak brightness. Pro reference modes.",
-    eyebrow: "MacBook Pro",
+    eyebrow: "Laptop Pro",
   },
   {
     src: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80",
-    alt: "MacBook Pro open on desk",
-    title: "Up to 24 hours",
-    description: "All-day battery life. The most power-efficient pro laptop ever.",
-    eyebrow: "MacBook Pro",
+    alt: "Laptop Pro battery",
+    title: "All-day battery",
+    description: "Up to 24 hours. The most power-efficient pro laptop ever.",
+    eyebrow: "Laptop Pro",
   },
 ]
 
-export default function MacPage() {
+export default function LaptopPage() {
   return (
     <>
       <TopNotificationBar />
@@ -53,7 +53,7 @@ export default function MacPage() {
               <h2 className="mb-6 text-center font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
                 View in detail
               </h2>
-              <ProductGallery images={MAC_GALLERY} productName="MacBook Pro" />
+              <ProductGallery images={LAPTOP_GALLERY} productName="Laptop Pro" />
             </div>
           </section>
         </Reveal>
@@ -68,7 +68,7 @@ export default function MacPage() {
           </Reveal>
         </ScrollParallax>
 
-        <HorizontalPan panels={MAC_PANELS} bgClass="bg-ink" />
+        <HorizontalPan panels={LAPTOP_PANELS} bgClass="bg-ink" />
       </main>
       <FooterSection />
     </>

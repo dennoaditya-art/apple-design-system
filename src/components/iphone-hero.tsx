@@ -36,7 +36,7 @@ export function PhoneHero() {
             <div className="relative" style={{ aspectRatio: "9 / 16" }}>
               <Image
                 src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500&q=80"
-                alt="iPhone 16 Pro"
+                alt="UltraPhone X"
                 fill
                 sizes="(max-width: 400px) 100vw, 400px"
                 className="object-cover"
