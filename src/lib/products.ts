@@ -143,7 +143,7 @@ export const PRODUCTS: Product[] = [
     tagline: "Pixel-perfect precision.",
     price: "$129",
     category: "accessories",
-    imageSrc: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&q=80",
+    imageSrc: "https://images.unsplash.com/photo-1588778841637-8bb1e92be057?w=600&q=80",
   },
 ]
 
