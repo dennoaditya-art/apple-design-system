@@ -14,22 +14,22 @@ interface ShowProps {
 
 const SHOWS: ShowProps[] = [
   {
-    name: "Severance",
+    name: "The Divide",
     tagline: "A workplace thriller like no other.",
     imageSrc: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80",
   },
   {
-    name: "Ted Lasso",
+    name: "Coach",
     tagline: "Believe in the power of optimism.",
     imageSrc: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&q=80",
   },
   {
-    name: "Foundation",
+    name: "Starborn",
     tagline: "The fate of the galaxy awaits.",
     imageSrc: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&q=80",
   },
   {
-    name: "Monarch",
+    name: "Titan",
     tagline: "Legacy of monsters begins.",
     imageSrc: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=400&q=80",
   },
@@ -57,7 +57,7 @@ export function FeaturedMediaCard() {
 
         <motion.a
                 href="/entertainment"
-              aria-label="Watch Silo, a dystopian mystery in the bunker"
+              aria-label="Watch The Bunker, a dystopian mystery"
           initial={prefersReduced ? undefined : { opacity: 0, y: 30, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
@@ -67,7 +67,7 @@ export function FeaturedMediaCard() {
         >
           <Image
             src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80"
-            alt="Poster for Silo"
+            alt="Poster for The Bunker"
             fill
             sizes="(max-width: 800px) 100vw, 800px"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -84,10 +84,10 @@ export function FeaturedMediaCard() {
             </span>
             <div>
               <h3 className="font-font-heading md:text-[28px] text-[22px] font-semibold leading-[1.14] tracking-[-0.28px] text-paper">
-                Silo
+                The Bunker
               </h3>
               <p className="mt-0.5 font-font-body text-[14px] font-light leading-[1.43] text-paper/80">
-                A dystopian mystery in the bunker.
+                A dystopian mystery deep underground.
               </p>
             </div>
           </div>
