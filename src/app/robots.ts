@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://nova-store.vercel.app/sitemap.xml",
+    sitemap: "https://toko-gadget.vercel.app/sitemap.xml",
   }
 }
