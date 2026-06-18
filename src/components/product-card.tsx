@@ -16,7 +16,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div className="overflow-hidden rounded-xl bg-paper shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
-      <Link href={`/${product.category}`} className="block">
+      <Link href={product.category === "accessories" ? "/store" : `/${product.category}`} className="block">
         <div className="relative w-full overflow-hidden bg-fog" style={{ paddingBottom: "100%" }}>
           <Image
             src={product.imageSrc}

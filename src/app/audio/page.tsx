@@ -1,4 +1,11 @@
+import type { Metadata } from "next"
 import { TopNotificationBar } from "@/components/top-notification-bar"
+
+export const metadata: Metadata = {
+  title: "Audio",
+  description: "Discover premium audio at Nova Store. Earbuds Pro 2, Headphones Max, and more — sound the way it was meant to be.",
+  openGraph: { title: "Audio | Nova Store", description: "Discover premium audio at Nova Store." },
+}
 import { StickyNav } from "@/components/sticky-nav"
 import { AudioHero } from "@/components/audio-hero"
 import { AudioFeatureGrid } from "@/components/audio-feature-grid"

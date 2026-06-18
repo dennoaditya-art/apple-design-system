@@ -167,13 +167,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                   aria-label="Search dashboard"
                 />
               </div>
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-fog text-graphite" aria-label="Notifications">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-fog text-graphite" aria-hidden="true">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M8 1C5.5 1 4 3.5 4 5.5V8L2.5 11H13.5L12 8V5.5C12 3.5 10.5 1 8 1Z" />
                   <path d="M6 11C6 12 7 13 8 13C9 13 10 12 10 11" />
                 </svg>
               </div>
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-[12px] font-semibold text-paper" aria-label="Profile">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-[12px] font-semibold text-paper" aria-hidden="true">
                 A
               </div>
             </div>

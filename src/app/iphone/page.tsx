@@ -1,4 +1,10 @@
+import type { Metadata } from "next"
 import { TopNotificationBar } from "@/components/top-notification-bar"
+
+export const metadata: Metadata = {
+  title: "Phones",
+  description: "Explore the latest smartphones at Nova Store. UltraPhone X with titanium design and pro camera system.",
+}
 import { StickyNav } from "@/components/sticky-nav"
 import { PhoneHero } from "@/components/phone-hero"
 import { PhoneShowcase } from "@/components/phone-showcase"

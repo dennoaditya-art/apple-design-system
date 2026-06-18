@@ -72,14 +72,14 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
           {results.slice(0, 6).map((product) => (
             <li key={product.id}>
               <Link
-                href={`/${product.category}`}
+                href={product.category === "accessories" ? "/store" : `/${product.category}`}
                 onClick={onClose}
                 className="flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-fog focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-sm bg-fog">
                   <Image
                     src={product.imageSrc}
-                    alt=""
+                    alt={product.name}
                     fill
                     sizes="48px"
                     className="object-cover"
@@ -119,14 +119,14 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
             {PRODUCTS.slice(0, 5).map((product) => (
               <Link
                 key={product.id}
-                href={`/${product.category}`}
+                href={product.category === "accessories" ? "/store" : `/${product.category}`}
                 onClick={onClose}
                 className="flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-fog focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-sm bg-fog">
                   <Image
                     src={product.imageSrc}
-                    alt=""
+                    alt={product.name}
                     fill
                     sizes="40px"
                     className="object-cover"

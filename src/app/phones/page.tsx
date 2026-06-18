@@ -1,4 +1,11 @@
+import type { Metadata } from "next"
 import { TopNotificationBar } from "@/components/top-notification-bar"
+
+export const metadata: Metadata = {
+  title: "Phones",
+  description: "Explore the latest smartphones at Nova Store. UltraPhone X, Phone S, and more — titanium design, pro camera system.",
+  openGraph: { title: "Phones | Nova Store", description: "Explore the latest smartphones at Nova Store." },
+}
 import { StickyNav } from "@/components/sticky-nav"
 import { PhoneHero } from "@/components/phone-hero"
 import { PhoneShowcase } from "@/components/phone-showcase"

@@ -19,8 +19,9 @@ export function NewsletterCta() {
               <input
                 type="email"
                 placeholder="Enter your email"
+                aria-label="Enter your email"
                 required
-                className="w-full rounded-full border border-steel bg-slate px-5 py-3.5 font-font-body text-[15px] text-paper outline-none transition-all placeholder:text-graphite focus:border-accent focus:ring-2 focus:ring-accent/20"
+                className="w-full rounded-full border border-steel bg-slate px-5 py-3.5 font-font-body text-[15px] text-paper outline-none transition-all placeholder:text-graphite focus:border-accent focus:ring-2 focus:ring-accent/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               />
               <button
                 type="submit"

@@ -1,4 +1,10 @@
+import type { Metadata } from "next"
 import { TopNotificationBar } from "@/components/top-notification-bar"
+
+export const metadata: Metadata = {
+  title: "Entertainment",
+  description: "Stream original series and movies with Nova Stream+. Exclusive content, ad-free.",
+}
 import { StickyNav } from "@/components/sticky-nav"
 import { FeaturedMediaCard } from "@/components/featured-media-card"
 import { MediaCardGrid } from "@/components/media-card-grid"

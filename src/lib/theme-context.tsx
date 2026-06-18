@@ -16,8 +16,10 @@ const STORAGE_KEY = "nova-store-theme"
 
 function getInitialTheme(): Theme {
   if (typeof window === "undefined") return "light"
-  const stored = localStorage.getItem(STORAGE_KEY)
-  if (stored === "light" || stored === "dark") return stored
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY)
+      if (stored === "light" || stored === "dark") return stored
+    } catch { /* private browsing */ }
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
 }
 
@@ -26,7 +28,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   const applyTheme = useCallback((t: Theme) => {
     document.documentElement.setAttribute("data-theme", t)
-    localStorage.setItem(STORAGE_KEY, t)
+    try { localStorage.setItem(STORAGE_KEY, t) } catch { /* private browsing */ }
   }, [])
 
   useEffect(() => {

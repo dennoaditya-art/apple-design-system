@@ -60,7 +60,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
           >
             <Image
               src={img.src}
-              alt=""
+              alt={img.alt}
               fill
               sizes="64px"
               className="object-cover"

@@ -18,10 +18,26 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Nova Store — Premium Gadgets",
+  title: {
+    default: "Nova Store — Premium Gadgets",
+    template: "%s | Nova Store",
+  },
   description: "Discover the latest gadgets, phones, laptops, tablets, and more at Nova Store.",
   icons: {
     icon: "/favicon.svg",
+  },
+  openGraph: {
+    title: "Nova Store — Premium Gadgets",
+    description: "Discover the latest gadgets, phones, laptops, tablets, and more at Nova Store.",
+    url: "https://nova-store-gadget.vercel.app",
+    siteName: "Nova Store",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nova Store — Premium Gadgets",
+    description: "Discover the latest gadgets, phones, laptops, tablets, and more at Nova Store.",
   },
 }
 
@@ -61,7 +77,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} pb-[50px] md:pb-0`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} pb-[var(--mobile-nav-height)] md:pb-0`} style={{"--mobile-nav-height": "50px"} as React.CSSProperties}>
         <LayoutClient>{children}</LayoutClient>
         <CursorGlow />
         <BackToTop />

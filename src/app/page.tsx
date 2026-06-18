@@ -1,4 +1,14 @@
+import type { Metadata } from "next"
 import { TopNotificationBar } from "@/components/top-notification-bar"
+
+export const metadata: Metadata = {
+  title: "Nova Store — Premium Gadgets",
+  description: "Discover the latest premium gadgets at Nova Store. Shop phones, laptops, tablets, watches, audio, and more.",
+  openGraph: {
+    title: "Nova Store — Premium Gadgets",
+    description: "Discover the latest premium gadgets at Nova Store.",
+  },
+}
 import { StickyNav } from "@/components/sticky-nav"
 import { PhoneHero } from "@/components/phone-hero"
 import { LaptopHero } from "@/components/laptop-hero"

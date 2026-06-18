@@ -27,12 +27,12 @@ export default function SettingsPage() {
         <p className="mt-0.5 font-font-body text-[13px] text-graphite">Configure your store details.</p>
         <div className="mt-4 space-y-3">
           <div>
-            <label className="font-font-body text-[13px] font-semibold text-ink">Store name</label>
-            <input type="text" defaultValue="Nova Store" className="mt-1 w-full rounded-lg border border-silver bg-fog px-4 py-2.5 font-font-body text-[14px] text-ink outline-none focus:border-accent" />
+            <label htmlFor="store-name" className="font-font-body text-[13px] font-semibold text-ink">Store name</label>
+            <input id="store-name" type="text" defaultValue="Nova Store" className="mt-1 w-full rounded-lg border border-silver bg-fog px-4 py-2.5 font-font-body text-[14px] text-ink outline-none focus:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" />
           </div>
           <div>
-            <label className="font-font-body text-[13px] font-semibold text-ink">Currency</label>
-            <select className="mt-1 w-full rounded-lg border border-silver bg-fog px-4 py-2.5 font-font-body text-[14px] text-ink outline-none focus:border-accent">
+            <label htmlFor="currency" className="font-font-body text-[13px] font-semibold text-ink">Currency</label>
+            <select id="currency" className="mt-1 w-full rounded-lg border border-silver bg-fog px-4 py-2.5 font-font-body text-[14px] text-ink outline-none focus:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
               <option>USD ($)</option>
               <option>EUR (€)</option>
               <option>IDR (Rp)</option>

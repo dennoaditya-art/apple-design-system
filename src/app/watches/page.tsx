@@ -1,4 +1,11 @@
+import type { Metadata } from "next"
 import { TopNotificationBar } from "@/components/top-notification-bar"
+
+export const metadata: Metadata = {
+  title: "Watches",
+  description: "Explore smartwatches at Nova Store. Watch Pro and Watch Series X with advanced health monitoring and fitness tracking.",
+  openGraph: { title: "Watches | Nova Store", description: "Explore smartwatches at Nova Store." },
+}
 import { StickyNav } from "@/components/sticky-nav"
 import { WatchHero } from "@/components/watch-hero"
 import { LifestyleShowcase } from "@/components/lifestyle-showcase"

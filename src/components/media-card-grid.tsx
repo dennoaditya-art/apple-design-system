@@ -105,7 +105,7 @@ export function MediaCardGrid() {
                 <div className="relative w-full overflow-hidden" style={{ aspectRatio: "16 / 9" }}>
                   <Image
                     src={service.imageSrc}
-                    alt=""
+                    alt={service.name}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 50vw, 240px"

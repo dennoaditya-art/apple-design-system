@@ -30,7 +30,8 @@ export function SupportHero() {
             <input
               type="text"
               placeholder="Search for articles..."
-              className="w-full rounded-full border border-silver bg-transparent py-4 pl-12 pr-6 font-font-body text-[17px] text-ink outline-none transition-all focus:border-accent focus:ring-4 focus:ring-accent/10"
+              aria-label="Search for articles"
+              className="w-full rounded-full border border-silver bg-transparent py-4 pl-12 pr-6 font-font-body text-[17px] text-ink outline-none transition-all focus:border-accent focus:ring-4 focus:ring-accent/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
             />
           </div>
         </motion.div>

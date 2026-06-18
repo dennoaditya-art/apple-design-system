@@ -11,7 +11,7 @@ export default function AnalyticsPage() {
             <rect x="1" y="1" width="16" height="16" rx="2" /><path d="M1 6H17" />
           </svg>
         } />
-        <StatsCard title="Bounce Rate" value="32.1%" change="-2.4%" trend="up" index={1} icon={
+        <StatsCard title="Bounce Rate" value="32.1%" change="-2.4%" trend="down" index={1} icon={
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
             <path d="M1 17L6 10L10 13L17 1" /><path d="M13 1H17V5" />
           </svg>

@@ -1,4 +1,10 @@
+import type { Metadata } from "next"
 import { TopNotificationBar } from "@/components/top-notification-bar"
+
+export const metadata: Metadata = {
+  title: "Tablets",
+  description: "Browse tablets at Nova Store. Tablet Pro and Tablet Air with stunning displays and powerful performance.",
+}
 import { StickyNav } from "@/components/sticky-nav"
 import { TabletHero } from "@/components/tablet-hero"
 import { ProductActionGrid } from "@/components/product-action-grid"

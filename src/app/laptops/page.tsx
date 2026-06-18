@@ -1,4 +1,11 @@
+import type { Metadata } from "next"
 import { TopNotificationBar } from "@/components/top-notification-bar"
+
+export const metadata: Metadata = {
+  title: "Laptops",
+  description: "Discover powerful laptops at Nova Store. Laptop Pro and Laptop Air with next-gen processors and Liquid Retina XDR displays.",
+  openGraph: { title: "Laptops | Nova Store", description: "Discover powerful laptops at Nova Store." },
+}
 import { StickyNav } from "@/components/sticky-nav"
 import { LaptopHero } from "@/components/laptop-hero"
 import { ProductSpecGrid } from "@/components/product-spec-grid"
