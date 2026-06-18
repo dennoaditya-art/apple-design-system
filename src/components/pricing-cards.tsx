@@ -94,3 +94,4 @@ export function PricingCards() {
     </section>
   )
 }
+PricingCards.displayName = "PricingCards"

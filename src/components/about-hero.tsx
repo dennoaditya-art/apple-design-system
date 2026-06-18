@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "motion/react"
 import { easings, durations } from "@/lib/motion"
 
 export function AboutHero() {
+
   const prefersReduced = useReducedMotion()
 
   return (
@@ -47,3 +48,4 @@ export function AboutHero() {
     </section>
   )
 }
+AboutHero.displayName = "AboutHero"

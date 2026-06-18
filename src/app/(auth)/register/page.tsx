@@ -15,6 +15,7 @@ export default function RegisterPage() {
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState<{ name?: string; email?: string; password?: string; agree?: string }>({})
   const { addToast } = useToast()
+  const SIM_AUTH_DELAY = 1200
   const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
   useEffect(() => {
@@ -42,7 +43,7 @@ export default function RegisterPage() {
     timerRef.current = setTimeout(() => {
       setLoading(false)
       addToast("Account created successfully!", "success")
-    }, 1200)
+    }, SIM_AUTH_DELAY)
   }
 
   return (

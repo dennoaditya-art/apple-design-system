@@ -1,5 +1,7 @@
 "use client"
 
+import { STATUS_STYLES } from "@/lib/orders"
+
 export default function OrdersPage() {
   const ORDERS = [
     { id: "#ORD-001", customer: "Alice Johnson", product: "UltraPhone X", amount: "$1,199", date: "12 Jun 2026", status: "Completed" as const },
@@ -10,12 +12,6 @@ export default function OrdersPage() {
     { id: "#ORD-006", customer: "Frank Brown", product: "UltraPhone X Plus", amount: "$1,399", date: "07 Jun 2026", status: "Processing" as const },
     { id: "#ORD-007", customer: "Grace Kim", product: "Laptop Air", amount: "$1,099", date: "06 Jun 2026", status: "Completed" as const },
   ]
-
-  const STATUS_STYLES: Record<string, string> = {
-    Completed: "bg-green-50 text-green-700 border-green-200",
-    Processing: "bg-accent/10 text-accent border-accent/20",
-    Pending: "bg-amber-50 text-amber-700 border-amber-200",
-  }
 
   return (
     <div className="rounded-xl bg-paper shadow-sm">

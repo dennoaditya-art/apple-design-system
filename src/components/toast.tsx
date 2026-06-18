@@ -44,6 +44,8 @@ const BORDER_COLORS: Record<ToastType, string> = {
   info: "border-accent",
 }
 
+const TOAST_DURATION = 4000
+
 const TEXT_COLORS: Record<ToastType, string> = {
   success: "text-green-600",
   error: "text-red-600",
@@ -65,7 +67,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     clearTimeout(timerRef.current)
     timerRef.current = setTimeout(() => {
       setToasts((prev) => prev.filter((t) => t.id !== id))
-    }, 4000)
+    }, TOAST_DURATION)
   }, [])
 
   const removeToast = useCallback((id: string) => {

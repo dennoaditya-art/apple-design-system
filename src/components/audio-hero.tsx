@@ -88,13 +88,8 @@ export function AudioHero({ as: Heading = "h2" }: AudioHeroProps) {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1.2, delay: 0.3, ease: easings.dramatic }}
         >
-          <motion.div
-            animate={{
-              y: [0, -10, 0],
-              rotate: [0, -2, 0, 2, 0],
-            }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="relative overflow-hidden rounded-md shadow-xl"
+          <div
+            className="animate-float relative overflow-hidden rounded-md shadow-xl"
             style={{ aspectRatio: "1 / 1" }}
           >
             <Image
@@ -112,7 +107,7 @@ export function AudioHero({ as: Heading = "h2" }: AudioHeroProps) {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
               className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/0 via-white/[0.03] to-white/0"
             />
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

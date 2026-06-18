@@ -89,3 +89,4 @@ export function FaqAccordion() {
     </section>
   )
 }
+FaqAccordion.displayName = "FaqAccordion"

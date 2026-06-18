@@ -36,3 +36,4 @@ export function NewsletterCta() {
     </section>
   )
 }
+NewsletterCta.displayName = "NewsletterCta"

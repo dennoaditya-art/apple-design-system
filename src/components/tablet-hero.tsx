@@ -97,10 +97,8 @@ export function TabletHero({ as: Heading = "h2" }: TabletHeroProps) {
               style={{ y: imageParallaxY }}
               className="absolute inset-0"
             >
-              <motion.div
-                className="relative h-full w-full"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              <div
+                className="animate-bob relative h-full w-full"
               >
                 <Image
                   src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80"
@@ -112,7 +110,7 @@ export function TabletHero({ as: Heading = "h2" }: TabletHeroProps) {
                   placeholder="blur"
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
                 />
-              </motion.div>
+              </div>
             </motion.div>
             <motion.div
               animate={{ opacity: [0, 0.04, 0] }}

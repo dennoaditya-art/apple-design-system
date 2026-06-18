@@ -39,3 +39,4 @@ export function SupportHero() {
     </section>
   )
 }
+SupportHero.displayName = "SupportHero"

@@ -88,10 +88,8 @@ export function WatchHero({ as: Heading = "h2" }: WatchHeroProps) {
           animate={{ scale: 1, opacity: 1, rotate: 0 }}
           transition={{ duration: 1.2, delay: 0.3, ease: easings.dramatic }}
         >
-          <motion.div
-            animate={{ scale: [1, 1.03, 1] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="relative overflow-hidden rounded-full shadow-xl"
+          <div
+            className="animate-pulse-soft relative overflow-hidden rounded-full shadow-xl"
             style={{ aspectRatio: "1 / 1" }}
           >
             <Image
@@ -113,7 +111,7 @@ export function WatchHero({ as: Heading = "h2" }: WatchHeroProps) {
                   "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 70%)",
               }}
             />
-          </motion.div>
+          </div>
         </motion.div>
       </div>
     </section>

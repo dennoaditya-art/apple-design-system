@@ -214,3 +214,35 @@ body {
   outline: 2px solid #2997ff;
   outline-offset: 2px;
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(-2deg); }
+  25% { transform: translateY(-5px) rotate(1deg); }
+  75% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-bob {
+  animation: bob 5s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 6s ease-in-out infinite;
+  animation-delay: 2s;
+}

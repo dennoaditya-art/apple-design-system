@@ -3,6 +3,7 @@
 import { StatsCard } from "@/components/dashboard-stats-card"
 import { LineChart } from "@/components/dashboard-line-chart"
 import { BarChart } from "@/components/dashboard-bar-chart"
+import { STATUS_STYLES } from "@/lib/orders"
 
 const MONTHLY_REVENUE = [
   { label: "Jan", value: 24000 },
@@ -32,12 +33,6 @@ const RECENT_ORDERS = [
   { id: "#ORD-004", customer: "David Lee", product: "Tablet Pro", amount: "$999", status: "Pending" as const },
   { id: "#ORD-005", customer: "Eve Wilson", product: "Watch Ultra 2", amount: "$799", status: "Completed" as const },
 ]
-
-const STATUS_STYLES: Record<string, string> = {
-  Completed: "bg-green-50 text-green-700 border-green-200",
-  Processing: "bg-accent/10 text-accent border-accent/20",
-  Pending: "bg-amber-50 text-amber-700 border-amber-200",
-}
 
 const TOP_PRODUCTS = [
   { name: "UltraPhone X", revenue: "$52,400", units: 44, trend: "up" as const },

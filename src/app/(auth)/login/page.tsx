@@ -14,6 +14,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false)
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({})
   const { addToast } = useToast()
+  const SIM_AUTH_DELAY = 1200
   const timerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
   useEffect(() => {
@@ -37,7 +38,7 @@ export default function LoginPage() {
     timerRef.current = setTimeout(() => {
       setLoading(false)
       addToast("Logged in successfully!", "success")
-    }, 1200)
+    }, SIM_AUTH_DELAY)
   }
 
   return (
