@@ -27,6 +27,8 @@ export function HorizontalPan({ panels, bgClass = "bg-ink" }: HorizontalPanProps
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
+    ScrollTrigger.getAll().forEach((st) => st.kill())
+
     if (prefersReduced || !wrap.current || !track.current) return
 
     const ctx = gsap.context(() => {
