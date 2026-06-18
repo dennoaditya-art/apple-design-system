@@ -1,3 +1,5 @@
+"use client"
+
 import type { ReactNode } from "react"
 import { TopNotificationBar } from "@/components/top-notification-bar"
 import { StickyNav } from "@/components/sticky-nav"
