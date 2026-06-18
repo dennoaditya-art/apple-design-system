@@ -1,7 +1,4 @@
-import { StickyNav } from "@/components/sticky-nav"
-import { FooterSection } from "@/components/footer-section"
 import type { Metadata } from "next"
-import { TopNotificationBar } from "@/components/top-notification-bar"
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -14,13 +11,8 @@ import { PricingCards } from "@/components/pricing-cards"
 export default function PricingPage() {
   return (
     <>
-      <TopNotificationBar />
-      <StickyNav />
-      <main className="pb-[120px]">
-        <PricingHero />
-        <PricingCards />
-      </main>
-      <FooterSection />
+      <PricingHero />
+      <PricingCards />
     </>
   )
 }

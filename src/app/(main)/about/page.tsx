@@ -1,7 +1,4 @@
-import { StickyNav } from "@/components/sticky-nav"
-import { FooterSection } from "@/components/footer-section"
 import type { Metadata } from "next"
-import { TopNotificationBar } from "@/components/top-notification-bar"
 
 export const metadata: Metadata = {
   title: "About",
@@ -14,13 +11,8 @@ import { AboutStory } from "@/components/about-story"
 export default function AboutPage() {
   return (
     <>
-      <TopNotificationBar />
-      <StickyNav />
-      <main className="pb-[120px]">
-        <AboutHero />
-        <AboutStory />
-      </main>
-      <FooterSection />
+      <AboutHero />
+      <AboutStory />
     </>
   )
 }

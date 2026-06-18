@@ -1,12 +1,10 @@
 import type { Metadata } from "next"
-import { TopNotificationBar } from "@/components/top-notification-bar"
 
 export const metadata: Metadata = {
   title: "Phones",
   description: "Explore the latest smartphones at Nova Store. UltraPhone X, Phone S, and more — titanium design, pro camera system.",
   openGraph: { title: "Phones | Nova Store", description: "Explore the latest smartphones at Nova Store." },
 }
-import { StickyNav } from "@/components/sticky-nav"
 import { PhoneHero } from "@/components/phone-hero"
 import { PhoneShowcase } from "@/components/phone-showcase"
 import { StickyStack } from "@/components/sticky-stack"
@@ -14,7 +12,6 @@ import { HorizontalPan } from "@/components/horizontal-pan"
 import type { PanPanel } from "@/components/horizontal-pan"
 import { ProductLineup } from "@/components/product-lineup"
 import { ProductGallery } from "@/components/product-gallery"
-import { FooterSection } from "@/components/footer-section"
 import { Reveal } from "@/components/reveal"
 import { ScrollParallax } from "@/components/scroll-parallax"
 
@@ -51,35 +48,27 @@ const PHONE_PANELS: PanPanel[] = [
 export default function PhonesPage() {
   return (
     <>
-      <TopNotificationBar />
-      <StickyNav />
-      <main>
-        <PhoneHero />
+      <PhoneHero />
+      <Reveal delay={0.1}>
+        <section className="bg-paper px-5 py-[80px]">
+          <div className="mx-auto max-w-[980px]">
+            <h2 className="mb-6 text-center font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-ink">
+              View in detail
+            </h2>
+            <ProductGallery images={PHONE_GALLERY} productName="UltraPhone X" />
+          </div>
+        </section>
+      </Reveal>
+      <Reveal delay={0.1}>
+        <PhoneShowcase />
+      </Reveal>
+      <StickyStack />
+      <HorizontalPan panels={PHONE_PANELS} />
+      <ScrollParallax offset={30}>
         <Reveal delay={0.1}>
-          <section className="bg-paper px-5 py-[80px]">
-            <div className="mx-auto max-w-[980px]">
-              <h2 className="mb-6 text-center font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-ink">
-                View in detail
-              </h2>
-              <ProductGallery images={PHONE_GALLERY} productName="UltraPhone X" />
-            </div>
-          </section>
+          <ProductLineup />
         </Reveal>
-        <Reveal delay={0.1}>
-          <PhoneShowcase />
-        </Reveal>
-
-        <StickyStack />
-
-        <HorizontalPan panels={PHONE_PANELS} />
-
-        <ScrollParallax offset={30}>
-          <Reveal delay={0.1}>
-            <ProductLineup />
-          </Reveal>
-        </ScrollParallax>
-      </main>
-      <FooterSection />
+      </ScrollParallax>
     </>
   )
 }

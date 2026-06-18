@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { TopNotificationBar } from "@/components/top-notification-bar"
 
 export const metadata: Metadata = {
   title: "Nova Store — Premium Gadgets",
@@ -9,7 +8,6 @@ export const metadata: Metadata = {
     description: "Discover the latest premium gadgets at Nova Store.",
   },
 }
-import { StickyNav } from "@/components/sticky-nav"
 import { PhoneHero } from "@/components/phone-hero"
 import { LaptopHero } from "@/components/laptop-hero"
 import { PhoneShowcase } from "@/components/phone-showcase"
@@ -44,37 +42,23 @@ import { ColoredProductSection } from "@/components/colored-product-section"
 import { FeaturedMediaCard } from "@/components/featured-media-card"
 import { MediaCardGrid } from "@/components/media-card-grid"
 import { NewsletterCta } from "@/components/newsletter-cta"
-import { FooterSection } from "@/components/footer-section"
 import { ScrollProgressBar, MorphGradient } from "@/components/cinematic"
 
 export default function Home() {
   return (
     <>
       <ScrollProgressBar />
-      <TopNotificationBar />
-      <StickyNav />
-      <main>
-        <PhoneHero />
-
-        <PhoneShowcase />
-
-        <MorphGradient>
-          <ProductLineup />
-        </MorphGradient>
-
-        <LaptopHero />
-
-        <ColoredProductSection />
-
-        <FeaturedMediaCard />
-
-        <MediaCardGrid />
-
-        <HorizontalPan panels={PHONE_PANELS} />
-        
-        <NewsletterCta />
-      </main>
-      <FooterSection />
+      <PhoneHero />
+      <PhoneShowcase />
+      <MorphGradient>
+        <ProductLineup />
+      </MorphGradient>
+      <LaptopHero />
+      <ColoredProductSection />
+      <FeaturedMediaCard />
+      <MediaCardGrid />
+      <HorizontalPan panels={PHONE_PANELS} />
+      <NewsletterCta />
     </>
   )
 }
