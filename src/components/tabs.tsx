@@ -25,7 +25,7 @@ export function Tabs({ tabs, defaultTab, className = "" }: TabsProps) {
 
   return (
     <div className={className}>
-      <div className="flex gap-1 border-b border-bone" role="tablist">
+      <div className="flex gap-1 border-b border-silver" role="tablist">
         {tabs.map((tab) => {
           const isActive = tab.id === activeId
           return (
@@ -38,7 +38,7 @@ export function Tabs({ tabs, defaultTab, className = "" }: TabsProps) {
               aria-controls={`panel-${tab.id}`}
               onClick={() => setActiveId(tab.id)}
               className={`relative px-5 py-3 font-font-body text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
-                isActive ? "font-semibold text-graphite" : "font-normal text-fog hover:text-graphite"
+                isActive ? "font-semibold text-ink" : "font-normal text-graphite hover:text-ink"
               }`}
             >
               {tab.label}
@@ -68,3 +68,4 @@ export function Tabs({ tabs, defaultTab, className = "" }: TabsProps) {
     </div>
   )
 }
+Tabs.displayName = "Tabs"

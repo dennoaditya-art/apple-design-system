@@ -23,10 +23,10 @@ export function AudioHero({ as: Heading = "h2" }: AudioHeroProps) {
   if (prefersReduced) {
     return (
       <section className="relative flex flex-col items-center justify-center overflow-hidden bg-paper px-5 pb-0 pt-[80px] text-center">
-        <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+        <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-ink">
           Earbuds Pro 2
         </Heading>
-        <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
+        <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-ink">
           Sound the way it was meant to be.
         </p>
         <div className="mt-6 flex items-center gap-3">
@@ -58,7 +58,7 @@ export function AudioHero({ as: Heading = "h2" }: AudioHeroProps) {
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: durations.hero, ease: easings.dramatic }}
       >
-        <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+        <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-ink">
           Earbuds Pro 2
         </Heading>
       </motion.div>
@@ -66,7 +66,7 @@ export function AudioHero({ as: Heading = "h2" }: AudioHeroProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.15 }}
-        className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite"
+        className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-ink"
       >
         Sound the way it was meant to be.
       </motion.p>
@@ -118,3 +118,4 @@ export function AudioHero({ as: Heading = "h2" }: AudioHeroProps) {
     </section>
   )
 }
+AudioHero.displayName = "AudioHero"

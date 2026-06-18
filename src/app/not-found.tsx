@@ -2,11 +2,11 @@ import Link from "next/link"
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-[100dvh] flex-col items-center justify-center bg-cloud px-5 text-center">
-      <h1 className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+    <main className="flex min-h-[100dvh] flex-col items-center justify-center bg-fog px-5 text-center">
+      <h1 className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-ink">
         404
       </h1>
-      <p className="mt-3 font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-fog">
+      <p className="mt-3 font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
         The page you&apos;re looking for doesn&apos;t exist.
       </p>
       <Link

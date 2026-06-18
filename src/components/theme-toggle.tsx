@@ -78,3 +78,4 @@ export function ThemeToggle() {
     </button>
   )
 }
+ThemeToggle.displayName = "ThemeToggle"

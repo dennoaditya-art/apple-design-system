@@ -78,3 +78,4 @@ export function TiltCard({
     </motion.div>
   )
 }
+TiltCard.displayName = "TiltCard"

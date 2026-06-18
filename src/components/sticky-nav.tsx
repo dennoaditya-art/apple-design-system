@@ -64,9 +64,9 @@ export function StickyNav() {
       <div className="pointer-events-none absolute inset-0 border-t border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]" />
       <motion.div
         style={{ opacity: borderAlpha }}
-        className="absolute inset-x-0 bottom-0 h-[1px] bg-graphite"
+        className="absolute inset-x-0 bottom-0 h-[1px] bg-ink"
       />
-      <div className="relative mx-auto flex h-full max-w-[980px] items-center justify-between px-5 text-graphite">
+      <div className="relative mx-auto flex h-full max-w-[980px] items-center justify-between px-5 text-ink">
         <Link href="/" aria-label="Nova Store" className="flex-shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
           <motion.svg
             width="16"
@@ -91,7 +91,7 @@ export function StickyNav() {
                 key={link.label}
                 href={link.href}
                 aria-current={isActive ? "page" : undefined}
-                className={`relative px-2 font-normal leading-[1.33] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${isActive ? "text-graphite" : "text-graphite/70"}`}
+                className={`relative px-2 font-normal leading-[1.33] transition-opacity hover:opacity-70 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${isActive ? "text-ink" : "text-ink/70"}`}
               >
                 <motion.span
                   className="relative inline-block"
@@ -102,7 +102,7 @@ export function StickyNav() {
                   {isActive && (
                     <motion.span
                       layoutId="nav-active"
-                      className="absolute -bottom-[13px] left-1/2 h-[3px] w-[3px] -translate-x-1/2 rounded-full bg-graphite"
+                      className="absolute -bottom-[13px] left-1/2 h-[3px] w-[3px] -translate-x-1/2 rounded-full bg-ink"
                     />
                   )}
                 </motion.span>
@@ -182,7 +182,7 @@ export function StickyNav() {
                     href={link.href}
                     aria-current={isActive ? "page" : undefined}
                     onClick={closeMenu}
-                    className={`block px-6 py-3 font-font-body text-[17px] transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${isActive ? "font-semibold text-graphite" : "font-normal text-graphite/70"}`}
+                    className={`block px-6 py-3 font-font-body text-[17px] transition-colors hover:bg-fog focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${isActive ? "font-semibold text-ink" : "font-normal text-ink/70"}`}
                   >
                     {link.label}
                   </Link>
@@ -202,3 +202,4 @@ export function StickyNav() {
     </motion.nav>
   )
 }
+StickyNav.displayName = "StickyNav"

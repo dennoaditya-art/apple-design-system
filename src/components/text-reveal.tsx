@@ -55,3 +55,4 @@ export function TextReveal({
     </Tag>
   )
 }
+TextReveal.displayName = "TextReveal"

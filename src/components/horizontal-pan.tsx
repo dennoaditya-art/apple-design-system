@@ -6,8 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useReducedMotion } from "motion/react"
 import Image from "next/image"
 
-gsap.registerPlugin(ScrollTrigger)
-
 export interface PanPanel {
   src: string
   alt: string
@@ -27,9 +25,15 @@ export function HorizontalPan({ panels, bgClass = "bg-ink" }: HorizontalPanProps
   const prefersReduced = useReducedMotion()
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
     if (prefersReduced || !wrap.current || !track.current) return
+
     const ctx = gsap.context(() => {
       const distance = track.current!.scrollWidth - window.innerWidth
+
+      if (distance <= 0) return
+
       gsap.to(track.current, {
         x: -distance,
         ease: "none",
@@ -42,18 +46,27 @@ export function HorizontalPan({ panels, bgClass = "bg-ink" }: HorizontalPanProps
           invalidateOnRefresh: true,
         },
       })
+
+      ScrollTrigger.refresh()
     }, wrap)
+
     return () => ctx.revert()
   }, [prefersReduced])
 
   if (prefersReduced) {
     return (
       <section className={`px-5 py-[80px] ${bgClass}`}>
-        <div className="mx-auto max-w-[980px] space-y-10">
+        <div className="mx-auto max-w-[980px] space-y-16">
           {panels.map((panel) => (
-            <div key={panel.title} className="flex flex-col gap-6 md:flex-row md:items-center">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl md:w-1/2">
-                <Image src={panel.src} alt={panel.alt} fill className="object-cover" sizes="50vw" />
+            <div key={panel.title} className="flex flex-col gap-8 md:flex-row md:items-center">
+              <div className="relative w-full overflow-hidden rounded-2xl bg-zinc-800/60 md:w-1/2" style={{ aspectRatio: "4 / 3" }}>
+                <Image
+                  src={panel.src}
+                  alt={panel.alt}
+                  fill
+                  className="object-contain p-4"
+                  sizes="50vw"
+                />
               </div>
               <div className="md:w-1/2 md:pl-8">
                 {panel.eyebrow && (
@@ -77,20 +90,22 @@ export function HorizontalPan({ panels, bgClass = "bg-ink" }: HorizontalPanProps
 
   return (
     <section ref={wrap} className={`relative overflow-hidden ${bgClass}`}>
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-r from-ink via-transparent to-ink" />
       <div ref={track} className="flex h-[100dvh] items-center">
-        {panels.map((panel) => (
+        {panels.map((panel, idx) => (
           <div
             key={panel.title}
-            className="flex h-full w-screen shrink-0 items-center justify-center px-10 md:px-20"
+            className="relative flex h-full w-screen shrink-0 items-center justify-center px-8 md:px-20"
           >
-            <div className="flex w-full max-w-[1200px] flex-col items-center gap-8 md:flex-row md:gap-16">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl md:w-1/2">
+            <div className="flex w-full max-w-[1200px] flex-col items-center gap-10 md:flex-row md:gap-20">
+              <div className="relative w-full overflow-hidden rounded-2xl bg-zinc-800/40 md:w-1/2" style={{ aspectRatio: "4 / 3" }}>
                 <Image
                   src={panel.src}
                   alt={panel.alt}
                   fill
-                  className="object-cover"
+                  className="object-contain p-6"
                   sizes="50vw"
+                  priority={idx === 0}
                 />
               </div>
               <div className="md:w-1/2">
@@ -110,6 +125,12 @@ export function HorizontalPan({ panels, bgClass = "bg-ink" }: HorizontalPanProps
           </div>
         ))}
       </div>
+      <div className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2">
+        <span className="font-font-body text-[11px] uppercase tracking-[0.15em] text-paper/30">
+          Scroll &rarr;
+        </span>
+      </div>
     </section>
   )
 }
+HorizontalPan.displayName = "HorizontalPan"

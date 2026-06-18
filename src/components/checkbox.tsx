@@ -18,21 +18,22 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
             ref={ref}
             type="checkbox"
             id={checkboxId}
-            className={`mt-[3px] h-[18px] w-[18px] shrink-0 cursor-pointer appearance-none rounded-xs border-2 bg-cloud transition-colors checked:border-accent-solid checked:bg-accent-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
-              error ? "border-red-500" : "border-bone"
+            className={`mt-[3px] h-[18px] w-[18px] shrink-0 cursor-pointer appearance-none rounded-xs border-2 bg-fog transition-colors checked:border-accent-solid checked:bg-accent-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
+              error ? "border-red-500" : "border-silver"
             } ${className}`}
             aria-invalid={error ? "true" : undefined}
+            aria-describedby={error ? `${checkboxId}-error` : undefined}
             {...props}
           />
           <label
             htmlFor={checkboxId}
-            className="cursor-pointer font-font-body text-[15px] leading-[1.47] text-graphite"
+            className="cursor-pointer font-font-body text-[15px] leading-[1.47] text-ink"
           >
             {label}
           </label>
         </div>
         {error && (
-          <p className="mt-1 pl-[30px] font-font-body text-[12px] leading-[1.33] text-red-500" role="alert">
+          <p id={`${checkboxId}-error`} className="mt-1 pl-[30px] font-font-body text-[12px] leading-[1.33] text-red-500" role="alert">
             {error}
           </p>
         )}

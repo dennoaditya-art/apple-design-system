@@ -1,5 +1,5 @@
 function SkeletonBlock({ className = "", style }: { className?: string; style?: React.CSSProperties }) {
-  return <div className={`animate-pulse rounded-md bg-bone ${className}`} style={style} aria-hidden="true" />
+  return <div className={`animate-pulse rounded-md bg-silver ${className}`} style={style} aria-hidden="true" />
 }
 
 export function SkeletonLine({ width = "100%", className = "" }: { width?: string; className?: string }) {
@@ -10,14 +10,14 @@ export function SkeletonHeading({ className = "" }: { className?: string }) {
   return <SkeletonBlock className={`h-[28px] w-[60%] ${className}`} />
 }
 
-export function SkeletonImage({ className = "" }: { className?: string }) {
-  return <SkeletonBlock className={`h-full w-full ${className}`} />
+export function SkeletonImage({ className = "", style }: { className?: string; style?: React.CSSProperties }) {
+  return <SkeletonBlock className={`h-full w-full ${className}`} style={style} />
 }
 
 export function SkeletonCard({ className = "" }: { className?: string }) {
   return (
     <div className={`overflow-hidden rounded-md bg-paper shadow-xl ${className}`}>
-      <SkeletonImage className="aspect-[3/2]" />
+      <SkeletonImage style={{ aspectRatio: "3 / 2" }} />
       <div className="space-y-2 p-4">
         <SkeletonLine width="70%" />
         <SkeletonLine width="90%" />
@@ -115,3 +115,11 @@ export function SkeletonStorePage() {
     </>
   )
 }
+SkeletonLine.displayName = "SkeletonLine"
+SkeletonHeading.displayName = "SkeletonHeading"
+SkeletonImage.displayName = "SkeletonImage"
+SkeletonCard.displayName = "SkeletonCard"
+SkeletonNav.displayName = "SkeletonNav"
+SkeletonHomePage.displayName = "SkeletonHomePage"
+SkeletonProductPage.displayName = "SkeletonProductPage"
+SkeletonStorePage.displayName = "SkeletonStorePage"

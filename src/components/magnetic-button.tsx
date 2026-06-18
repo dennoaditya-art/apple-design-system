@@ -62,3 +62,4 @@ export function MagneticButton({
     </motion.button>
   )
 }
+MagneticButton.displayName = "MagneticButton"

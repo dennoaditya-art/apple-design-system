@@ -25,10 +25,10 @@ export function LaptopHero({ as: Heading = "h2" }: LaptopHeroProps) {
       <section className="relative overflow-hidden bg-paper px-5 py-[80px]">
         <div className="mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-2">
           <div className="text-left">
-            <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+            <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-ink">
               Laptop Pro
             </Heading>
-            <p className="mt-3 max-w-[440px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-fog">
+            <p className="mt-3 max-w-[440px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
               Built for the impossible.
             </p>
             <div className="mt-6 flex items-center gap-3">
@@ -70,7 +70,7 @@ export function LaptopHero({ as: Heading = "h2" }: LaptopHeroProps) {
             viewport={{ once: true }}
             transition={{ duration: durations.hero, ease: easings.dramatic }}
           >
-            <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+            <Heading className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-ink">
               Laptop Pro
             </Heading>
           </motion.div>
@@ -79,7 +79,7 @@ export function LaptopHero({ as: Heading = "h2" }: LaptopHeroProps) {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.15 }}
-            className="mt-3 max-w-[440px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-fog"
+            className="mt-3 max-w-[440px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite"
           >
             Built for the impossible.
           </motion.p>
@@ -125,3 +125,4 @@ export function LaptopHero({ as: Heading = "h2" }: LaptopHeroProps) {
     </section>
   )
 }
+LaptopHero.displayName = "LaptopHero"

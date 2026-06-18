@@ -12,13 +12,13 @@ interface ProductHeroProps {
   buyHref?: string
 }
 
-export function ProductHero({ productName, subtitle, bgClass = "bg-cloud", imageSrc, imageAlt, priority, learnHref, buyHref }: ProductHeroProps) {
+export function ProductHero({ productName, subtitle, bgClass = "bg-fog", imageSrc, imageAlt, priority, learnHref, buyHref }: ProductHeroProps) {
   return (
     <section className={`flex flex-col items-center justify-center px-5 py-[80px] text-center ${bgClass}`}>
-      <h1 className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+      <h1 className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-ink">
         {productName}
       </h1>
-      <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
+      <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-ink">
         {subtitle}
       </p>
       <div className="mt-5 flex items-center gap-3">
@@ -33,3 +33,4 @@ export function ProductHero({ productName, subtitle, bgClass = "bg-cloud", image
     </section>
   )
 }
+ProductHero.displayName = "ProductHero"

@@ -33,10 +33,11 @@ export function BarChart({ data, height = 180 }: BarChartProps) {
                 minHeight: pct > 0 ? "4px" : "0",
               }}
             />
-            <span className="font-font-body text-[10px] leading-[1.2] text-fog">{d.label}</span>
+            <span className="font-font-body text-[10px] leading-[1.2] text-graphite">{d.label}</span>
           </div>
         )
       })}
     </div>
   )
 }
+BarChart.displayName = "BarChart"

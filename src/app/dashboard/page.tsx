@@ -111,15 +111,15 @@ export default function DashboardPage() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="rounded-xl bg-paper p-6 shadow-sm lg:col-span-2">
-          <h3 className="font-font-body text-[15px] font-semibold leading-[1.47] text-graphite">Monthly Revenue</h3>
-          <p className="mt-0.5 font-font-body text-[13px] leading-[1.38] text-fog">Total revenue over the last 8 months</p>
+          <h3 className="font-font-body text-[15px] font-semibold leading-[1.47] text-ink">Monthly Revenue</h3>
+          <p className="mt-0.5 font-font-body text-[13px] leading-[1.38] text-graphite">Total revenue over the last 8 months</p>
           <div className="mt-4">
             <LineChart data={MONTHLY_REVENUE} height={220} />
           </div>
         </div>
         <div className="rounded-xl bg-paper p-6 shadow-sm">
-          <h3 className="font-font-body text-[15px] font-semibold leading-[1.47] text-graphite">Weekly Sales</h3>
-          <p className="mt-0.5 font-font-body text-[13px] leading-[1.38] text-fog">Sales by day this week</p>
+          <h3 className="font-font-body text-[15px] font-semibold leading-[1.47] text-ink">Weekly Sales</h3>
+          <p className="mt-0.5 font-font-body text-[13px] leading-[1.38] text-graphite">Sales by day this week</p>
           <div className="mt-4">
             <BarChart data={WEEKLY_SALES} height={180} />
           </div>
@@ -128,8 +128,8 @@ export default function DashboardPage() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <div className="rounded-xl bg-paper shadow-sm lg:col-span-2">
-          <div className="flex items-center justify-between border-b border-bone px-6 py-4">
-            <h3 className="font-font-body text-[15px] font-semibold leading-[1.47] text-graphite">Recent Orders</h3>
+          <div className="flex items-center justify-between border-b border-silver px-6 py-4">
+            <h3 className="font-font-body text-[15px] font-semibold leading-[1.47] text-ink">Recent Orders</h3>
             <button
               type="button"
               className="font-font-body text-[13px] font-semibold leading-[1.38] text-accent transition-colors hover:text-accent-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
@@ -140,21 +140,21 @@ export default function DashboardPage() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-bone">
-                  <th className="px-6 py-3 text-left font-font-body text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">Order</th>
-                  <th className="px-6 py-3 text-left font-font-body text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">Customer</th>
-                  <th className="px-6 py-3 text-left font-font-body text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">Product</th>
-                  <th className="px-6 py-3 text-left font-font-body text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">Amount</th>
-                  <th className="px-6 py-3 text-left font-font-body text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">Status</th>
+                <tr className="border-b border-silver">
+                  <th className="px-6 py-3 text-left font-font-body text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-graphite">Order</th>
+                  <th className="px-6 py-3 text-left font-font-body text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-graphite">Customer</th>
+                  <th className="px-6 py-3 text-left font-font-body text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-graphite">Product</th>
+                  <th className="px-6 py-3 text-left font-font-body text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-graphite">Amount</th>
+                  <th className="px-6 py-3 text-left font-font-body text-[11px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-graphite">Status</th>
                 </tr>
               </thead>
               <tbody>
                 {RECENT_ORDERS.map((order) => (
-                  <tr key={order.id} className="border-b border-bone/50 last:border-0">
-                    <td className="px-6 py-3.5 font-font-body text-[14px] font-semibold leading-[1.43] text-graphite">{order.id}</td>
-                    <td className="px-6 py-3.5 font-font-body text-[14px] leading-[1.43] text-graphite">{order.customer}</td>
-                    <td className="px-6 py-3.5 font-font-body text-[14px] leading-[1.43] text-fog">{order.product}</td>
-                    <td className="px-6 py-3.5 font-font-body text-[14px] leading-[1.43] text-graphite">{order.amount}</td>
+                  <tr key={order.id} className="border-b border-silver/50 last:border-0">
+                    <td className="px-6 py-3.5 font-font-body text-[14px] font-semibold leading-[1.43] text-ink">{order.id}</td>
+                    <td className="px-6 py-3.5 font-font-body text-[14px] leading-[1.43] text-ink">{order.customer}</td>
+                    <td className="px-6 py-3.5 font-font-body text-[14px] leading-[1.43] text-graphite">{order.product}</td>
+                    <td className="px-6 py-3.5 font-font-body text-[14px] leading-[1.43] text-ink">{order.amount}</td>
                     <td className="px-6 py-3.5">
                       <span className={`inline-block rounded-sm border px-2.5 py-1 font-font-body text-[11px] font-semibold leading-[1.33] ${STATUS_STYLES[order.status]}`}>
                         {order.status}
@@ -168,18 +168,18 @@ export default function DashboardPage() {
         </div>
 
         <div className="rounded-xl bg-paper shadow-sm">
-          <div className="border-b border-bone px-6 py-4">
-            <h3 className="font-font-body text-[15px] font-semibold leading-[1.47] text-graphite">Top Products</h3>
+          <div className="border-b border-silver px-6 py-4">
+            <h3 className="font-font-body text-[15px] font-semibold leading-[1.47] text-ink">Top Products</h3>
           </div>
           <div className="divide-y divide-bone/50">
             {TOP_PRODUCTS.map((product) => (
               <div key={product.name} className="flex items-center justify-between px-6 py-3.5">
                 <div>
-                  <p className="font-font-body text-[14px] font-semibold leading-[1.43] text-graphite">{product.name}</p>
-                  <p className="font-font-body text-[12px] leading-[1.33] text-fog">{product.units} units sold</p>
+                  <p className="font-font-body text-[14px] font-semibold leading-[1.43] text-ink">{product.name}</p>
+                  <p className="font-font-body text-[12px] leading-[1.33] text-graphite">{product.units} units sold</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-font-body text-[14px] font-semibold leading-[1.43] text-graphite">{product.revenue}</p>
+                  <p className="font-font-body text-[14px] font-semibold leading-[1.43] text-ink">{product.revenue}</p>
                   <span className={`font-font-body text-[11px] font-semibold leading-[1.33] ${product.trend === "up" ? "text-green-600" : "text-red-500"}`}>
                     {product.trend === "up" ? "↑" : "↓"} {(product.units * 0.03 + 2).toFixed(1)}%
                   </span>

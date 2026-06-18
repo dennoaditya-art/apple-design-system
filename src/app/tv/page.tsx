@@ -13,10 +13,10 @@ export default function TVPage() {
       <StickyNav />
       <main>
         <section className="flex flex-col items-center justify-center bg-paper px-5 py-[60px] text-center md:py-[120px]">
-          <h1 className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+          <h1 className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-ink">
             Stream+
           </h1>
-          <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
+          <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-ink">
             Original stories from the most creative minds in television.
           </p>
         </section>

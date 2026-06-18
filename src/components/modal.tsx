@@ -59,8 +59,8 @@ export function Modal({ open, onClose, title, children, size = "md" }: ModalProp
             transition={prefersReduced ? { duration: 0 } : springs.standard}
             className={`relative w-full ${SIZE_MAP[size]} rounded-2xl bg-paper shadow-xl`}
           >
-            <div className="flex items-center justify-between border-b border-bone px-6 py-4">
-              <h2 className="font-font-heading text-[20px] font-semibold leading-[1.2] tracking-[-0.3px] text-graphite">
+            <div className="flex items-center justify-between border-b border-silver px-6 py-4">
+              <h2 className="font-font-heading text-[20px] font-semibold leading-[1.2] tracking-[-0.3px] text-ink">
                 {title}
               </h2>
               <button
@@ -68,7 +68,7 @@ export function Modal({ open, onClose, title, children, size = "md" }: ModalProp
                 type="button"
                 onClick={onClose}
                 aria-label="Close"
-                className="flex h-11 w-11 items-center justify-center rounded-full text-fog transition-colors hover:bg-cloud hover:text-graphite focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                className="flex h-11 w-11 items-center justify-center rounded-full text-graphite transition-colors hover:bg-fog hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true">
                   <path d="M4 4L12 12M12 4L4 12" />
@@ -82,3 +82,4 @@ export function Modal({ open, onClose, title, children, size = "md" }: ModalProp
     </AnimatePresence>
   )
 }
+Modal.displayName = "Modal"

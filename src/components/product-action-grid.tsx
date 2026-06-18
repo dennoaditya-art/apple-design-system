@@ -30,7 +30,7 @@ export function ProductActionGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: durations.hero, ease: easings.dramatic }}
-          className="text-center font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite"
+          className="text-center font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-ink"
         >
           Your computer. Not a computer.
         </motion.h2>
@@ -39,7 +39,7 @@ export function ProductActionGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.12 }}
-          className="mt-2 text-center font-font-body text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog"
+          className="mt-2 text-center font-font-body text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-graphite"
         >
           A creative powerhouse for work and play.
         </motion.p>
@@ -47,11 +47,11 @@ export function ProductActionGrid() {
         <StaggerGrid className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-2">
           {ACTIONS.map((item) => (
             <StaggerItem key={item.name}>
-              <div className="flex gap-4 rounded-xl border border-bone bg-cloud p-6 transition-all hover:border-accent/20 hover:shadow-md">
-                <div className="shrink-0 text-graphite/60">{item.icon}</div>
+              <div className="flex gap-4 rounded-xl border border-silver bg-fog p-6 transition-all hover:border-accent/20 hover:shadow-md">
+                <div className="shrink-0 text-ink/60">{item.icon}</div>
                 <div>
-                  <h3 className="font-font-body text-[17px] font-semibold leading-[1.24] text-graphite">{item.name}</h3>
-                  <p className="mt-1 font-font-body text-[14px] font-normal leading-[1.43] text-fog">{item.description}</p>
+                  <h3 className="font-font-body text-[17px] font-semibold leading-[1.24] text-ink">{item.name}</h3>
+                  <p className="mt-1 font-font-body text-[14px] font-normal leading-[1.43] text-graphite">{item.description}</p>
                 </div>
               </div>
             </StaggerItem>
@@ -76,3 +76,4 @@ export function ProductActionGrid() {
     </section>
   )
 }
+ProductActionGrid.displayName = "ProductActionGrid"

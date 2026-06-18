@@ -28,7 +28,7 @@ export function PhoneShowcase() {
   const prefersReduced = useReducedMotion()
 
   return (
-    <section className="bg-cloud px-5 py-[80px] md:py-[120px]">
+    <section className="bg-fog px-5 py-[80px] md:py-[120px]">
       <div className="mx-auto max-w-[1200px]">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
@@ -37,7 +37,7 @@ export function PhoneShowcase() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: durations.hero, ease: easings.dramatic }}
-              className="font-font-heading text-[36px] font-bold leading-[1.05] tracking-[-0.8px] text-graphite md:text-[48px]"
+              className="font-font-heading text-[36px] font-bold leading-[1.05] tracking-[-0.8px] text-ink md:text-[48px]"
             >
               Phones built to last.
             </motion.h2>
@@ -46,7 +46,7 @@ export function PhoneShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.12 }}
-              className="mt-4 max-w-[440px] font-font-body text-[17px] leading-[1.6] text-fog"
+              className="mt-4 max-w-[440px] font-font-body text-[17px] leading-[1.6] text-graphite"
             >
               Every detail engineered for performance. Titanium frame, pro-grade camera system, and a display that sets the standard.
             </motion.p>
@@ -100,3 +100,4 @@ export function PhoneShowcase() {
     </section>
   )
 }
+PhoneShowcase.displayName = "PhoneShowcase"

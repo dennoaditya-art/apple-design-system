@@ -72,10 +72,11 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
       </div>
 
       <div className="mt-4 text-center">
-        <p className="font-font-body text-[14px] font-light leading-[1.43] text-fog">
+        <p className="font-font-body text-[14px] font-light leading-[1.43] text-graphite">
           {productName} · {active + 1} of {images.length}
         </p>
       </div>
     </div>
   )
 }
+ProductGallery.displayName = "ProductGallery"

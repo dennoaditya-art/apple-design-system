@@ -7,8 +7,8 @@ interface ShareErrorProps {
 
 export function ErrorFallback({ reset }: ShareErrorProps) {
   return (
-    <main className="flex min-h-[50vh] flex-col items-center justify-center bg-cloud px-5 text-center">
-      <p className="font-font-body text-[17px] font-light leading-[1.47] text-fog">Something went wrong</p>
+    <main className="flex min-h-[50vh] flex-col items-center justify-center bg-fog px-5 text-center">
+      <p className="font-font-body text-[17px] font-light leading-[1.47] text-graphite">Something went wrong</p>
       <button
         type="button"
         onClick={reset}

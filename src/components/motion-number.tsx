@@ -65,3 +65,4 @@ export function MotionNumber({
     </span>
   )
 }
+MotionNumber.displayName = "MotionNumber"

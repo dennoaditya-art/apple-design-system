@@ -48,3 +48,4 @@ export function ScrollParallax({
     </motion.div>
   )
 }
+ScrollParallax.displayName = "ScrollParallax"

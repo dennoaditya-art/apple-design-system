@@ -8,11 +8,11 @@ export default function ErrorPage({
   reset: () => void
 }) {
   return (
-    <main className="flex min-h-[100dvh] flex-col items-center justify-center bg-cloud px-5 text-center">
-      <h1 className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-graphite">
+    <main className="flex min-h-[100dvh] flex-col items-center justify-center bg-fog px-5 text-center">
+      <h1 className="font-font-heading md:text-[56px] text-[36px] font-bold leading-[1.07] tracking-[-1.23px] text-ink">
         Something went wrong
       </h1>
-      <p className="mt-3 font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-fog">
+      <p className="mt-3 font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
         Please try again later.
       </p>
       <button

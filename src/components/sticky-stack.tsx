@@ -112,3 +112,4 @@ export function StickyStack() {
     </section>
   )
 }
+StickyStack.displayName = "StickyStack"

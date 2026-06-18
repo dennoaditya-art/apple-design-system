@@ -18,15 +18,15 @@ export function ColoredProductSection() {
   if (prefersReduced) {
     return (
       <section className="flex flex-col items-center justify-center px-5 py-[80px] text-center" style={{ backgroundColor: "var(--color-bone, #e2e2e5)" }}>
-        <h2 className="font-font-heading md:text-[56px] text-[36px] font-semibold leading-[1.07] tracking-[-1.23px] text-graphite">
+        <h2 className="font-font-heading md:text-[56px] text-[36px] font-semibold leading-[1.07] tracking-[-1.23px] text-ink">
           Tablet Air
         </h2>
-        <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite">
+        <p className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-ink">
           Supercharged performance.
         </p>
         <div className="mt-5 flex items-center gap-3">
           <PillButton variant="filled" href="/tablets">Learn more</PillButton>
-          <PillButton variant="outlined" href="/store" className="border-graphite text-graphite hover:border-graphite hover:text-graphite">Buy</PillButton>
+          <PillButton variant="outlined" href="/store" className="border-graphite text-ink hover:border-graphite hover:text-ink">Buy</PillButton>
         </div>
         <div className="relative mt-10 w-full max-w-[65vw] shadow-xl" style={{ aspectRatio: "4 / 3" }}>
           <Image
@@ -50,7 +50,7 @@ export function ColoredProductSection() {
         whileInView={{ opacity: 1, y: 0, filter: "blur(0px)", scale: 1 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: durations.hero, ease: easings.dramatic }}
-        className="font-font-heading md:text-[56px] text-[36px] font-semibold leading-[1.07] tracking-[-1.23px] text-graphite"
+        className="font-font-heading md:text-[56px] text-[36px] font-semibold leading-[1.07] tracking-[-1.23px] text-ink"
       >
         Tablet Air
       </motion.h2>
@@ -59,7 +59,7 @@ export function ColoredProductSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.2 }}
-        className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-graphite"
+        className="mt-3 max-w-[640px] font-font-body text-[21px] font-light leading-[1.38] tracking-[-0.11px] text-ink"
       >
         Supercharged performance.
       </motion.p>
@@ -71,7 +71,7 @@ export function ColoredProductSection() {
         className="mt-5 flex items-center gap-3"
       >
         <PillButton variant="filled">Learn more</PillButton>
-        <PillButton variant="outlined" className="border-graphite text-graphite hover:border-graphite hover:text-graphite">Buy</PillButton>
+        <PillButton variant="outlined" className="border-graphite text-ink hover:border-graphite hover:text-ink">Buy</PillButton>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 60, scale: 0.9 }}
@@ -94,3 +94,4 @@ export function ColoredProductSection() {
     </section>
   )
 }
+ColoredProductSection.displayName = "ColoredProductSection"

@@ -16,3 +16,4 @@ export function LayoutClient({ children }: { children: React.ReactNode }) {
     </ThemeProvider>
   )
 }
+LayoutClient.displayName = "LayoutClient"

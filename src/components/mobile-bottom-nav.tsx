@@ -35,7 +35,7 @@ export function MobileBottomNav() {
             {isActive && (
               <motion.span
                 layoutId="mobile-nav-active"
-                className="absolute -top-0.5 left-1/2 h-[3px] w-[20px] -translate-x-1/2 rounded-full bg-graphite"
+                className="absolute -top-0.5 left-1/2 h-[3px] w-[20px] -translate-x-1/2 rounded-full bg-ink"
                 transition={springs.snappy}
               />
             )}
@@ -48,12 +48,12 @@ export function MobileBottomNav() {
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className={isActive ? "text-graphite" : "text-steel"}
+              className={isActive ? "text-ink" : "text-steel"}
               aria-hidden="true"
             >
               <path d={link.icon} />
             </svg>
-            <span className={`font-font-body text-[9px] leading-none ${isActive ? "font-semibold text-graphite" : "font-normal text-steel"}`}>
+            <span className={`font-font-body text-[9px] leading-none ${isActive ? "font-semibold text-ink" : "font-normal text-steel"}`}>
               {link.label}
             </span>
           </Link>
@@ -62,3 +62,4 @@ export function MobileBottomNav() {
     </nav>
   )
 }
+MobileBottomNav.displayName = "MobileBottomNav"

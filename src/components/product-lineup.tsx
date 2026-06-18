@@ -51,7 +51,7 @@ const LINK_ITEMS: LinkItemProps[] = [
 export function ProductLineup() {
   const prefersReduced = useReducedMotion()
   return (
-    <section className="bg-cloud px-5 py-[80px]">
+    <section className="bg-fog px-5 py-[80px]">
       <div className="mx-auto max-w-[980px]">
         <div className="mb-10 overflow-hidden">
           <motion.h2
@@ -59,7 +59,7 @@ export function ProductLineup() {
             whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true }}
             transition={prefersReduced ? { duration: 0 } : { duration: durations.hero, ease: easings.dramatic }}
-            className="text-center font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite"
+            className="text-center font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-ink"
           >
             Meet the latest phone lineup.
           </motion.h2>
@@ -68,7 +68,7 @@ export function ProductLineup() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={prefersReduced ? { duration: 0 } : { duration: durations.slow, ease: easings.easeOut, delay: 0.15 }}
-            className="mt-2 text-center font-font-body text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog"
+            className="mt-2 text-center font-font-body text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-graphite"
           >
             Explore the full lineup of phones, tablets, laptops, and more.
           </motion.p>
@@ -134,7 +134,7 @@ export function ProductLineup() {
         <div className="mt-4">
           <StaggerGrid>
             <StaggerItem>
-              <Link href="/laptops" className="group flex items-center justify-between rounded-md bg-paper p-6 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg">
+              <Link href="/laptops" className="group flex items-center justify-between rounded-md bg-paper p-6 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.99] active:transition-transform active:duration-75">
                 <div className="flex items-center gap-4">
                   <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-xs">
                     <Image
@@ -148,13 +148,13 @@ export function ProductLineup() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-font-body text-[17px] font-semibold leading-[1.24] text-graphite">
+                    <h3 className="font-font-body text-[17px] font-semibold leading-[1.24] text-ink">
                       Laptop Air
                     </h3>
                     <p className="mt-0.5 font-font-body text-[14px] font-normal leading-[1.43] text-steel">
                       Supercharged performance.
                     </p>
-                    <p className="font-font-body text-[14px] font-normal leading-[1.43] text-fog">
+                    <p className="font-font-body text-[14px] font-normal leading-[1.43] text-graphite">
                       From $1,099
                     </p>
                   </div>
@@ -173,9 +173,9 @@ export function ProductLineup() {
               <StaggerItem key={item.name}>
                 <Link
                   href={item.href}
-                  className="group flex items-center justify-between rounded-md bg-paper px-5 py-4 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                  className="group flex items-center justify-between rounded-md bg-paper px-5 py-4 shadow-xl transition-all hover:-translate-y-0.5 hover:shadow-lg active:scale-[0.98] active:transition-transform active:duration-75"
                 >
-                  <span className="flex items-center gap-3 font-font-body text-[14px] font-semibold leading-[1.43] text-graphite">
+                  <span className="flex items-center gap-3 font-font-body text-[14px] font-semibold leading-[1.43] text-ink">
                     {item.icon}
                     {item.name}
                   </span>
@@ -189,3 +189,4 @@ export function ProductLineup() {
     </section>
   )
 }
+ProductLineup.displayName = "ProductLineup"

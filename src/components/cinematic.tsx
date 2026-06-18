@@ -92,3 +92,6 @@ export function MorphGradient({ children, className = "" }: MorphGradientProps) 
     </div>
   )
 }
+ScrollProgressBar.displayName = "ScrollProgressBar"
+ParallaxImage.displayName = "ParallaxImage"
+MorphGradient.displayName = "MorphGradient"

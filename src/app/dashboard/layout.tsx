@@ -61,19 +61,28 @@ const SIDEBAR_LINKS = [
   },
 ]
 
+const PAGE_TITLES: Record<string, string> = {
+  "/dashboard": "Overview",
+  "/dashboard/analytics": "Analytics",
+  "/dashboard/orders": "Orders",
+  "/dashboard/customers": "Customers",
+  "/dashboard/settings": "Settings",
+}
+
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const pageTitle = PAGE_TITLES[pathname] || "Dashboard"
 
   return (
-    <div className="flex min-h-[100dvh] bg-cloud">
+    <div className="flex min-h-[100dvh] bg-fog">
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-64 shrink-0 border-r border-bone bg-paper transition-transform md:static md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-40 w-64 shrink-0 border-r border-silver bg-paper transition-transform md:static md:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex h-full flex-col">
-          <div className="flex h-[60px] items-center gap-3 border-b border-bone px-5">
+          <div className="flex h-[60px] items-center gap-3 border-b border-silver px-5">
             <Link href="/dashboard" className="flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center rounded-md bg-accent text-paper">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="currentColor" aria-hidden="true">
@@ -83,7 +92,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                   <rect x="8" y="8" width="5" height="5" rx="1" />
                 </svg>
               </div>
-              <span className="font-font-heading text-[17px] font-semibold leading-[1.24] tracking-[-0.3px] text-graphite">
+              <span className="font-font-heading text-[17px] font-semibold leading-[1.24] tracking-[-0.3px] text-ink">
                 Dashboard
               </span>
             </Link>
@@ -97,8 +106,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                   href={link.href}
                   className={`flex items-center gap-3 rounded-md px-3 py-2.5 font-font-body text-[14px] leading-[1.43] transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
                     isActive
-                      ? "bg-cloud font-semibold text-graphite"
-                      : "text-fog hover:bg-cloud/50 hover:text-graphite"
+                      ? "bg-fog font-semibold text-ink"
+                      : "text-graphite hover:bg-fog/50 hover:text-ink"
                   }`}
                 >
                   {link.icon}
@@ -107,10 +116,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               )
             })}
           </nav>
-          <div className="border-t border-bone p-4">
+          <div className="border-t border-silver p-4">
             <Link
               href="/"
-              className="flex items-center gap-2 rounded-md px-3 py-2 font-font-body text-[13px] leading-[1.38] text-fog transition-colors hover:bg-cloud hover:text-graphite"
+              className="flex items-center gap-2 rounded-md px-3 py-2 font-font-body text-[13px] leading-[1.38] text-graphite transition-colors hover:bg-fog hover:text-ink"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M1 7H13M7 1V13" />
@@ -130,7 +139,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       )}
 
       <div className="flex flex-1 flex-col">
-        <header className="flex h-[60px] items-center gap-4 border-b border-bone bg-paper px-6">
+        <header className="flex h-[60px] items-center gap-4 border-b border-silver bg-paper px-6">
           <button
             type="button"
             aria-label="Toggle sidebar"
@@ -142,23 +151,23 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </svg>
           </button>
           <div className="flex flex-1 items-center justify-between">
-            <h1 className="font-font-heading text-[20px] font-semibold leading-[1.2] tracking-[-0.3px] text-graphite">
-              Overview
+            <h1 className="font-font-heading text-[20px] font-semibold leading-[1.2] tracking-[-0.3px] text-ink">
+              {pageTitle}
             </h1>
             <div className="flex items-center gap-4">
               <div className="relative">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-fog">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true" className="absolute left-3 top-1/2 -translate-y-1/2 text-graphite">
                   <circle cx="7" cy="7" r="4.5" />
                   <path d="M10.5 10.5L14 14" />
                 </svg>
                 <input
                   type="search"
                   placeholder="Search..."
-                  className="w-[200px] rounded-md bg-cloud py-2 pl-9 pr-3 font-font-body text-[13px] text-graphite outline-none placeholder:text-fog focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  className="w-[200px] rounded-md bg-fog py-2 pl-9 pr-3 font-font-body text-[13px] text-ink outline-none placeholder:text-graphite focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                   aria-label="Search dashboard"
                 />
               </div>
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cloud text-fog" aria-label="Notifications">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-fog text-graphite" aria-label="Notifications">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M8 1C5.5 1 4 3.5 4 5.5V8L2.5 11H13.5L12 8V5.5C12 3.5 10.5 1 8 1Z" />
                   <path d="M6 11C6 12 7 13 8 13C9 13 10 12 10 11" />

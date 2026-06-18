@@ -129,3 +129,6 @@ export function StaggerItem({
     </motion.div>
   )
 }
+Reveal.displayName = "Reveal"
+StaggerGrid.displayName = "StaggerGrid"
+StaggerItem.displayName = "StaggerItem"

@@ -22,10 +22,10 @@ export function PhoneHero() {
       <section className="relative grid min-h-[100dvh] items-center gap-12 overflow-hidden bg-paper px-5 md:grid-cols-2 md:px-12">
         <div className="z-10 max-w-lg">
           <p className="font-font-mono text-[13px] uppercase tracking-[0.15em] text-accent">New arrival</p>
-          <h1 className="mt-4 font-font-heading text-[44px] font-bold leading-[1.05] tracking-[-1px] text-graphite md:text-[64px]">
+          <h1 className="mt-4 font-font-heading text-[44px] font-bold leading-[1.05] tracking-[-1px] text-ink md:text-[64px]">
             UltraPhone X
           </h1>
-          <p className="mt-4 max-w-[440px] font-font-body text-[18px] leading-[1.5] text-fog">
+          <p className="mt-4 max-w-[440px] font-font-body text-[18px] leading-[1.5] text-graphite">
             Built for next-gen intelligence. Titanium design. Pro camera system.
           </p>
           <div className="mt-8 flex items-center gap-4">
@@ -66,7 +66,7 @@ export function PhoneHero() {
           initial={{ opacity: 0, x: -30, filter: "blur(6px)" }}
           animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
           transition={{ duration: durations.hero, ease: easings.dramatic, delay: 0.1 }}
-          className="mt-4 font-font-heading text-[44px] font-bold leading-[1.05] tracking-[-1px] text-graphite md:text-[64px]"
+          className="mt-4 font-font-heading text-[44px] font-bold leading-[1.05] tracking-[-1px] text-ink md:text-[64px]"
         >
           UltraPhone X
         </motion.h1>
@@ -74,7 +74,7 @@ export function PhoneHero() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.25 }}
-          className="mt-4 max-w-[440px] font-font-body text-[18px] leading-[1.5] text-fog"
+          className="mt-4 max-w-[440px] font-font-body text-[18px] leading-[1.5] text-graphite"
         >
           Built for next-gen intelligence. Titanium design. Pro camera system.
         </motion.p>
@@ -123,3 +123,4 @@ export function PhoneHero() {
     </section>
   )
 }
+PhoneHero.displayName = "PhoneHero"

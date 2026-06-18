@@ -51,7 +51,7 @@ export default function PhonePage() {
         <Reveal delay={0.1}>
           <section className="bg-paper px-5 py-[80px]">
             <div className="mx-auto max-w-[980px]">
-              <h2 className="mb-6 text-center font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
+              <h2 className="mb-6 text-center font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-ink">
                 View in detail
               </h2>
               <ProductGallery images={PHONE_GALLERY} productName="UltraPhone X" />

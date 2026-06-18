@@ -47,3 +47,4 @@ export function CursorGlow() {
     />
   )
 }
+CursorGlow.displayName = "CursorGlow"

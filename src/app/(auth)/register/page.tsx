@@ -48,10 +48,10 @@ export default function RegisterPage() {
   return (
     <div className="w-full rounded-2xl bg-paper px-8 py-8 shadow-sm">
       <div className="mb-6 text-center">
-        <h1 className="font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
+        <h1 className="font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-ink">
           Create Account
         </h1>
-        <p className="mt-1 font-font-body text-[15px] leading-[1.47] text-fog">
+        <p className="mt-1 font-font-body text-[15px] leading-[1.47] text-graphite">
           Fill in your details to get started.
         </p>
       </div>
@@ -103,7 +103,7 @@ export default function RegisterPage() {
         </PillButton>
       </form>
 
-      <p className="mt-6 text-center font-font-body text-[14px] leading-[1.43] text-fog">
+      <p className="mt-6 text-center font-font-body text-[14px] leading-[1.43] text-graphite">
         Already have an account?{" "}
         <Link
           href="/login"

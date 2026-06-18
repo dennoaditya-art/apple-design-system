@@ -38,7 +38,7 @@ const SHOWS: ShowProps[] = [
 export function FeaturedMediaCard() {
   const prefersReduced = useReducedMotion()
   return (
-    <section className="bg-cloud px-5 py-[80px]">
+    <section className="bg-fog px-5 py-[80px]">
       <div className="mx-auto max-w-[1200px]">
         <motion.div
           initial={prefersReduced ? undefined : { opacity: 0, y: 20 }}
@@ -47,10 +47,10 @@ export function FeaturedMediaCard() {
           transition={prefersReduced ? { duration: 0 } : { duration: durations.slow, ease: easings.easeOut }}
           className="mb-8 text-center"
         >
-          <p className="font-font-body text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
+          <p className="font-font-body text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-graphite">
             Stream+
           </p>
-          <h2 className="mt-1 font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite">
+          <h2 className="mt-1 font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-ink">
             Watch now
           </h2>
         </motion.div>
@@ -76,7 +76,7 @@ export function FeaturedMediaCard() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
           <div className="absolute right-8 top-8 flex h-7 w-7 items-center justify-center rounded-lg bg-white">
-            <Play size={14} weight="fill" className="text-graphite" />
+            <Play size={14} weight="fill" className="text-ink" />
           </div>
           <div className="absolute bottom-8 left-8 right-8 flex items-end gap-5">
             <span className="inline-flex shrink-0 items-center rounded-full border border-paper px-[15px] py-[8px] font-font-body text-[14px] text-paper transition-opacity group-hover:opacity-60">
@@ -98,7 +98,7 @@ export function FeaturedMediaCard() {
             <StaggerItem key={show.name}>
               <a
               href="/entertainment"
-                className="group block overflow-hidden rounded-md bg-paper shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="group block overflow-hidden rounded-md bg-paper shadow-xl transition-all hover:-translate-y-1 hover:shadow-lg active:scale-[0.99] active:transition-transform active:duration-75"
               >
                 <div className="relative" style={{ aspectRatio: "3 / 4" }}>
                   <Image
@@ -113,10 +113,10 @@ export function FeaturedMediaCard() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
                 <div className="p-4">
-                  <h4 className="font-font-body text-[15px] font-semibold leading-[1.24] text-graphite">
+                  <h4 className="font-font-body text-[15px] font-semibold leading-[1.24] text-ink">
                     {show.name}
                   </h4>
-                  <p className="mt-0.5 font-font-body text-[12px] font-light leading-[1.33] text-fog">
+                  <p className="mt-0.5 font-font-body text-[12px] font-light leading-[1.33] text-graphite">
                     {show.tagline}
                   </p>
                   <span className="mt-2 inline-block font-font-body text-[12px] font-normal leading-[1.33] text-accent transition-all group-hover:translate-x-0.5">
@@ -131,3 +131,4 @@ export function FeaturedMediaCard() {
     </section>
   )
 }
+FeaturedMediaCard.displayName = "FeaturedMediaCard"

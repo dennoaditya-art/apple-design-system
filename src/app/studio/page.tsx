@@ -44,7 +44,7 @@ function GalleryFrame({
   return (
     <section
       className={`relative flex min-h-0 md:min-h-[80vh] flex-col items-center justify-center overflow-hidden px-6 py-20 ${
-        isDark ? "text-white" : "text-graphite"
+        isDark ? "text-white" : "text-ink"
       }`}
       style={{ backgroundColor: isDark ? "#000" : "#fff" }}
     >
@@ -65,7 +65,7 @@ function GalleryFrame({
           {index === 0 ? (
             <h1
               className={`font-font-heading text-[32px] font-bold leading-[1.1] tracking-[-0.6px] md:text-[56px] ${
-                isDark ? "text-white" : "text-graphite"
+                isDark ? "text-white" : "text-ink"
               }`}
             >
               {item.title}
@@ -73,7 +73,7 @@ function GalleryFrame({
           ) : (
             <h2
               className={`font-font-heading text-[32px] font-bold leading-[1.1] tracking-[-0.6px] md:text-[56px] ${
-                isDark ? "text-white" : "text-graphite"
+                isDark ? "text-white" : "text-ink"
               }`}
             >
               {item.title}
@@ -92,8 +92,8 @@ function GalleryFrame({
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative aspect-[16/9] w-full overflow-hidden shadow-xl"
-          style={{ borderRadius: isDark ? "4px" : "4px" }}
+          className="relative w-full overflow-hidden shadow-xl"
+          style={{ aspectRatio: "16 / 9", borderRadius: isDark ? "4px" : "4px" }}
         >
           <Image
             src={item.image}

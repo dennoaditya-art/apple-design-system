@@ -44,7 +44,7 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
           stroke="currentColor"
           strokeWidth="1.5"
           strokeLinecap="round"
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-fog"
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-graphite"
           aria-hidden="true"
         >
           <circle cx="8" cy="8" r="5.5" />
@@ -55,14 +55,14 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search 17 products..."
-          className="w-full rounded-lg border border-bone bg-cloud py-3 pl-10 pr-4 font-font-body text-[15px] text-graphite outline-none transition-colors placeholder:text-fog focus:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+          placeholder={`Search ${PRODUCTS.length} products...`}
+          className="w-full rounded-lg border border-silver bg-fog py-3 pl-10 pr-4 font-font-body text-[15px] text-ink outline-none transition-colors placeholder:text-graphite focus:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           aria-label="Search products"
         />
       </div>
 
       {query && results.length === 0 && (
-        <p className="mt-6 font-font-body text-[14px] font-light leading-[1.43] text-fog">
+        <p className="mt-6 font-font-body text-[14px] font-light leading-[1.43] text-graphite">
           No results for &ldquo;{query}&rdquo;
         </p>
       )}
@@ -74,9 +74,9 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
               <Link
                 href={`/${product.category}`}
                 onClick={onClose}
-                className="flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                className="flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-fog focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
-                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-sm bg-cloud">
+                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-sm bg-fog">
                   <Image
                     src={product.imageSrc}
                     alt=""
@@ -86,10 +86,10 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
                   />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="truncate font-font-body text-[14px] font-semibold leading-[1.43] text-graphite">
+                  <p className="truncate font-font-body text-[14px] font-semibold leading-[1.43] text-ink">
                     {product.name}
                   </p>
-                  <p className="truncate font-font-body text-[12px] font-light leading-[1.33] text-fog">
+                  <p className="truncate font-font-body text-[12px] font-light leading-[1.33] text-graphite">
                     {product.price}
                   </p>
                 </div>
@@ -112,7 +112,7 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
 
       {!query && (
         <div className="mt-8">
-          <h3 className="mb-3 font-font-body text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
+          <h3 className="mb-3 font-font-body text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-graphite">
             Popular products
           </h3>
           <div className="space-y-2">
@@ -121,9 +121,9 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
                 key={product.id}
                 href={`/${product.category}`}
                 onClick={onClose}
-                className="flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-cloud focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                className="flex items-center gap-3 rounded-md p-2 transition-colors hover:bg-fog focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
               >
-                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-sm bg-cloud">
+                <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-sm bg-fog">
                   <Image
                     src={product.imageSrc}
                     alt=""
@@ -133,10 +133,10 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
                   />
                 </div>
                 <div>
-                  <p className="font-font-body text-[14px] font-semibold leading-[1.43] text-graphite">
+                  <p className="font-font-body text-[14px] font-semibold leading-[1.43] text-ink">
                     {product.name}
                   </p>
-                  <p className="font-font-body text-[12px] font-light leading-[1.33] text-fog">
+                  <p className="font-font-body text-[12px] font-light leading-[1.33] text-graphite">
                     {product.price}
                   </p>
                 </div>
@@ -148,3 +148,4 @@ export function SearchPanel({ onClose }: { onClose?: () => void }) {
     </div>
   )
 }
+SearchPanel.displayName = "SearchPanel"

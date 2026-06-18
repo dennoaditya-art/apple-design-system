@@ -23,14 +23,14 @@ export function LifestyleShowcase() {
   const prefersReduced = useReducedMotion()
 
   return (
-    <section className="bg-cloud px-5 py-[80px]">
+    <section className="bg-fog px-5 py-[80px]">
       <div className="mx-auto max-w-[980px]">
         <motion.h2
           initial={prefersReduced ? undefined : { opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: durations.hero, ease: easings.dramatic }}
-          className="text-center font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-graphite"
+          className="text-center font-font-heading md:text-[40px] text-[28px] font-semibold leading-[1.1] tracking-[-0.6px] text-ink"
         >
           Built for the elements.
         </motion.h2>
@@ -39,7 +39,7 @@ export function LifestyleShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: durations.slow, ease: easings.easeOut, delay: 0.12 }}
-          className="mt-2 text-center font-font-body text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-fog"
+          className="mt-2 text-center font-font-body text-[17px] font-light leading-[1.47] tracking-[-0.05px] text-graphite"
         >
           Designed to withstand extreme environments.
         </motion.p>
@@ -49,10 +49,10 @@ export function LifestyleShowcase() {
             <div className="flex flex-col gap-5">
               {FEATURES.slice(0, 2).map((f) => (
                 <div key={f.name} className={`flex items-start gap-5 rounded-xl ${f.bgClass} p-6 shadow-xl`}>
-                  <div className="shrink-0 text-graphite/70">{f.icon}</div>
+                  <div className="shrink-0 text-ink/70">{f.icon}</div>
                   <div>
-                    <h3 className="font-font-body text-[17px] font-semibold leading-[1.24] text-graphite">{f.name}</h3>
-                    <p className="mt-1 font-font-body text-[14px] font-normal leading-[1.43] text-fog">{f.description}</p>
+                    <h3 className="font-font-body text-[17px] font-semibold leading-[1.24] text-ink">{f.name}</h3>
+                    <p className="mt-1 font-font-body text-[14px] font-normal leading-[1.43] text-graphite">{f.description}</p>
                   </div>
                 </div>
               ))}
@@ -62,10 +62,10 @@ export function LifestyleShowcase() {
             <div className="flex flex-col gap-5">
               {FEATURES.slice(2).map((f) => (
                 <div key={f.name} className={`flex items-start gap-5 rounded-xl ${f.bgClass} p-6 shadow-xl`}>
-                  <div className="shrink-0 text-graphite/70">{f.icon}</div>
+                  <div className="shrink-0 text-ink/70">{f.icon}</div>
                   <div>
-                    <h3 className="font-font-body text-[17px] font-semibold leading-[1.24] text-graphite">{f.name}</h3>
-                    <p className="mt-1 font-font-body text-[14px] font-normal leading-[1.43] text-fog">{f.description}</p>
+                    <h3 className="font-font-body text-[17px] font-semibold leading-[1.24] text-ink">{f.name}</h3>
+                    <p className="mt-1 font-font-body text-[14px] font-normal leading-[1.43] text-graphite">{f.description}</p>
                   </div>
                 </div>
               ))}
@@ -76,3 +76,4 @@ export function LifestyleShowcase() {
     </section>
   )
 }
+LifestyleShowcase.displayName = "LifestyleShowcase"

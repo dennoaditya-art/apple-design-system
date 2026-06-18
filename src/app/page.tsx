@@ -33,6 +33,7 @@ import { ProductLineup } from "@/components/product-lineup"
 import { ColoredProductSection } from "@/components/colored-product-section"
 import { FeaturedMediaCard } from "@/components/featured-media-card"
 import { MediaCardGrid } from "@/components/media-card-grid"
+import { NewsletterCta } from "@/components/newsletter-cta"
 import { FooterSection } from "@/components/footer-section"
 import { ScrollProgressBar, MorphGradient } from "@/components/cinematic"
 
@@ -60,6 +61,8 @@ export default function Home() {
         <MediaCardGrid />
 
         <HorizontalPan panels={PHONE_PANELS} />
+        
+        <NewsletterCta />
       </main>
       <FooterSection />
     </>

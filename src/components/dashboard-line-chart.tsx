@@ -114,3 +114,5 @@ export function MiniLineChart({ data }: { data: number[] }) {
     </svg>
   )
 }
+LineChart.displayName = "LineChart"
+MiniLineChart.displayName = "MiniLineChart"

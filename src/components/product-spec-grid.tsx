@@ -67,3 +67,4 @@ export function ProductSpecGrid() {
     </section>
   )
 }
+ProductSpecGrid.displayName = "ProductSpecGrid"

@@ -42,12 +42,12 @@ export default function ResetPasswordPage() {
                 <path d="M2 4H22V20H2V4Z" />
               </svg>
             </div>
-            <h1 className="font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
+            <h1 className="font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-ink">
               Check your email
             </h1>
-            <p className="mt-2 font-font-body text-[15px] leading-[1.47] text-fog">
+            <p className="mt-2 font-font-body text-[15px] leading-[1.47] text-graphite">
               We&apos;ve sent a password reset link to{" "}
-              <span className="font-semibold text-graphite">{email}</span>
+              <span className="font-semibold text-ink">{email}</span>
             </p>
             <Link
               href="/login"
@@ -58,10 +58,10 @@ export default function ResetPasswordPage() {
           </>
         ) : (
           <>
-            <h1 className="font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-graphite">
+            <h1 className="font-font-heading text-[28px] font-semibold leading-[1.14] tracking-[-0.28px] text-ink">
               Reset Password
             </h1>
-            <p className="mt-1 font-font-body text-[15px] leading-[1.47] text-fog">
+            <p className="mt-1 font-font-body text-[15px] leading-[1.47] text-graphite">
               Enter your email and we&apos;ll send you a reset link.
             </p>
           </>
@@ -93,7 +93,7 @@ export default function ResetPasswordPage() {
       )}
 
       {!sent && (
-        <p className="mt-6 text-center font-font-body text-[14px] leading-[1.43] text-fog">
+        <p className="mt-6 text-center font-font-body text-[14px] leading-[1.43] text-graphite">
           Remember your password?{" "}
           <Link
             href="/login"

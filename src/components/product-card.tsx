@@ -17,7 +17,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="overflow-hidden rounded-xl bg-paper shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
       <Link href={`/${product.category}`} className="block">
-        <div className="relative w-full overflow-hidden bg-cloud" style={{ paddingBottom: "100%" }}>
+        <div className="relative w-full overflow-hidden bg-fog" style={{ paddingBottom: "100%" }}>
           <Image
             src={product.imageSrc}
             alt={product.name}
@@ -28,7 +28,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
       </Link>
       <div className="p-4">
-          <p className="font-font-body text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-fog">
+          <p className="font-font-body text-[12px] font-semibold uppercase leading-[1.33] tracking-[0.08px] text-graphite">
             {product.category === "phones"
               ? "Phones"
               : product.category === "laptops"
@@ -41,13 +41,13 @@ export function ProductCard({ product }: ProductCardProps) {
                       ? "Audio"
                       : "Accessories"}
           </p>
-          <h3 className="mt-0.5 font-font-body text-[15px] font-semibold leading-[1.24] text-graphite hover:text-accent transition-colors">
+          <h3 className="mt-0.5 font-font-body text-[15px] font-semibold leading-[1.24] text-ink hover:text-accent transition-colors">
             {product.name}
           </h3>
-          <p className="mt-0.5 font-font-body text-[13px] font-light leading-[1.38] text-fog line-clamp-1">
+          <p className="mt-0.5 font-font-body text-[13px] font-light leading-[1.38] text-graphite line-clamp-1">
             {product.tagline}
           </p>
-          <p className="mt-1 font-font-body text-[15px] font-normal leading-[1.24] text-graphite">
+          <p className="mt-1 font-font-body text-[15px] font-normal leading-[1.24] text-ink">
             {product.price}
           </p>
           <motion.button
@@ -64,3 +64,4 @@ export function ProductCard({ product }: ProductCardProps) {
       </div>
   )
 }
+ProductCard.displayName = "ProductCard"
